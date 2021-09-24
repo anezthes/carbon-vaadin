@@ -1,0 +1,22 @@
+:host {
+    color: var(--lumo-primary-contrast-color);
+    margin: 0;
+}
+
+:host(:hover) {
+    background-color: var(--hover-bg);
+    color: var(--lumo-primary-contrast-color);
+}
+
+:host([active]) {
+    background-color: var(--active-bg);
+}
+
+:host([focused]) {
+    border-color: white;
+    box-shadow: none;
+}
+
+[part=icon]::before {
+    font-size: var(--lumo-icon-size-l);
+}

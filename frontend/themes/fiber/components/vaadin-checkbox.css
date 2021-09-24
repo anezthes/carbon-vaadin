@@ -1,0 +1,73 @@
+:host {
+    font-size: var(--lumo-font-size-s);
+}
+
+/* === Label === */
+label {
+    align-items: flex-start;
+}
+
+[part="label"] {
+
+}
+
+[part="label"]:not([empty]) {
+    margin: 0 0 0 var(--lumo-space-xxs);
+}
+
+/* === Checkbox === */
+[part="checkbox"] {
+    background-color: transparent;
+    border: 1px solid var(--lumo-shade-90pct);
+    border-radius: var(--lumo-border-radius-s);
+    box-sizing: border-box;
+    height: var(--lumo-icon-size-m);
+    margin: var(--lumo-space-xxxs);
+    width: var(--lumo-icon-size-m);
+}
+
+[part="checkbox"]::before {
+    content: none;
+}
+
+[part="checkbox"]::after {
+    top: 0.625rem;
+    left: 0.375rem;
+}
+
+/* === Active === */
+:host([active]) [part="checkbox"] {
+    transform: none;
+}
+
+/* === Hover === */
+:host(:not([checked]):not([indeterminate]):not([disabled]):hover) [part="checkbox"] {
+    background-color: transparent;
+}
+
+/* === Focus === */
+:host([focus-ring]) [part="checkbox"] {
+    box-shadow: none;
+    outline: 2px solid var(--lumo-primary-color);
+    outline-offset: 1px;
+}
+
+/* === Checked === */
+:host([indeterminate]) [part="checkbox"],
+:host([checked]) [part="checkbox"] {
+    background-color: var(--lumo-shade-90pct);
+}
+
+/* === Disabled === */
+:host([disabled]) [part="checkbox"] {
+    background-color: transparent;
+    border-color: var(--lumo-shade-20pct);
+}
+
+:host([disabled][checked]) [part="checkbox"] {
+    background-color: var(--lumo-shade-20pct);
+}
+
+:host([disabled]) [part="checkbox"]::after {
+    border-color: var(--lumo-primary-contrast-color);
+}

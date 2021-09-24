@@ -1,0 +1,153 @@
+:host {
+    --lumo-button-size: var(--lumo-size-m);
+    background-color: transparent;
+    border: 1px solid transparent;
+    font-size: var(--lumo-font-size-s);
+    font-weight: normal;
+    min-width: 0;
+    padding: 0 calc(var(--lumo-space-m) - 1px);
+}
+
+:host::before,
+:host::after {
+    content: none;
+}
+
+[part="label"] {
+    padding: 0;
+}
+
+[part="label"], [part="prefix"], [part="suffix"] {
+    display: flex;
+    line-height: 2;
+    margin: 0;
+}
+
+/* === Hover === */
+:host(:hover) {
+    background-color: var(--hover-bg);
+    color: var(--hover-text);
+}
+
+/* === Active === */
+:host([active]) {
+    background-color: var(--active-bg);
+}
+
+/* === Primary === */
+:host([theme~="primary"]) {
+    font-weight: normal;
+    min-width: 0;
+}
+
+:host([theme~="primary"]:hover) {
+    background-color: var(--hover-primary-bg);
+    color: var(--lumo-primary-contrast-color);
+}
+
+:host([theme~="primary"][active]) {
+    background-color: var(--active-primary-bg);
+}
+
+/* === Contrast === */
+:host([theme~="contrast"]) {
+    background-color: var(--lumo-shade-70pct);
+    color: var(--lumo-primary-contrast-color);
+}
+
+:host([theme~="contrast"]:hover) {
+    background-color: var(--hover-contrast-bg);
+}
+
+:host([theme~="contrast"][active]) {
+    background-color: var(--active-contrast-bg)
+}
+
+/* === Tertiary === */
+:host([theme~="tertiary"]) {
+    border: 1px solid var(--lumo-primary-color);
+    padding: 0 calc(var(--lumo-space-m) - 1px);
+}
+
+:host([theme*="tertiary"]:hover) {
+    background-color: var(--hover-primary-bg) !important;
+    color: var(--lumo-primary-contrast-color);
+}
+
+:host([theme~="tertiary"][active]),
+:host([theme~="tertiary-inline"][active]),
+:host([theme*="tertiary"]:not([active]):hover) {
+    opacity: 1;
+}
+
+:host([theme~="tertiary"][focused]) {
+    background-color: var(--lumo-primary-color) !important;
+    color: var(--lumo-primary-contrast-color);
+}
+
+:host([theme~="tertiary"][active]) {
+    background-color: var(--active-primary-bg) !important;
+}
+
+/* === Error === */
+:host([theme~="error"]) {
+    background-color: var(--lumo-error-color);
+    color: var(--lumo-primary-contrast-color);
+}
+
+:host([theme~="error"]:hover) {
+    background-color: var(--hover-error-bg);
+}
+
+:host([theme~="error"][active]) {
+    background-color: var(--active-error-bg);
+}
+
+/* === Small === */
+:host([theme~="small"]) {
+    --lumo-button-size: var(--lumo-size-s);
+}
+
+/* === Large === */
+:host([theme~="large"]) {
+    font-size: var(--lumo-font-size-s);
+    --lumo-button-size: var(--lumo-size-l);
+}
+
+/* === Icon === */
+:host([theme~="icon"]:not([theme~="tertiary-inline"])) {
+    min-width: 0;
+    padding: 0;
+    width: var(--lumo-button-size);
+}
+
+:host([theme~="icon"]) [part="label"],
+:host([theme~="icon"]) [part="prefix"],
+:host([theme~="icon"]) [part="suffix"] {
+    line-height: 1;
+}
+
+[part] ::slotted(iron-icon[icon^="vaadin:"]) {
+    padding: 0;
+}
+
+:host(:not([theme~="icon"])) [part="prefix"] ::slotted(iron-icon[icon^="vaadin:"]) {
+    margin: 0 var(--lumo-space-xs) 0 0;
+}
+
+:host(:not([theme~="icon"])) [part="suffix"] ::slotted(iron-icon[icon^="vaadin:"]) {
+    margin: 0 0 0 var(--lumo-space-xs);
+}
+
+/* === Focus === */
+:host([focused]) {
+    border-color: var(--lumo-primary-color);
+    box-shadow: inset 0 0 0 1px var(--lumo-primary-color), inset 0 0 0 2px var(--lumo-shade-5pct);
+}
+
+/* === Disabled === */
+:host([disabled][disabled]) {
+    background-color: var(--lumo-shade-20pct) !important;
+    border-color: var(--lumo-shade-20pct);
+    color: var(--lumo-shade-40pct);
+}
