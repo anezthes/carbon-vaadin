@@ -72,10 +72,10 @@ public class MainLayout extends AppLayout {
     }
 
     private Component createDrawerContent() {
-        H2 appName = new H2("Components");
-        appName.addClassNames("flex", "items-center", "h-xl", "m-0", "px-m", "text-m");
+        H2 title = new H2("Components");
+        title.addClassNames("flex", "items-center", "h-xl", "m-0", "px-m", "text-m");
 
-        com.vaadin.flow.component.html.Section section = new com.vaadin.flow.component.html.Section(appName,
+        com.vaadin.flow.component.html.Section section = new com.vaadin.flow.component.html.Section(title,
                 createNavigation());
         section.addClassNames("flex", "flex-col", "items-stretch", "max-h-full", "min-h-full");
         return section;
