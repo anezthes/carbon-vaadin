@@ -8,11 +8,11 @@ import com.vaadin.flow.component.html.Main;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Checkboxes")
-@Route(value = "checkboxes", layout = MainLayout.class)
-public class CheckboxesView extends Main {
+@PageTitle("Checkbox")
+@Route(value = "checkbox", layout = MainLayout.class)
+public class CheckboxView extends Main {
 
-    public CheckboxesView() {
+    public CheckboxView() {
         addClassNames("flex", "flex-col", "px-l");
 
         add(new H2("Checkboxes"));

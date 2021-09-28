@@ -3,20 +3,24 @@
     margin: 0;
 }
 
+/* === Hover === */
 :host(:hover) {
     background-color: var(--hover-bg);
     color: var(--lumo-primary-contrast-color);
 }
 
+/* === Active === */
 :host([active]) {
     background-color: var(--active-bg);
 }
 
+/* === Focus === */
 :host([focused]) {
     border-color: white;
     box-shadow: none;
 }
 
+/* === Icon === */
 [part=icon]::before {
     font-size: var(--lumo-icon-size-l);
 }

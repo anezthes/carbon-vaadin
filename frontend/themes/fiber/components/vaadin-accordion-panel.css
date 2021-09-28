@@ -1,9 +1,9 @@
 :host(:first-child) {
-    border-top: 1px solid var(--cds-ui-03, #e0e0e0);
+    border-top: 1px solid var(--gray-20);
 }
 
 :host(:last-child) {
-    border-bottom: 1px solid var(--cds-ui-03, #e0e0e0);
+    border-bottom: 1px solid var(--gray-20);
 }
 
 :host([focus-ring]) [part="summary"] {
@@ -43,5 +43,5 @@
 }
 
 :host([disabled]) {
-    border-color: var(--lumo-shade-5pct);
+    border-color: var(--gray-10);
 }

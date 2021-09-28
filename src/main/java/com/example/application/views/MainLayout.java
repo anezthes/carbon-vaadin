@@ -98,9 +98,10 @@ public class MainLayout extends AppLayout {
 
     private List<RouterLink> createLinks() {
         MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
-                new MenuItemInfo("Accordions", "la la-cubes", AccordionsView.class),
-                new MenuItemInfo("Buttons", "la la-cubes", ButtonsView.class),
-                new MenuItemInfo("Checkboxes", "la la-cubes", CheckboxesView.class),
+                new MenuItemInfo("Accordion", "la la-cubes", AccordionView.class),
+                new MenuItemInfo("Button", "la la-cubes", ButtonView.class),
+                new MenuItemInfo("Checkbox", "la la-cubes", CheckboxView.class),
+                new MenuItemInfo("Data table", "la la-cubes", DataTableView.class),
         };
         List<RouterLink> links = new ArrayList<>();
         for (MenuItemInfo menuItemInfo : menuItems) {

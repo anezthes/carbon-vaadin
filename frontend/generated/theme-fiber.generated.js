@@ -84,6 +84,8 @@ import vaadinButtonCss from 'themes/fiber/components/vaadin-button.css';
 import vaadinCheckboxGroupCss from 'themes/fiber/components/vaadin-checkbox-group.css';
 import vaadinCheckboxCss from 'themes/fiber/components/vaadin-checkbox.css';
 import vaadinDrawerToggleCss from 'themes/fiber/components/vaadin-drawer-toggle.css';
+import vaadinGridSorterCss from 'themes/fiber/components/vaadin-grid-sorter.css';
+import vaadinGridCss from 'themes/fiber/components/vaadin-grid.css';
 
 window.Vaadin = window.Vaadin || {}; 
 window.Vaadin.theme = window.Vaadin.theme || {};
@@ -167,6 +169,18 @@ export const applyTheme = (target) => {
       'vaadin-drawer-toggle',
       css`
         ${unsafeCSS(vaadinDrawerToggleCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-grid-sorter',
+      css`
+        ${unsafeCSS(vaadinGridSorterCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-grid',
+      css`
+        ${unsafeCSS(vaadinGridCss.toString())}
       `
     );
     

@@ -18,10 +18,10 @@
 }
 
 [part="backdrop"] {
-    background-color: var(--lumo-shade-90pct);
+    background-color: var(--gray-100);
     opacity: 0.5;
 }
 
 [content] {
-    background-color: var(--lumo-shade-5pct);
+    background-color: var(--gray-10);
 }

@@ -26,7 +26,7 @@
 /* === Hover === */
 :host(:hover) {
     background-color: var(--hover-bg);
-    color: var(--hover-text);
+    color: var(--button-hover-color);
 }
 
 /* === Active === */
@@ -41,26 +41,26 @@
 }
 
 :host([theme~="primary"]:hover) {
-    background-color: var(--hover-primary-bg);
+    background-color: var(--button-primary-hover-bg);
     color: var(--lumo-primary-contrast-color);
 }
 
 :host([theme~="primary"][active]) {
-    background-color: var(--active-primary-bg);
+    background-color: var(--button-primary-active-bg);
 }
 
 /* === Contrast === */
 :host([theme~="contrast"]) {
-    background-color: var(--lumo-shade-70pct);
+    background-color: var(--gray-80);
     color: var(--lumo-primary-contrast-color);
 }
 
 :host([theme~="contrast"]:hover) {
-    background-color: var(--hover-contrast-bg);
+    background-color: var(--button-contrast-hover-bg);
 }
 
 :host([theme~="contrast"][active]) {
-    background-color: var(--active-contrast-bg)
+    background-color: var(--button-contrast-active-bg);
 }
 
 /* === Tertiary === */
@@ -70,7 +70,7 @@
 }
 
 :host([theme*="tertiary"]:hover) {
-    background-color: var(--hover-primary-bg) !important;
+    background-color: var(--button-primary-hover-bg) !important;
     color: var(--lumo-primary-contrast-color);
 }
 
@@ -86,7 +86,7 @@
 }
 
 :host([theme~="tertiary"][active]) {
-    background-color: var(--active-primary-bg) !important;
+    background-color: var(--button-primary-active-bg) !important;
 }
 
 /* === Error === */
@@ -96,11 +96,11 @@
 }
 
 :host([theme~="error"]:hover) {
-    background-color: var(--hover-error-bg);
+    background-color: var(--button-error-hover-bg);
 }
 
 :host([theme~="error"][active]) {
-    background-color: var(--active-error-bg);
+    background-color: var(--button-error-active-bg);
 }
 
 /* === Small === */
@@ -142,12 +142,12 @@
 /* === Focus === */
 :host([focused]) {
     border-color: var(--lumo-primary-color);
-    box-shadow: inset 0 0 0 1px var(--lumo-primary-color), inset 0 0 0 2px var(--lumo-shade-5pct);
+    box-shadow: inset 0 0 0 1px var(--lumo-primary-color), inset 0 0 0 2px var(--gray-10);
 }
 
 /* === Disabled === */
 :host([disabled][disabled]) {
-    background-color: var(--lumo-shade-20pct) !important;
-    border-color: var(--lumo-shade-20pct);
-    color: var(--lumo-shade-40pct);
+    background-color: var(--gray-30) !important;
+    border-color: var(--gray-30);
+    color: var(--gray-50);
 }

@@ -1,0 +1,19 @@
+:host {
+    align-items: center;
+    height: 100%;
+    margin-left: calc(var(--lumo-space-m) * -1);
+    margin-right: calc(var(--lumo-space-m) * -1);
+    padding-left: var(--lumo-space-m);
+    padding-right: var(--lumo-space-m);
+    width: 100%;
+}
+
+/* === Sort icon === */
+:host(:not([direction])) [part="indicators"]::before {
+    opacity: 0;
+}
+
+:host(:not([direction]):hover) [part="indicators"]::before,
+:host(:not([direction]):focus) [part="indicators"]::before {
+    opacity: 1;
+}
