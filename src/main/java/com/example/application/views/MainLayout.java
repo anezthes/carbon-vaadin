@@ -103,6 +103,10 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("Checkbox", "la la-check", CheckboxView.class),
                 new MenuItemInfo("Data table", "la la-table", DataTableView.class),
                 new MenuItemInfo("Date picker", "la la-calendar", DatePickerView.class),
+                new MenuItemInfo("Search", "la la-search", SearchView.class),
+                new MenuItemInfo("Select", "la la-tasks", SelectView.class),
+                new MenuItemInfo("Text input", "la la-terminal", TextInputView.class),
+                new MenuItemInfo("Tag", "la la-tag", TagView.class),
         };
         List<RouterLink> links = new ArrayList<>();
         for (MenuItemInfo menuItemInfo : menuItems) {

@@ -1,0 +1,35 @@
+:host {
+    align-items: stretch;
+    --border-top-color: var(--gray-30);
+    color: var(--lumo-secondary-text-color);
+    font-size: var(--lumo-font-size-s);
+    padding: 0 var(--lumo-space-m);
+    position: relative;
+}
+
+:host(:first-child),
+:host(:hover),
+:host(:active),
+:host([focus-ring]),
+:host([selected]) {
+    --border-top-color: transparent;
+}
+
+:host([tabindex])::before {
+    color: var(--lumo-body-text-color);
+    font-size: var(--lumo-icon-size-l);
+    margin: 0;
+    order: 1;
+    position: absolute;
+    right: var(--lumo-space-m);
+    top: calc((var(--lumo-size-m) - var(--lumo-icon-size-l)) / 2);
+}
+
+[part="content"] {
+    align-items: center;
+    border-bottom: 1px solid transparent;
+    border-top: 1px solid var(--border-top-color);
+    display: flex;
+    padding-inline-end: var(--lumo-icon-size-l);
+}
+

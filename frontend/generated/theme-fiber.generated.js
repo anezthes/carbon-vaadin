@@ -83,9 +83,17 @@ import vaadinAppLayoutCss from 'themes/fiber/components/vaadin-app-layout.css';
 import vaadinButtonCss from 'themes/fiber/components/vaadin-button.css';
 import vaadinCheckboxGroupCss from 'themes/fiber/components/vaadin-checkbox-group.css';
 import vaadinCheckboxCss from 'themes/fiber/components/vaadin-checkbox.css';
+import vaadinDatePickerCss from 'themes/fiber/components/vaadin-date-picker.css';
 import vaadinDrawerToggleCss from 'themes/fiber/components/vaadin-drawer-toggle.css';
 import vaadinGridSorterCss from 'themes/fiber/components/vaadin-grid-sorter.css';
 import vaadinGridCss from 'themes/fiber/components/vaadin-grid.css';
+import vaadinItemCss from 'themes/fiber/components/vaadin-item.css';
+import vaadinListBoxCss from 'themes/fiber/components/vaadin-list-box.css';
+import vaadinPasswordFieldCss from 'themes/fiber/components/vaadin-password-field.css';
+import vaadinSelectOverlayCss from 'themes/fiber/components/vaadin-select-overlay.css';
+import vaadinSelectCss from 'themes/fiber/components/vaadin-select.css';
+import vaadinTextAreaCss from 'themes/fiber/components/vaadin-text-area.css';
+import vaadinTextFieldCss from 'themes/fiber/components/vaadin-text-field.css';
 
 window.Vaadin = window.Vaadin || {}; 
 window.Vaadin.theme = window.Vaadin.theme || {};
@@ -166,6 +174,12 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
+      'vaadin-date-picker',
+      css`
+        ${unsafeCSS(vaadinDatePickerCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-drawer-toggle',
       css`
         ${unsafeCSS(vaadinDrawerToggleCss.toString())}
@@ -181,6 +195,48 @@ export const applyTheme = (target) => {
       'vaadin-grid',
       css`
         ${unsafeCSS(vaadinGridCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-item',
+      css`
+        ${unsafeCSS(vaadinItemCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-list-box',
+      css`
+        ${unsafeCSS(vaadinListBoxCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-password-field',
+      css`
+        ${unsafeCSS(vaadinPasswordFieldCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-select-overlay',
+      css`
+        ${unsafeCSS(vaadinSelectOverlayCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-select',
+      css`
+        ${unsafeCSS(vaadinSelectCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-text-area',
+      css`
+        ${unsafeCSS(vaadinTextAreaCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-text-field',
+      css`
+        ${unsafeCSS(vaadinTextFieldCss.toString())}
       `
     );
     

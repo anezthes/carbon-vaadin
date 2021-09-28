@@ -86,6 +86,10 @@
     background-color: var(--gray-20);
 }
 
+:host([theme~="row-stripes"]) [part~="row"][odd] [part~="details-cell"]::before {
+    background-color: var(--gray-30);
+}
+
 /* === Sorting === */
 [part~="header-cell"][aria-sort]:hover {
     background-color: var(--grid-column-hover-bg);

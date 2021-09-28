@@ -1,0 +1,110 @@
+[theme~="badge"] {
+  background-color: var(--blue-20);
+  border-radius: var(--lumo-size-m);
+  color: var(--blue-80);
+  font-size: var(--lumo-font-size-xs);
+  font-weight: normal;
+  line-height: 1rem;
+  padding: var(--lumo-space-xxs) var(--lumo-space-xs);
+}
+
+[theme~="badge"].disabled {
+  background-color: var(--gray-10) !important;
+  color: var(--gray-30) !important;
+}
+
+[theme~="badge"][theme~="error"] {
+  background-color: var(--red-20);
+  color: var(--red-80);
+}
+
+[theme~="badge"][theme~="magenta"] {
+  background-color: var(--magenta-20);
+  color: var(--magenta-80);
+}
+
+[theme~="badge"][theme~="purple"] {
+  background-color: var(--purple-20);
+  color: var(--purple-80);
+}
+
+[theme~="badge"][theme~="cyan"] {
+  background-color: var(--cyan-20);
+  color: var(--cyan-80);
+}
+
+[theme~="badge"][theme~="teal"] {
+  background-color: var(--teal-20);
+  color: var(--teal-80);
+}
+
+[theme~="badge"][theme~="success"] {
+  background-color: var(--green-20);
+  color: var(--green-80);
+}
+
+[theme~="badge"][theme~="contrast"] {
+  background-color: var(--gray-20);
+  color: var(--gray-80);
+}
+
+[theme~="badge"][theme~="cool-gray"] {
+  background-color: var(--cool-gray-20);
+  color: var(--cool-gray-80);
+}
+
+[theme~="badge"][theme~="warm-gray"] {
+  background-color: var(--warm-gray-20);
+  color: var(--warm-gray-80);
+}
+
+/* === Button === */
+[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
+  border-radius: var(--lumo-size-xs);
+  color: currentColor;
+  height: var(--lumo-size-xs);
+  margin-bottom: calc(var(--lumo-space-xxs) * -1);
+  margin-inline-end: calc(var(--lumo-space-xs) * -1);
+  margin-top: calc(var(--lumo-space-xxs) * -1);
+  width: var(--lumo-size-xs);
+}
+
+[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--blue-30) !important;
+}
+
+[theme~="badge"][theme~="error"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--red-30) !important;
+}
+
+[theme~="badge"][theme~="magenta"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--magenta-30) !important;
+}
+
+[theme~="badge"][theme~="purple"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--purple-30) !important;
+}
+
+[theme~="badge"][theme~="cyan"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--cyan-30) !important;
+}
+
+[theme~="badge"][theme~="teal"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--teal-30) !important;
+}
+
+[theme~="badge"][theme~="success"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--green-30) !important;
+}
+
+[theme~="badge"][theme~="contrast"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--gray-30) !important;
+}
+
+[theme~="badge"][theme~="cool-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--cool-gray-30) !important;
+}
+
+[theme~="badge"][theme~="warm-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+  background-color: var(--warm-gray-30) !important;
+}

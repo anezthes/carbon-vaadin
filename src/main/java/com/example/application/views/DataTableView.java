@@ -13,7 +13,7 @@ import com.vaadin.flow.router.Route;
 public class DataTableView extends Main {
 
     public DataTableView() {
-        addClassNames("flex", "flex-col", "px-l");
+        addClassNames("flex", "flex-col", "pb-l", "px-l");
 
         add(new H2("Data table"));
         createDataTables();

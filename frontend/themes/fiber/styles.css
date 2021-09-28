@@ -1,9 +1,12 @@
+@import url('./badge.css');
+@import url('./color.css');
 @import url('./main-layout.css');
 @import url('lumo-css-framework/all-classes.css');
 @import url('line-awesome/dist/line-awesome/css/line-awesome.min.css');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 html {
+    /* === Tweaking Lumo to match Carbon === */
     --lumo-font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
     --lumo-font-size-xxs: 0.75rem;
@@ -48,51 +51,21 @@ html {
     --lumo-shade-90pct: var(--gray-90);
     --lumo-shade: var(--gray-100);
 
-    --lumo-primary-color: #0f62fe;
-    --lumo-error-color: #da1e28;
+    --lumo-primary-color: var(--blue-60);
+    --lumo-error-color: var(--red-60);
 
     --lumo-body-text-color: var(--gray-100);
     --lumo-secondary-text-color: var(--gray-70);
     --lumo-disabled-text-color: var(--gray-30);
+    --lumo-error-text-color: var(--red-60);
 
-    /* === Fiber === */
+    --lumo-box-shadow-m: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 
-    --blue-10: #edf5ff;
-    --blue-20: #d0e2ff;
-    --blue-30: #a6c8ff;
-    --blue-40: #78a9ff;
-    --blue-50: #4589ff;
-    --blue-60: #0f62fe;
-    --blue-70: #0043ce;
-    --blue-80: #002d9c;
-    --blue-90: #001d6c;
-    --blue-100: #001141;
-
-    --gray-10: #f4f4f4;
-    --gray-20: #e0e0e0;
-    --gray-30: #c6c6c6;
-    --gray-40: #a8a8a8;
-    --gray-50: #8d8d8d;
-    --gray-60: #6f6f6f;
-    --gray-70: #525252;
-    --gray-80: #393939;
-    --gray-90: #262626;
-    --gray-100: #161616;
-
-    --gray-10-hover: #e8e8e8;
-    --gray-20-hover: #d1d1d1;
-    --gray-30-hover: #b5b5b5;
-    --gray-40-hover: #999999;
-    --gray-50-hover: #7a7a7a;
-    --gray-60-hover: #5e5e5e;
-    --gray-70-hover: #636363;
-    --gray-80-hover: #474747;
-    --gray-90-hover: #333333;
-    --gray-100-hover: #292929;
+    /* === Misc colors used in Carbon === */
 
     /* === Hover === */
     --hover-bg: #e5e5e5;
-    --button-hover-color: #0043ce;
+    --button-hover-color: var(--blue-70);
     --button-primary-hover-bg: #0353e9;
     --button-contrast-hover-bg: #4c4c4c;
     --button-error-hover-bg: #b81921;
@@ -100,12 +73,13 @@ html {
 
     /* === Active === */
     --active-bg: var(--gray-30);
-    --button-primary-active-bg: #002d9c;
+    --button-primary-active-bg: var(--blue-80);
     --button-contrast-active-bg: var(--gray-60);
-    --button-error-active-bg: #750e13;
+    --button-error-active-bg: var(--red-80);
 }
 
 [theme~="dark"] {
+    /* === Tweaking Lumo to match Carbon === */
     --lumo-shade-10pct: var(--gray-10);
     --lumo-shade-20pct: var(--gray-20);
     --lumo-shade-30pct: var(--gray-30);
@@ -119,6 +93,19 @@ html {
 
     --lumo-base-color: var(--gray-100);
 
-    --hover-bg: #212121;
+    /* === Misc colors used in Carbon === */
+
+    /* === Hover === */
+    --hover-bg: var(--black-hover);
+
+    /* === Active === */
     --active-bg: var(--gray-80);
+}
+
+/* === Misc fixes === */
+vaadin-item:hover + vaadin-item,
+vaadin-item:active + vaadin-item,
+vaadin-item[focus-ring] + vaadin-item,
+vaadin-item[selected] + vaadin-item {
+    --border-top-color: transparent;
 }

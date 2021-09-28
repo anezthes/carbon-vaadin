@@ -23,7 +23,7 @@ public class AccordionView extends Main {
     private String ACCORDION_PARAGRAPH = "The accordion component delivers large amounts of content in a small space through progressive disclosure. The user gets key details about the underlying content and can choose to expand that content within the constraints of the accordion. Accordions work especially well on mobile interfaces or whenever vertical space is at a premium.";
 
     public AccordionView() {
-        addClassNames("flex", "flex-col", "px-l");
+        addClassNames("flex", "flex-col", "pb-l", "px-l");
 
         add(new H2("Accordion"));
         createAccordion();

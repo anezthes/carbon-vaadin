@@ -15,7 +15,7 @@ import org.apache.commons.lang3.StringUtils;
 public class ButtonView extends Main {
 
     public ButtonView() {
-        addClassNames("flex", "flex-col", "px-l");
+        addClassNames("flex", "flex-col", "pb-l", "px-l");
 
         add(new H2("Buttons"));
         createButtons();
