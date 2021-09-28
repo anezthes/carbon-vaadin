@@ -1,10 +1,10 @@
 package com.example.application.views;
 
+import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.grid.Grid;
 import com.vaadin.flow.component.grid.GridVariant;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.html.Main;
+import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.data.renderer.ComponentRenderer;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
@@ -42,12 +42,22 @@ public class DataTableView extends Main {
         grid = createGrid();
         grid.addThemeName("tall");
         add(new H3("Tall"), grid);
+
+        grid = createGrid();
+        grid.setSelectionMode(Grid.SelectionMode.MULTI);
+        add(new H3("Multi-select"), grid);
+
+        grid = createGrid();
+        grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
+        grid.setSelectionMode(Grid.SelectionMode.MULTI);
+        add(new H3("Multi-select with stripes"), grid);
     }
 
     private Grid<LoadBalancer> createGrid() {
         Grid<LoadBalancer> grid = new Grid();
         grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
         grid.setAllRowsVisible(true);
+        grid.setSelectionMode(Grid.SelectionMode.NONE);
 
         grid.addColumn(LoadBalancer::getName).setHeader("Name");
         grid.addColumn(LoadBalancer::getProtocol).setHeader("Protocol");
@@ -55,6 +65,8 @@ public class DataTableView extends Main {
         grid.addColumn(LoadBalancer::getRule).setHeader("Rule");
         grid.addColumn(LoadBalancer::getAttachedGroups).setHeader("Attached Groups");
         grid.addColumn(LoadBalancer::getStatus).setHeader("Status");
+
+        grid.setItemDetailsRenderer(new ComponentRenderer<>(loadBalancer -> new Span("Aux squad rules")));
 
         grid.setItems(
                 new LoadBalancer("Load Balance 3", "HTTP", 3000, "Round robin", "Kevins VM Groups", "Disabled"),
