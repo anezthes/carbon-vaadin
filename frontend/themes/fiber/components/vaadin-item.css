@@ -1,12 +1,13 @@
 :host {
     align-items: stretch;
-    --border-top-color: var(--gray-30);
+    --border-top-color: var(--gray-20);
     color: var(--lumo-secondary-text-color);
     font-size: var(--lumo-font-size-s);
     padding: 0 var(--lumo-space-m);
     position: relative;
 }
 
+/* Hide border under these circumstances (pt 1/2 -- see styles.css) */
 :host(:first-child),
 :host(:hover),
 :host(:active),

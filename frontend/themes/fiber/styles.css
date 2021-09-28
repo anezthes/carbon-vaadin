@@ -102,7 +102,9 @@ html {
     --active-bg: var(--gray-80);
 }
 
-/* === Misc fixes === */
+/* === Misc === */
+
+/* Hide border under these circumstances (pt 2/2 -- see vaadin-item.css) */
 vaadin-item:hover + vaadin-item,
 vaadin-item:active + vaadin-item,
 vaadin-item[focus-ring] + vaadin-item,
