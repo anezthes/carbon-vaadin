@@ -45,18 +45,18 @@ public class UploadView extends Main {
         Upload upload = new Upload(multiFileMemoryBuffer);
 
         upload.addSucceededListener(event -> {
-            // Determine which file was uploaded
             String fileName = event.getFileName();
-
-            // Get input stream specifically for the finished file
             InputStream fileData = multiFileMemoryBuffer.getInputStream(fileName);
             long contentLength = event.getContentLength();
             String mimeType = event.getMIMEType();
-
-            // Do something with the file data
             System.out.println("Great success!");
         });
 
+        /**
+         * Use these button theme variant
+         * to ensure both upload scenarios
+         * look correct
+         */
         Button button;
         if (dnd) {
             button = new Button("Drag and drop files here or click to upload");
