@@ -77,12 +77,16 @@ import '@vaadin/vaadin-lumo-styles/typography.js';
 import '@vaadin/vaadin-lumo-styles/color.js';
 import '@vaadin/vaadin-lumo-styles/spacing.js';
 import '@vaadin/vaadin-lumo-styles/badge.js';
+import ironListCss from 'themes/fiber/components/iron-list.css';
 import vaadinAccordionPanelCss from 'themes/fiber/components/vaadin-accordion-panel.css';
 import vaadinAccordionCss from 'themes/fiber/components/vaadin-accordion.css';
 import vaadinAppLayoutCss from 'themes/fiber/components/vaadin-app-layout.css';
 import vaadinButtonCss from 'themes/fiber/components/vaadin-button.css';
 import vaadinCheckboxGroupCss from 'themes/fiber/components/vaadin-checkbox-group.css';
 import vaadinCheckboxCss from 'themes/fiber/components/vaadin-checkbox.css';
+import vaadinComboBoxItemCss from 'themes/fiber/components/vaadin-combo-box-item.css';
+import vaadinComboBoxOverlayCss from 'themes/fiber/components/vaadin-combo-box-overlay.css';
+import vaadinComboBoxCss from 'themes/fiber/components/vaadin-combo-box.css';
 import vaadinDatePickerCss from 'themes/fiber/components/vaadin-date-picker.css';
 import vaadinDrawerToggleCss from 'themes/fiber/components/vaadin-drawer-toggle.css';
 import vaadinGridSorterCss from 'themes/fiber/components/vaadin-grid-sorter.css';
@@ -90,10 +94,13 @@ import vaadinGridCss from 'themes/fiber/components/vaadin-grid.css';
 import vaadinItemCss from 'themes/fiber/components/vaadin-item.css';
 import vaadinListBoxCss from 'themes/fiber/components/vaadin-list-box.css';
 import vaadinPasswordFieldCss from 'themes/fiber/components/vaadin-password-field.css';
+import vaadinProgressBarCss from 'themes/fiber/components/vaadin-progress-bar.css';
 import vaadinSelectOverlayCss from 'themes/fiber/components/vaadin-select-overlay.css';
 import vaadinSelectCss from 'themes/fiber/components/vaadin-select.css';
 import vaadinTextAreaCss from 'themes/fiber/components/vaadin-text-area.css';
 import vaadinTextFieldCss from 'themes/fiber/components/vaadin-text-field.css';
+import vaadinUploadFileCss from 'themes/fiber/components/vaadin-upload-file.css';
+import vaadinUploadCss from 'themes/fiber/components/vaadin-upload.css';
 
 window.Vaadin = window.Vaadin || {}; 
 window.Vaadin.theme = window.Vaadin.theme || {};
@@ -138,6 +145,12 @@ export const applyTheme = (target) => {
   
   if (!document['_vaadintheme_fiber_componentCss']) {
     registerStyles(
+      'iron-list',
+      css`
+        ${unsafeCSS(ironListCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-accordion-panel',
       css`
         ${unsafeCSS(vaadinAccordionPanelCss.toString())}
@@ -171,6 +184,24 @@ export const applyTheme = (target) => {
       'vaadin-checkbox',
       css`
         ${unsafeCSS(vaadinCheckboxCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-combo-box-item',
+      css`
+        ${unsafeCSS(vaadinComboBoxItemCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-combo-box-overlay',
+      css`
+        ${unsafeCSS(vaadinComboBoxOverlayCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-combo-box',
+      css`
+        ${unsafeCSS(vaadinComboBoxCss.toString())}
       `
     );
     registerStyles(
@@ -216,6 +247,12 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
+      'vaadin-progress-bar',
+      css`
+        ${unsafeCSS(vaadinProgressBarCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-select-overlay',
       css`
         ${unsafeCSS(vaadinSelectOverlayCss.toString())}
@@ -237,6 +274,18 @@ export const applyTheme = (target) => {
       'vaadin-text-field',
       css`
         ${unsafeCSS(vaadinTextFieldCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-upload-file',
+      css`
+        ${unsafeCSS(vaadinUploadFileCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-upload',
+      css`
+        ${unsafeCSS(vaadinUploadCss.toString())}
       `
     );
     

@@ -1,0 +1,99 @@
+:host {
+    /* Alignment purposes */
+    --height: var(--lumo-size-m);
+    background-color: var(--gray-10);
+    font-size: var(--lumo-font-size-s);
+    min-height: var(--height);
+    padding: 0;
+    position: relative;
+}
+
+[part="row"],
+[part="info"] {
+    align-items: normal;
+}
+
+[part="meta"] {
+    order: -1;
+}
+
+/* === Name === */
+[part="name"] {
+    line-height: var(--height);
+    padding: 0 var(--lumo-space-m);
+}
+
+/* === Icons === */
+[part="done-icon"],
+[part="warning-icon"] {
+    align-items: center;
+    font-size: var(--lumo-icon-size-l);
+    height: var(--height);
+    justify-content: center;
+    margin: 0;
+    width: var(--lumo-size-xs);
+}
+
+[part="done-icon"]::before,
+[part="warning-icon"]::before,
+[part="start-button"]::before,
+[part="retry-button"]::before,
+[part="clear-button"]::before {
+    vertical-align: 0;
+}
+
+/* === Border === */
+:host([uploading])::before,
+:host([error])::before {
+    background-color: var(--gray-20);
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: var(--height);
+}
+
+/* === Status === */
+[part="status"],
+[part="error"] {
+    align-items: center;
+    box-sizing: border-box;
+    font-size: var(--lumo-font-size-xs);
+    min-height: var(--height);
+    padding: var(--lumo-space-xs) var(--lumo-space-m);
+}
+
+/* === Buttons === */
+[part="commands"] {
+    align-items: center;
+    height: var(--height);
+    padding: 0 var(--lumo-space-m) 0 0;
+}
+
+[part$="button"] {
+    align-items: center;
+    font-size: var(--lumo-icon-size-l);
+    height: var(--lumo-size-xs);
+    justify-content: center;
+    margin: 0;
+    width: var(--lumo-size-xs);
+}
+
+[part$="button"]::before {
+    display: flex;
+}
+
+/* Display flex when not hidden */
+[part="done-icon"]:not([hidden]),
+[part="warning-icon"]:not([hidden]),
+[part$="button"]:not([hidden]),
+[part="status"]:not([hidden]),
+[part="error"]:not([hidden]) {
+    display: flex;
+}
+
+/* === Progress bar === */
+[part="progress"] {
+    margin: 0 var(--lumo-space-m) var(--lumo-space-s) var(--lumo-space-m);
+}

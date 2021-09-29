@@ -1,6 +1,7 @@
 @import url('./badge.css');
 @import url('./color.css');
-@import url('./main-layout.css');
+@import url('./item.css');
+@import url('./nav.css');
 @import url('lumo-css-framework/all-classes.css');
 @import url('line-awesome/dist/line-awesome/css/line-awesome.min.css');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
@@ -100,14 +101,4 @@ html {
 
     /* === Active === */
     --active-bg: var(--gray-80);
-}
-
-/* === Misc === */
-
-/* Hide border under these circumstances (pt 2/2 -- see vaadin-item.css) */
-vaadin-item:hover + vaadin-item,
-vaadin-item:active + vaadin-item,
-vaadin-item[focus-ring] + vaadin-item,
-vaadin-item[selected] + vaadin-item {
-    --border-top-color: transparent;
 }

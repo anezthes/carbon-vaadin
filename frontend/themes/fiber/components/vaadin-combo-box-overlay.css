@@ -1,0 +1,3 @@
+:host([opened]) {
+    --iron-list-items-container_-_border-width: 0;
+}

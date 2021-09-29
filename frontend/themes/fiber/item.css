@@ -1,0 +1,16 @@
+/* vaadin-item styles that don't belong in shadow root */
+
+vaadin-item:hover + vaadin-item,
+vaadin-item:active + vaadin-item,
+vaadin-item[focus-ring] + vaadin-item,
+vaadin-item[selected] + vaadin-item     {
+    --border-top-color: transparent;
+}
+
+[theme~="small"] vaadin-item {
+    --min-height: var(--lumo-size-s);
+}
+
+[theme~="large"] vaadin-item {
+    --min-height: var(--lumo-size-l);
+}

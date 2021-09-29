@@ -9,11 +9,36 @@
     position: relative;
 }
 
+:host([theme~="small"]) {
+    --min-height: var(--lumo-size-s);
+}
+
+:host([theme~="large"]) {
+    --min-height: var(--lumo-size-l);
+}
+
+/* === Hover === */
+:host(:hover) {
+    background-color: var(--hover-bg);
+    color: var(--lumo-body-text-color);
+}
+
+/* === Focus === */
+:host([focused]:not([disabled])) {
+    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+}
+
+/* === Selection === */
+:host([selected]) {
+    background-color: var(--grid-column-hover-bg) !important;
+    color: var(--lumo-body-text-color);
+}
+
 /* Hide border under these circumstances (pt 1/2 -- see styles.css) */
-:host(:first-child),
+:host(:first-of-type),
 :host(:hover),
 :host(:active),
-:host([focus-ring]),
+:host([focused]),
 :host([selected]) {
     --border-top-color: transparent;
 }

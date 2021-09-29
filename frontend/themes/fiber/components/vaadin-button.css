@@ -19,7 +19,7 @@
 
 [part="label"], [part="prefix"], [part="suffix"] {
     display: flex;
-    line-height: 2;
+    line-height: normal;
     margin: 0;
 }
 
@@ -150,4 +150,45 @@
     background-color: var(--gray-30) !important;
     border-color: var(--gray-30);
     color: var(--gray-50);
+}
+
+/* === Upload === */
+:host([theme~="upload"]) {
+    border: 1px dashed var(--gray-50);
+    font-size: var(--lumo-font-size-m);
+    height: 6rem;
+    margin: 0;
+    padding: var(--lumo-space-m);
+    width: 100%;
+}
+
+:host([theme~="upload"]:hover),
+:host([theme~="upload"][focused]) {
+    background-color: transparent;
+    outline: 2px solid var(--lumo-primary-color);
+    outline-offset: -2px;
+    text-decoration: underline;
+}
+
+:host([theme~="upload"]:active) {
+    background-color: transparent;
+    color: var(--lumo-body-text-color);
+}
+
+:host([theme~="upload"][focused]) {
+    box-shadow: none;
+}
+
+:host([theme~="upload"]) .vaadin-button-container {
+    align-items: normal;
+    justify-content: flex-start;
+}
+
+:host([theme~="upload"]) .vaadin-button-container::before {
+    content: none;
+}
+
+:host([theme~="upload"]) [part="label"] {
+    text-align: left;
+    white-space: normal;
 }

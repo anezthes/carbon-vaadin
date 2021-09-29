@@ -1,25 +1,25 @@
-[slot='drawer'] nav a {
+nav a {
   color: var(--lumo-secondary-text-color);
-  text-decoration: none;
 }
 
-[slot='drawer'] nav a:focus {
+nav a:focus {
   box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
   outline: none;
 }
 
-[slot='drawer'] nav a:hover {
+nav a:hover {
   background-color: var(--hover-bg);
   color: var(--lumo-body-text-color);
+  text-decoration: none;
 }
 
-[slot='drawer'] nav a[highlight] {
+nav a[highlight] {
   background-color: var(--gray-20);
   color: var(--lumo-body-text-color);
   font-weight: 600;
 }
 
-[slot='drawer'] nav a[highlight]::before {
+nav a[highlight]::before {
   background-color: var(--lumo-primary-color);
   content: "";
   height: 100%;

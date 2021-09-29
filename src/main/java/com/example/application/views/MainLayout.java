@@ -1,28 +1,23 @@
 package com.example.application.views;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
-import com.vaadin.flow.component.html.Nav;
-import com.vaadin.flow.component.html.Span;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.H3;
-import com.vaadin.flow.component.html.Header;
-import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.router.PageTitle;
+import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The main view is a top-level placeholder for other views.
  */
 @PWA(name = "Fiber", shortName = "Fiber", enableInstallPrompt = false)
 @Theme(themeFolder = "fiber")
-@PageTitle("Main")
+@PageTitle("Fiber")
 public class MainLayout extends AppLayout {
 
     public static class MenuItemInfo {
@@ -101,12 +96,14 @@ public class MainLayout extends AppLayout {
                 new MenuItemInfo("Accordion", "la la-angle-down", AccordionView.class),
                 new MenuItemInfo("Button", "la la-plus", ButtonView.class),
                 new MenuItemInfo("Checkbox", "la la-check", CheckboxView.class),
+                new MenuItemInfo("Combo box", "la la-caret-down", ComboBoxView.class),
                 new MenuItemInfo("Data table", "la la-table", DataTableView.class),
                 new MenuItemInfo("Date picker", "la la-calendar", DatePickerView.class),
                 new MenuItemInfo("Search", "la la-search", SearchView.class),
                 new MenuItemInfo("Select", "la la-tasks", SelectView.class),
                 new MenuItemInfo("Text input", "la la-terminal", TextInputView.class),
                 new MenuItemInfo("Tag", "la la-tag", TagView.class),
+                new MenuItemInfo("Upload", "la la-upload", UploadView.class),
         };
         List<RouterLink> links = new ArrayList<>();
         for (MenuItemInfo menuItemInfo : menuItems) {
