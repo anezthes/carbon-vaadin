@@ -53,9 +53,8 @@ public class UploadView extends Main {
         });
 
         /**
-         * Use these button theme variant
-         * to ensure both upload scenarios
-         * look correct
+         * These button theme variants ensure their
+         * respective upload scenario look correct
          */
         Button button;
         if (dnd) {
