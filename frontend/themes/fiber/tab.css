@@ -1,0 +1,5 @@
+/* vaadin-tab styles that don't belong in shadow root */
+
+vaadin-tab[selected] + vaadin-tab {
+    box-shadow: none;
+}

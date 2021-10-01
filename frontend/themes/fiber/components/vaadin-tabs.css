@@ -1,3 +1,7 @@
+:host([orientation="horizontal"]) [part="tabs"] {
+    margin: 0;
+}
+
 :host(:not([orientation="vertical"])) {
     box-shadow: none;
     min-height: var(--lumo-size-m);
@@ -7,6 +11,7 @@
     min-height: var(--lumo-size-m);
 }
 
+/* === Buttons === */
 [part="forward-button"],
 [part="back-button"] {
     color: var(--lumo-body-text-color);
@@ -17,4 +22,21 @@
 [part="forward-button"]:focus,
 [part="back-button"]:focus {
     box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+}
+
+/* === Outline theme variant === */
+:host([theme~="outline"]) {
+    background-color: var(--gray-20);
+    min-height: var(--lumo-size-l);
+}
+
+:host([theme~="outline"]) [part="tabs"] {
+    min-height: var(--lumo-size-l);
+}
+
+:host([theme~="outline"]) [part="forward-button"],
+:host([theme~="outline"]) [part="back-button"] {
+    background-color: var(--gray-20);
+    height: var(--lumo-size-l);
+    width: var(--lumo-size-l);
 }

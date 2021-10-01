@@ -39,7 +39,7 @@ public class TabsView extends Main {
                 createTab("Tab label 3", OUTLINE)
         );
         tabs.addThemeName(OUTLINE);
-        tabs.setWidth("320px");
+        tabs.setWidth("240px");
         div.add(tabs);
 
         add(div);

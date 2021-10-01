@@ -53,7 +53,23 @@
 }
 
 /* === Outline theme variant === */
+:host([theme~="outline"]) {
+    background-color: var(--gray-20);
+    box-shadow: inset 1px 0 0 0 var(--gray-50);
+    margin-inline-start: 0;
+}
+
+:host([theme~="outline"][selected]) {
+    background-color: var(--gray-10);
+    box-shadow: none;
+}
 
 :host([theme~="outline"])::before {
     background-color: transparent;
+    bottom: auto;
+    top: 0;
+}
+
+:host([theme~="outline"][selected])::before {
+    background-color: var(--lumo-primary-color);
 }
