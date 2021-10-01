@@ -30,7 +30,7 @@ public class TabsView extends Main {
                 new Tab("Tab label 2"),
                 new Tab("Tab label 3")
         );
-        tabs.setWidth("320px");
+        tabs.setWidth("2400px");
         div.add(tabs);
 
         tabs = new Tabs(
