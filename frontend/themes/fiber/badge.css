@@ -8,11 +8,6 @@
   padding: var(--lumo-space-xxs) var(--lumo-space-xs);
 }
 
-[theme~="badge"].disabled {
-  background-color: var(--gray-10) !important;
-  color: var(--gray-30) !important;
-}
-
 [theme~="badge"][theme~="error"] {
   background-color: var(--red-20);
   color: var(--red-80);
@@ -58,53 +53,64 @@
   color: var(--warm-gray-80);
 }
 
+[theme~="badge"][class~="disabled"] {
+  background-color: var(--gray-10);
+  color: var(--gray-30);
+}
+
 /* === Button === */
 [theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
+  border: none;
   border-radius: var(--lumo-size-xs);
   color: currentColor;
   height: var(--lumo-size-xs);
   margin-bottom: calc(var(--lumo-space-xxs) * -1);
   margin-inline-end: calc(var(--lumo-space-xs) * -1);
+  margin-inline-start: var(--lumo-space-xxxs);
   margin-top: calc(var(--lumo-space-xxs) * -1);
   width: var(--lumo-size-xs);
 }
 
+[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"][focused] {
+  box-shadow: inset 0 0 0 1px var(--lumo-primary-color);
+}
+
 [theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--blue-30) !important;
+  --button-hover-bg: var(--blue-30);
 }
 
 [theme~="badge"][theme~="error"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--red-30) !important;
+  --button-hover-bg: var(--red-30);
 }
 
 [theme~="badge"][theme~="magenta"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--magenta-30) !important;
+  --button-hover-bg: var(--magenta-30);
 }
 
 [theme~="badge"][theme~="purple"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--purple-30) !important;
+  --button-hover-bg: var(--purple-30);
 }
 
 [theme~="badge"][theme~="cyan"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--cyan-30) !important;
+  --button-hover-bg: var(--cyan-30);
 }
 
 [theme~="badge"][theme~="teal"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--teal-30) !important;
+  --button-hover-bg: var(--teal-30);
 }
 
 [theme~="badge"][theme~="success"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--green-30) !important;
+  --button-hover-bg: var(--green-30);
 }
 
 [theme~="badge"][theme~="contrast"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--gray-30) !important;
+  --button-hover-bg: var(--gray-30);
 }
 
 [theme~="badge"][theme~="cool-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--cool-gray-30) !important;
+  --button-hover-bg: var(--cool-gray-30);
 }
 
 [theme~="badge"][theme~="warm-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
-  background-color: var(--warm-gray-30) !important;
+  --button-hover-bg: var(--warm-gray-30);
 }

@@ -2,8 +2,11 @@
     --lumo-button-size: var(--lumo-size-m);
     background-color: transparent;
     border: 1px solid transparent;
+    display: inline-flex;
     font-size: var(--lumo-font-size-s);
     font-weight: normal;
+    justify-content: center;
+    line-height: normal;
     min-width: 0;
     padding: 0 calc(var(--lumo-space-m) - 1px);
 }
@@ -13,19 +16,29 @@
     content: none;
 }
 
+.vaadin-button-container {
+    height: auto;
+    justify-content: inherit;
+    min-height: 0;
+}
+
+.vaadin-button-container::before {
+    content: none;
+}
+
 [part="label"] {
     padding: 0;
 }
 
 [part="label"], [part="prefix"], [part="suffix"] {
     display: flex;
-    line-height: normal;
+    line-height: inherit;
     margin: 0;
 }
 
 /* === Hover === */
 :host(:hover) {
-    background-color: var(--hover-bg);
+    background-color: var(--button-hover-bg);
     color: var(--button-hover-color);
 }
 
@@ -41,7 +54,7 @@
 }
 
 :host([theme~="primary"]:hover) {
-    background-color: var(--button-primary-hover-bg);
+    --button-hover-bg: var(--button-primary-hover-bg);
     color: var(--lumo-primary-contrast-color);
 }
 
@@ -56,7 +69,8 @@
 }
 
 :host([theme~="contrast"]:hover) {
-    background-color: var(--button-contrast-hover-bg);
+    --button-hover-bg: var(--button-contrast-hover-bg);
+    background-color: var(--button-hover-bg);
 }
 
 :host([theme~="contrast"][active]) {
@@ -70,7 +84,8 @@
 }
 
 :host([theme*="tertiary"]:hover) {
-    background-color: var(--button-primary-hover-bg) !important;
+    --button-hover-bg: var(--button-primary-hover-bg);
+    background-color: var(--button-hover-bg) !important;
     color: var(--lumo-primary-contrast-color);
 }
 
@@ -96,7 +111,8 @@
 }
 
 :host([theme~="error"]:hover) {
-    background-color: var(--button-error-hover-bg);
+    --button-hover-bg: var(--button-error-hover-bg);
+    background-color: var(--button-hover-bg);
 }
 
 :host([theme~="error"][active]) {
@@ -182,10 +198,6 @@
 :host([theme~="upload"]) .vaadin-button-container {
     align-items: normal;
     justify-content: flex-start;
-}
-
-:host([theme~="upload"]) .vaadin-button-container::before {
-    content: none;
 }
 
 :host([theme~="upload"]) [part="label"] {

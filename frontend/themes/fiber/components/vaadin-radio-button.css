@@ -15,59 +15,62 @@ label {
     margin: 0 var(--lumo-space-m) 0 var(--lumo-space-xxs);
 }
 
-/* === Checkbox === */
-[part="checkbox"] {
+/* === Radio === */
+[part="radio"] {
     background-color: transparent;
     border: 1px solid var(--gray-100);
-    border-radius: var(--lumo-border-radius-s);
+    border-radius: var(--lumo-icon-size-m);
     box-sizing: border-box;
     height: var(--lumo-icon-size-m);
     margin: var(--lumo-space-xxxs);
     width: var(--lumo-icon-size-m);
 }
 
-[part="checkbox"]::before {
-    content: none;
+[part="radio"]::before {
+
 }
 
-[part="checkbox"]::after {
-    top: 0.625rem;
-    left: 0.375rem;
+[part="radio"]::after {
+
 }
 
 /* === Active === */
-:host([active]) [part="checkbox"] {
+:host([active]) [part="radio"] {
     transform: none;
 }
 
 /* === Hover === */
-:host(:not([checked]):not([indeterminate]):not([disabled]):hover) [part="checkbox"] {
+:host(:not([checked]):not([indeterminate]):not([disabled]):hover) [part="radio"] {
     background-color: transparent;
 }
 
 /* === Focus === */
-:host([focus-ring]) [part="checkbox"] {
+:host([focus-ring]) [part="radio"] {
     box-shadow: none;
     outline: 2px solid var(--lumo-primary-color);
     outline-offset: 1px;
 }
 
 /* === Checked === */
-:host([indeterminate]) [part="checkbox"],
-:host([checked]) [part="checkbox"] {
-    background-color: var(--gray-100);
+:host([checked]) [part="radio"] {
+    background-color: transparent;
+}
+
+[part="radio"]::after {
+    border-color: var(--gray-100);
+    border-width: 0.25rem;
 }
 
 /* === Disabled === */
-:host([disabled]) [part="checkbox"] {
+:host([disabled]) [part="radio"] {
     background-color: transparent;
     border-color: var(--gray-30);
 }
 
-:host([disabled][checked]) [part="checkbox"] {
+:host([disabled][checked]) [part="radio"] {
     background-color: var(--gray-30);
 }
 
-:host([disabled]) [part="checkbox"]::after {
+:host([disabled]) [part="radio"]::after {
     border-color: var(--lumo-primary-contrast-color);
 }

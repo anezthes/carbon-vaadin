@@ -88,6 +88,8 @@ import vaadinComboBoxItemCss from 'themes/fiber/components/vaadin-combo-box-item
 import vaadinComboBoxOverlayCss from 'themes/fiber/components/vaadin-combo-box-overlay.css';
 import vaadinComboBoxCss from 'themes/fiber/components/vaadin-combo-box.css';
 import vaadinDatePickerCss from 'themes/fiber/components/vaadin-date-picker.css';
+import vaadinDialogOverlayCss from 'themes/fiber/components/vaadin-dialog-overlay.css';
+import vaadinDialogCss from 'themes/fiber/components/vaadin-dialog.css';
 import vaadinDrawerToggleCss from 'themes/fiber/components/vaadin-drawer-toggle.css';
 import vaadinGridSorterCss from 'themes/fiber/components/vaadin-grid-sorter.css';
 import vaadinGridCss from 'themes/fiber/components/vaadin-grid.css';
@@ -95,8 +97,12 @@ import vaadinItemCss from 'themes/fiber/components/vaadin-item.css';
 import vaadinListBoxCss from 'themes/fiber/components/vaadin-list-box.css';
 import vaadinPasswordFieldCss from 'themes/fiber/components/vaadin-password-field.css';
 import vaadinProgressBarCss from 'themes/fiber/components/vaadin-progress-bar.css';
+import vaadinRadioButtonCss from 'themes/fiber/components/vaadin-radio-button.css';
+import vaadinRadioGroupCss from 'themes/fiber/components/vaadin-radio-group.css';
 import vaadinSelectOverlayCss from 'themes/fiber/components/vaadin-select-overlay.css';
 import vaadinSelectCss from 'themes/fiber/components/vaadin-select.css';
+import vaadinTabCss from 'themes/fiber/components/vaadin-tab.css';
+import vaadinTabsCss from 'themes/fiber/components/vaadin-tabs.css';
 import vaadinTextAreaCss from 'themes/fiber/components/vaadin-text-area.css';
 import vaadinTextFieldCss from 'themes/fiber/components/vaadin-text-field.css';
 import vaadinUploadFileCss from 'themes/fiber/components/vaadin-upload-file.css';
@@ -211,6 +217,18 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
+      'vaadin-dialog-overlay',
+      css`
+        ${unsafeCSS(vaadinDialogOverlayCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-dialog',
+      css`
+        ${unsafeCSS(vaadinDialogCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-drawer-toggle',
       css`
         ${unsafeCSS(vaadinDrawerToggleCss.toString())}
@@ -253,6 +271,18 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
+      'vaadin-radio-button',
+      css`
+        ${unsafeCSS(vaadinRadioButtonCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-radio-group',
+      css`
+        ${unsafeCSS(vaadinRadioGroupCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-select-overlay',
       css`
         ${unsafeCSS(vaadinSelectOverlayCss.toString())}
@@ -262,6 +292,18 @@ export const applyTheme = (target) => {
       'vaadin-select',
       css`
         ${unsafeCSS(vaadinSelectCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-tab',
+      css`
+        ${unsafeCSS(vaadinTabCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-tabs',
+      css`
+        ${unsafeCSS(vaadinTabsCss.toString())}
       `
     );
     registerStyles(

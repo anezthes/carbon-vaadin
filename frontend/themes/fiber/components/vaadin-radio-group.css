@@ -1,0 +1,14 @@
+/* === Label === */
+[part="label"] {
+    font-size: var(--lumo-font-size-xs);
+    font-weight: normal;
+    line-height: var(--lumo-line-height-s);
+    margin-bottom: var(--lumo-space-xs);
+    padding: 0;
+}
+
+/* === Disabled === */
+:host([disabled]) [part="label"] {
+    color: var(--lumo-secondary-text-color);
+    -webkit-text-fill-color: var(--lumo-secondary-text-color);
+}

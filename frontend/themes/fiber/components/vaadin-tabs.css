@@ -1,0 +1,20 @@
+:host(:not([orientation="vertical"])) {
+    box-shadow: none;
+    min-height: var(--lumo-size-m);
+}
+
+[part="tabs"] {
+    min-height: var(--lumo-size-m);
+}
+
+[part="forward-button"],
+[part="back-button"] {
+    color: var(--lumo-body-text-color);
+    height: var(--lumo-size-m);
+    width: var(--lumo-size-m);
+}
+
+[part="forward-button"]:focus,
+[part="back-button"]:focus {
+    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+}

@@ -68,11 +68,11 @@ public class MainLayout extends AppLayout {
 
     private Component createDrawerContent() {
         H2 title = new H2("Components");
-        title.addClassNames("flex", "items-center", "h-xl", "m-0", "px-m", "text-m");
+        title.addClassNames("flex", "flex-shrink-0", "items-center", "h-xl", "m-0", "px-m", "text-m");
 
         com.vaadin.flow.component.html.Section section = new com.vaadin.flow.component.html.Section(title,
                 createNavigation());
-        section.addClassNames("flex", "flex-col", "items-stretch", "max-h-full", "min-h-full");
+        section.addClassNames("flex", "flex-col", "flex-shrink-0", "items-stretch", "max-h-full", "min-h-full");
         return section;
     }
 
@@ -95,14 +95,17 @@ public class MainLayout extends AppLayout {
         MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
                 new MenuItemInfo("Accordion", "la la-angle-down", AccordionView.class),
                 new MenuItemInfo("Button", "la la-plus", ButtonView.class),
-                new MenuItemInfo("Checkbox", "la la-check", CheckboxView.class),
+                new MenuItemInfo("Checkbox", "la la-check-square", CheckboxView.class),
                 new MenuItemInfo("Combo box", "la la-caret-down", ComboBoxView.class),
                 new MenuItemInfo("Data table", "la la-table", DataTableView.class),
                 new MenuItemInfo("Date picker", "la la-calendar", DatePickerView.class),
+                new MenuItemInfo("Modal", "la la-credit-card", ModalView.class),
+                new MenuItemInfo("Radio button", "la la-dot-circle", RadioButtonView.class),
                 new MenuItemInfo("Search", "la la-search", SearchView.class),
                 new MenuItemInfo("Select", "la la-tasks", SelectView.class),
-                new MenuItemInfo("Text input", "la la-terminal", TextInputView.class),
+                new MenuItemInfo("Tabs", "la la-database", TabsView.class),
                 new MenuItemInfo("Tag", "la la-tag", TagView.class),
+                new MenuItemInfo("Text input", "la la-terminal", TextInputView.class),
                 new MenuItemInfo("Upload", "la la-upload", UploadView.class),
         };
         List<RouterLink> links = new ArrayList<>();
@@ -122,6 +125,9 @@ public class MainLayout extends AppLayout {
         icon.addClassNames("me-l", "text-l");
         if (!menuItemInfo.getIconClass().isEmpty()) {
             icon.addClassNames(menuItemInfo.getIconClass());
+        }
+        if (menuItemInfo.getText().equals("Tabs")) {
+            icon.getStyle().set("transform", "rotate(90deg)");
         }
 
         Span text = new Span(menuItemInfo.getText());

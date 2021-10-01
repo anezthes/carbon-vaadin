@@ -1,0 +1,59 @@
+:host {
+    color: var(--lumo-secondary-text-color);
+    font-size: var(--lumo-font-size-s);
+    font-weight: normal;
+    line-height: normal;
+    margin-inline-start: 1px;
+    padding: 0 var(--lumo-space-m);
+}
+
+:host:first-child {
+    margin-inline-start: 0;
+}
+
+:host::after {
+    content: none;
+}
+
+/* === Focus === */
+:host(:focus),
+:host([focused]),
+:host([focus-ring]) {
+    box-shadow: none;
+    outline: 2px solid var(--lumo-primary-color);
+    outline-offset: -2px;
+}
+
+/* === Selection === */
+:host([selected]) {
+    color: var(--lumo-body-text-color);
+    font-weight: 600;
+}
+
+/* === Underline === */
+:host::before {
+    background-color: var(--gray-20);
+    left: 0;
+    transform: none;
+    width: 100%;
+}
+
+:host(:hover)::before {
+    background-color: var(--gray-50);
+}
+
+:host([selected])::before {
+    transform: none;
+}
+
+:host(:focus)::before,
+:host([focused])::before,
+:host([focus-ring])::before {
+    background-color: var(--lumo-primary-color);
+}
+
+/* === Outline theme variant === */
+
+:host([theme~="outline"])::before {
+    background-color: transparent;
+}

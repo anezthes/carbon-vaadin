@@ -1,0 +1,31 @@
+:host([theme~="no-padding"]) [part="content"] {
+    padding: 0;
+}
+
+[part="backdrop"] {
+    background-color: var(--gray-100);
+    opacity: 0.5;
+}
+
+[part="overlay"] {
+    box-shadow: none;
+}
+
+@media (min-width: 42rem) {
+    [part="overlay"] {
+        width: 84%;
+    }
+}
+
+@media (min-width: 66rem) {
+    [part="overlay"] {
+        width: 60%;
+    }
+}
+
+@media (min-width: 82rem) {
+    [part="overlay"] {
+        width: 48%;
+    }
+}
+

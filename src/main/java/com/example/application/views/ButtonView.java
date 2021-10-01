@@ -17,7 +17,7 @@ public class ButtonView extends Main {
     public ButtonView() {
         addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Buttons"));
+        add(new H2("Button"));
         createButtons();
     }
 

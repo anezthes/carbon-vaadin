@@ -15,27 +15,37 @@ public class CheckboxView extends Main {
     public CheckboxView() {
         addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Checkboxes"));
-        createCheckboxes();
+        add(new H2("Checkbox"));
+        createCheckboxGroups();
     }
 
-    private void createCheckboxes() {
+    private void createCheckboxGroups() {
         Div checkboxGroups = new Div();
         checkboxGroups.addClassNames("flex", "flex-col");
 
-        CheckboxGroup checkboxGroup = new CheckboxGroup();
-        checkboxGroup.addThemeVariants(CheckboxGroupVariant.LUMO_VERTICAL);
-        checkboxGroup.setItems("Checkbox label 1", "Checkbox label 2");
-        checkboxGroup.setLabel("Checkbox heading");
+        CheckboxGroup checkboxGroup = createCheckboxGroup();
         checkboxGroups.add(checkboxGroup);
 
-        checkboxGroup = new CheckboxGroup();
+        checkboxGroup = createCheckboxGroup();
         checkboxGroup.addThemeVariants(CheckboxGroupVariant.LUMO_VERTICAL);
-        checkboxGroup.setItems("Checkbox label 1", "Checkbox label 2");
-        checkboxGroup.setLabel("Checkbox heading");
+        checkboxGroups.add(checkboxGroup);
+
+        checkboxGroup = createCheckboxGroup();
+        checkboxGroup.setEnabled(false);
+        checkboxGroups.add(checkboxGroup);
+
+        checkboxGroup = createCheckboxGroup();
+        checkboxGroup.addThemeVariants(CheckboxGroupVariant.LUMO_VERTICAL);
         checkboxGroup.setEnabled(false);
         checkboxGroups.add(checkboxGroup);
 
         add(checkboxGroups);
+    }
+
+    private CheckboxGroup createCheckboxGroup() {
+        CheckboxGroup checkboxGroup = new CheckboxGroup();
+        checkboxGroup.setItems("Checkbox label 1", "Checkbox label 2");
+        checkboxGroup.setLabel("Checkbox heading");
+        return checkboxGroup;
     }
 }

@@ -66,6 +66,7 @@ html {
 
     /* === Hover === */
     --hover-bg: #e5e5e5;
+    --button-hover-bg: var(--hover-bg);
     --button-hover-color: var(--blue-70);
     --button-primary-hover-bg: #0353e9;
     --button-contrast-hover-bg: #4c4c4c;

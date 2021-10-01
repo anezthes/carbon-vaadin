@@ -41,16 +41,9 @@ public class UploadView extends Main {
     }
 
     private Upload createUpload(boolean dnd) {
-        MultiFileMemoryBuffer multiFileMemoryBuffer = new MultiFileMemoryBuffer();
-        Upload upload = new Upload(multiFileMemoryBuffer);
+        Upload upload = new Upload();
 
-        upload.addSucceededListener(event -> {
-            String fileName = event.getFileName();
-            InputStream fileData = multiFileMemoryBuffer.getInputStream(fileName);
-            long contentLength = event.getContentLength();
-            String mimeType = event.getMIMEType();
-            System.out.println("Great success!");
-        });
+
 
         /**
          * These button theme variants ensure their
