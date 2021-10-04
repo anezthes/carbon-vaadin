@@ -26,14 +26,6 @@ label {
     width: var(--lumo-icon-size-m);
 }
 
-[part="radio"]::before {
-
-}
-
-[part="radio"]::after {
-
-}
-
 /* === Active === */
 :host([active]) [part="radio"] {
     transform: none;
@@ -48,7 +40,6 @@ label {
 :host([focus-ring]) [part="radio"] {
     box-shadow: none;
     outline: 2px solid var(--lumo-primary-color);
-    outline-offset: 1px;
 }
 
 /* === Checked === */

@@ -1,5 +1,9 @@
 :host {
     --lumo-button-size: var(--lumo-size-m);
+    --button-hover-bg: var(--hover-bg);
+    --button-hover-color: var(--blue-70);
+    --button-active-bg: var(--active-bg);
+    --button-active-color: var(--blue-70);
     background-color: transparent;
     border: 1px solid transparent;
     display: inline-flex;
@@ -36,17 +40,6 @@
     margin: 0;
 }
 
-/* === Hover === */
-:host(:hover) {
-    background-color: var(--button-hover-bg);
-    color: var(--button-hover-color);
-}
-
-/* === Active === */
-:host([active]) {
-    background-color: var(--active-bg);
-}
-
 /* === Primary === */
 :host([theme~="primary"]) {
     font-weight: normal;
@@ -54,12 +47,13 @@
 }
 
 :host([theme~="primary"]:hover) {
-    --button-hover-bg: var(--button-primary-hover-bg);
-    color: var(--lumo-primary-contrast-color);
+    --button-hover-bg: #0353e9; /* TODO: not in the palette? */
+    --button-hover-color: var(--lumo-primary-contrast-color);
 }
 
 :host([theme~="primary"][active]) {
-    background-color: var(--button-primary-active-bg);
+    --button-active-bg: var(--blue-80);
+    --button-active-color: var(--lumo-primary-contrast-color);
 }
 
 /* === Contrast === */
@@ -69,12 +63,13 @@
 }
 
 :host([theme~="contrast"]:hover) {
-    --button-hover-bg: var(--button-contrast-hover-bg);
-    background-color: var(--button-hover-bg);
+    --button-hover-bg: #4c4c4c; /* TODO: not in the palette? */
+    --button-hover-color: var(--lumo-primary-contrast-color);
 }
 
 :host([theme~="contrast"][active]) {
-    background-color: var(--button-contrast-active-bg);
+    --button-active-bg: var(--gray-60);
+    --button-active-color: var(--lumo-primary-contrast-color);
 }
 
 /* === Tertiary === */
@@ -84,9 +79,9 @@
 }
 
 :host([theme*="tertiary"]:hover) {
-    --button-hover-bg: var(--button-primary-hover-bg);
+    --button-hover-bg: #0353e9; /* TODO: not in the palette? */
     background-color: var(--button-hover-bg) !important;
-    color: var(--lumo-primary-contrast-color);
+    --button-hover-color: var(--lumo-primary-contrast-color);
 }
 
 :host([theme~="tertiary"][active]),
@@ -101,7 +96,8 @@
 }
 
 :host([theme~="tertiary"][active]) {
-    background-color: var(--button-primary-active-bg) !important;
+    --button-active-bg: var(--blue-80);
+    background-color: var(--button-active-bg) !important;
 }
 
 /* === Error === */
@@ -111,17 +107,29 @@
 }
 
 :host([theme~="error"]:hover) {
-    --button-hover-bg: var(--button-error-hover-bg);
-    background-color: var(--button-hover-bg);
+    --button-hover-bg: var(--red-60-hover); /* #b81921 vs #b81922 */
+    --button-hover-color: var(--lumo-primary-contrast-color);
 }
 
 :host([theme~="error"][active]) {
-    background-color: var(--button-error-active-bg);
+    --button-active-bg: var(--red-80);
+    --button-active-color: var(--lumo-primary-contrast-color);
 }
 
-/* === Small === */
-:host([theme~="small"]) {
-    --lumo-button-size: var(--lumo-size-s);
+/* === Success === */
+:host([theme~="success"]) {
+    background-color: var(--lumo-success-color);
+    color: var(--lumo-primary-contrast-color);
+}
+
+:host([theme~="success"]:hover) {
+    --button-hover-bg: var(--green-60-hover);
+    --button-hover-color: var(--lumo-primary-contrast-color);
+}
+
+:host([theme~="success"][active]) {
+    --button-active-bg: var(--green-80);
+    --button-active-color: var(--lumo-primary-contrast-color);
 }
 
 /* === Large === */
@@ -155,6 +163,18 @@
     margin: 0 0 0 var(--lumo-space-xs);
 }
 
+/* === Hover === */
+:host(:hover) {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-color);
+}
+
+/* === Active === */
+:host([active]) {
+    background-color: var(--button-active-bg);
+    color: var(--button-active-color);
+}
+
 /* === Focus === */
 :host([focused]) {
     border-color: var(--lumo-primary-color);
@@ -180,15 +200,16 @@
 
 :host([theme~="upload"]:hover),
 :host([theme~="upload"][focused]) {
-    background-color: transparent;
+    --button-hover-bg: transparent;
+    --button-hover-color: var(--lumo-primary-color);
     outline: 2px solid var(--lumo-primary-color);
     outline-offset: -2px;
     text-decoration: underline;
 }
 
 :host([theme~="upload"]:active) {
-    background-color: transparent;
-    color: var(--lumo-body-text-color);
+    --button-active-bg: transparent;
+    --button-active-color: var(--lumo-body-text-color);
 }
 
 :host([theme~="upload"][focused]) {

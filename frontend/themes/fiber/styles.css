@@ -2,6 +2,7 @@
 @import url('./color.css');
 @import url('./item.css');
 @import url('./nav.css');
+@import url('./notification.css');
 @import url('./tab.css');
 @import url('lumo-css-framework/all-classes.css');
 @import url('line-awesome/dist/line-awesome/css/line-awesome.min.css');
@@ -54,6 +55,7 @@ html {
     --lumo-shade: var(--gray-100);
 
     --lumo-primary-color: var(--blue-60);
+    --lumo-success-color: var(--green-60);
     --lumo-error-color: var(--red-60);
 
     --lumo-body-text-color: var(--gray-100);
@@ -66,19 +68,11 @@ html {
     /* === Misc colors used in Carbon === */
 
     /* === Hover === */
-    --hover-bg: #e5e5e5;
-    --button-hover-bg: var(--hover-bg);
-    --button-hover-color: var(--blue-70);
-    --button-primary-hover-bg: #0353e9;
-    --button-contrast-hover-bg: #4c4c4c;
-    --button-error-hover-bg: #b81921;
-    --grid-column-hover-bg: #cacaca;
+    --hover-bg: #e5e5e5; /* TODO: not in the palette? */
+    --grid-column-hover-bg: #cacaca; /* TODO: not in the palette? */
 
     /* === Active === */
     --active-bg: var(--gray-30);
-    --button-primary-active-bg: var(--blue-80);
-    --button-contrast-active-bg: var(--gray-60);
-    --button-error-active-bg: var(--red-80);
 }
 
 [theme~="dark"] {
@@ -95,6 +89,15 @@ html {
     --lumo-shade: var(--gray-100);
 
     --lumo-base-color: var(--gray-100);
+    --lumo-primary-color: var(--blue-40);
+    --lumo-primary-text-color: var(--blue-40);
+    --lumo-success-color: var(--green-40);
+    --lumo-success-text-color: var(--green-40);
+    --lumo-error-color: var(--red-50);
+    --lumo-error-text-color: var(--red-50);
+
+    --lumo-header-text-color: white;
+    --lumo-body-text-color: white;
 
     /* === Misc colors used in Carbon === */
 

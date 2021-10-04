@@ -77,7 +77,6 @@ import '@vaadin/vaadin-lumo-styles/typography.js';
 import '@vaadin/vaadin-lumo-styles/color.js';
 import '@vaadin/vaadin-lumo-styles/spacing.js';
 import '@vaadin/vaadin-lumo-styles/badge.js';
-import ironListCss from 'themes/fiber/components/iron-list.css';
 import vaadinAccordionPanelCss from 'themes/fiber/components/vaadin-accordion-panel.css';
 import vaadinAccordionCss from 'themes/fiber/components/vaadin-accordion.css';
 import vaadinAppLayoutCss from 'themes/fiber/components/vaadin-app-layout.css';
@@ -95,6 +94,7 @@ import vaadinGridSorterCss from 'themes/fiber/components/vaadin-grid-sorter.css'
 import vaadinGridCss from 'themes/fiber/components/vaadin-grid.css';
 import vaadinItemCss from 'themes/fiber/components/vaadin-item.css';
 import vaadinListBoxCss from 'themes/fiber/components/vaadin-list-box.css';
+import vaadinNotificationCardCss from 'themes/fiber/components/vaadin-notification-card.css';
 import vaadinPasswordFieldCss from 'themes/fiber/components/vaadin-password-field.css';
 import vaadinProgressBarCss from 'themes/fiber/components/vaadin-progress-bar.css';
 import vaadinRadioButtonCss from 'themes/fiber/components/vaadin-radio-button.css';
@@ -150,12 +150,6 @@ export const applyTheme = (target) => {
     
   
   if (!document['_vaadintheme_fiber_componentCss']) {
-    registerStyles(
-      'iron-list',
-      css`
-        ${unsafeCSS(ironListCss.toString())}
-      `
-    );
     registerStyles(
       'vaadin-accordion-panel',
       css`
@@ -256,6 +250,12 @@ export const applyTheme = (target) => {
       'vaadin-list-box',
       css`
         ${unsafeCSS(vaadinListBoxCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-notification-card',
+      css`
+        ${unsafeCSS(vaadinNotificationCardCss.toString())}
       `
     );
     registerStyles(

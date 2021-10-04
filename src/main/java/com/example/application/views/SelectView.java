@@ -11,46 +11,46 @@ import com.vaadin.flow.router.Route;
 @Route(value = "select", layout = MainLayout.class)
 public class SelectView extends Main {
 
-    public SelectView() {
-        addClassNames("flex", "flex-col", "pb-l", "px-l");
+	public SelectView() {
+		addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Select"));
-        createSelects();
-    }
+		add(new H2("Select"));
+		createSelects();
+	}
 
-    private void createSelects() {
-        Div fields = new Div();
-        fields.addClassNames("flex", "flex-wrap", "gap-m");
+	private void createSelects() {
+		Div fields = new Div();
+		fields.addClassNames("flex", "flex-wrap", "gap-m");
 
-        Select select = createSelect();
-        fields.add(select);
+		Select select = createSelect();
+		fields.add(select);
 
-        select = createSelect();
-        select.setHelperText("");
-        select.setInvalid(true);
-        select.setErrorMessage("A valid value is required");
-        fields.add(select);
+		select = createSelect();
+		select.setHelperText("");
+		select.setInvalid(true);
+		select.setErrorMessage("A valid value is required");
+		fields.add(select);
 
-        select = createSelect();
-        select.setEnabled(false);
-        fields.add(select);
+		select = createSelect();
+		select.setEnabled(false);
+		fields.add(select);
 
-        select = createSelect();
-        select.getElement().getThemeList().add("small");
-        fields.add(select);
+		select = createSelect();
+		select.getElement().getThemeList().add("small");
+		fields.add(select);
 
-        select = createSelect();
-        select.getElement().getThemeList().add("large");
-        fields.add(select);
+		select = createSelect();
+		select.getElement().getThemeList().add("large");
+		fields.add(select);
 
-        add(fields);
-    }
+		add(fields);
+	}
 
-    private Select createSelect() {
-        Select select = new Select();
-        select.setLabel("Select");
-        select.setItems("Option 1", "Option 2", "Option 3", "Option 4");
-        select.setHelperText("Optional helper text");
-        return select;
-    }
+	private Select createSelect() {
+		Select select = new Select();
+		select.setLabel("Select");
+		select.setItems("Option 1", "Option 2", "Option 3", "Option 4");
+		select.setHelperText("Optional helper text");
+		return select;
+	}
 }

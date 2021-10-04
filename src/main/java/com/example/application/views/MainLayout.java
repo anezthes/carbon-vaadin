@@ -8,6 +8,7 @@ import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
+import com.vaadin.flow.theme.lumo.Lumo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,120 +21,121 @@ import java.util.List;
 @PageTitle("Fiber")
 public class MainLayout extends AppLayout {
 
-    public static class MenuItemInfo {
+	public MainLayout() {
+		setPrimarySection(Section.NAVBAR);
+		addToNavbar(true, createHeaderContent());
+		addToDrawer(createDrawerContent());
+	}
 
-        private String text;
-        private String iconClass;
-        private Class<? extends Component> view;
+	private static RouterLink createLink(MenuItemInfo menuItemInfo) {
+		RouterLink link = new RouterLink();
+		link.addClassNames("flex", "h-s", "items-center", "px-m", "relative", "text-secondary");
+		link.setRoute(menuItemInfo.getView());
 
-        public MenuItemInfo(String text, String iconClass, Class<? extends Component> view) {
-            this.text = text;
-            this.iconClass = iconClass;
-            this.view = view;
-        }
+		Span icon = new Span();
+		icon.addClassNames("me-l", "text-l");
+		if (!menuItemInfo.getIconClass().isEmpty()) {
+			icon.addClassNames(menuItemInfo.getIconClass());
+		}
+		if (menuItemInfo.getText().equals("Tabs")) {
+			icon.getStyle().set("transform", "rotate(90deg)");
+		}
 
-        public String getText() {
-            return text;
-        }
+		Span text = new Span(menuItemInfo.getText());
+		text.addClassNames("text-s");
 
-        public String getIconClass() {
-            return iconClass;
-        }
+		link.add(icon, text);
+		return link;
+	}
 
-        public Class<? extends Component> getView() {
-            return view;
-        }
+	private Component createHeaderContent() {
+		DrawerToggle toggle = new DrawerToggle();
+		toggle.getElement().setAttribute("aria-label", "Menu toggle");
 
-    }
+		H1 title = new H1("Fiber");
+		title.addClassNames("ms-xs", "my-0", "text-m");
 
-    public MainLayout() {
-        setPrimarySection(Section.NAVBAR);
-        addToNavbar(true, createHeaderContent());
-        addToDrawer(createDrawerContent());
-    }
+		Header header = new Header(toggle, title);
+		header.addClassNames("bg-base", "box-border", "flex", "h-l", "items-center",
+				"w-full");
+		header.getElement().getThemeList().add(Lumo.DARK);
+		return header;
+	}
 
-    private Component createHeaderContent() {
-        DrawerToggle toggle = new DrawerToggle();
-        toggle.getElement().setAttribute("aria-label", "Menu toggle");
+	private Component createDrawerContent() {
+		H2 title = new H2("Components");
+		title.addClassNames("flex", "flex-shrink-0", "items-center", "h-xl", "m-0", "px-m", "text-m");
 
-        H1 title = new H1("Fiber");
-        title.addClassNames("ms-xs", "my-0", "text-m");
+		com.vaadin.flow.component.html.Section section = new com.vaadin.flow.component.html.Section(title,
+				createNavigation());
+		section.addClassNames("flex", "flex-col", "flex-shrink-0", "items-stretch", "max-h-full", "min-h-full");
+		return section;
+	}
 
-        Header header = new Header(toggle, title);
-        header.addClassNames("bg-base", "box-border", "flex", "h-l", "items-center",
-                "w-full");
-        header.getElement().getThemeList().add("dark");
-        return header;
-    }
+	private Nav createNavigation() {
+		Nav nav = new Nav();
+		nav.addClassNames("border-b", "border-contrast-10", "flex-grow", "overflow-auto");
+		nav.getElement().setAttribute("aria-labelledby", "views");
 
-    private Component createDrawerContent() {
-        H2 title = new H2("Components");
-        title.addClassNames("flex", "flex-shrink-0", "items-center", "h-xl", "m-0", "px-m", "text-m");
+		H3 views = new H3("Views");
+		views.addClassNames("flex", "h-m", "items-center", "mx-m", "my-0", "text-s", "text-tertiary");
+		views.setId("views");
 
-        com.vaadin.flow.component.html.Section section = new com.vaadin.flow.component.html.Section(title,
-                createNavigation());
-        section.addClassNames("flex", "flex-col", "flex-shrink-0", "items-stretch", "max-h-full", "min-h-full");
-        return section;
-    }
+		for (RouterLink link : createLinks()) {
+			nav.add(link);
+		}
+		return nav;
+	}
 
-    private Nav createNavigation() {
-        Nav nav = new Nav();
-        nav.addClassNames("border-b", "border-contrast-10", "flex-grow", "overflow-auto");
-        nav.getElement().setAttribute("aria-labelledby", "views");
+	private List<RouterLink> createLinks() {
+		MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
+				new MenuItemInfo("Accordion", "la la-angle-down", AccordionView.class),
+				new MenuItemInfo("Button", "la la-plus", ButtonView.class),
+				new MenuItemInfo("Checkbox", "la la-check-square", CheckboxView.class),
+				new MenuItemInfo("Combo box", "la la-caret-down", ComboBoxView.class),
+				new MenuItemInfo("Data table", "la la-table", DataTableView.class),
+				new MenuItemInfo("Date picker", "la la-calendar", DatePickerView.class),
+				new MenuItemInfo("Modal", "la la-credit-card", ModalView.class),
+				new MenuItemInfo("Notification", "la la-bell", NotificationView.class),
+				new MenuItemInfo("Radio button", "la la-dot-circle", RadioButtonView.class),
+				new MenuItemInfo("Search", "la la-search", SearchView.class),
+				new MenuItemInfo("Select", "la la-tasks", SelectView.class),
+				new MenuItemInfo("Tabs", "la la-database", TabsView.class),
+				new MenuItemInfo("Tag", "la la-tag", TagView.class),
+				new MenuItemInfo("Text input", "la la-terminal", TextInputView.class),
+				new MenuItemInfo("Upload", "la la-upload", UploadView.class),
+		};
+		List<RouterLink> links = new ArrayList<>();
+		for (MenuItemInfo menuItemInfo : menuItems) {
+			links.add(createLink(menuItemInfo));
 
-        H3 views = new H3("Views");
-        views.addClassNames("flex", "h-m", "items-center", "mx-m", "my-0", "text-s", "text-tertiary");
-        views.setId("views");
+		}
+		return links;
+	}
 
-        for (RouterLink link : createLinks()) {
-            nav.add(link);
-        }
-        return nav;
-    }
+	public static class MenuItemInfo {
 
-    private List<RouterLink> createLinks() {
-        MenuItemInfo[] menuItems = new MenuItemInfo[]{ //
-                new MenuItemInfo("Accordion", "la la-angle-down", AccordionView.class),
-                new MenuItemInfo("Button", "la la-plus", ButtonView.class),
-                new MenuItemInfo("Checkbox", "la la-check-square", CheckboxView.class),
-                new MenuItemInfo("Combo box", "la la-caret-down", ComboBoxView.class),
-                new MenuItemInfo("Data table", "la la-table", DataTableView.class),
-                new MenuItemInfo("Date picker", "la la-calendar", DatePickerView.class),
-                new MenuItemInfo("Modal", "la la-credit-card", ModalView.class),
-                new MenuItemInfo("Radio button", "la la-dot-circle", RadioButtonView.class),
-                new MenuItemInfo("Search", "la la-search", SearchView.class),
-                new MenuItemInfo("Select", "la la-tasks", SelectView.class),
-                new MenuItemInfo("Tabs", "la la-database", TabsView.class),
-                new MenuItemInfo("Tag", "la la-tag", TagView.class),
-                new MenuItemInfo("Text input", "la la-terminal", TextInputView.class),
-                new MenuItemInfo("Upload", "la la-upload", UploadView.class),
-        };
-        List<RouterLink> links = new ArrayList<>();
-        for (MenuItemInfo menuItemInfo : menuItems) {
-            links.add(createLink(menuItemInfo));
+		private String text;
+		private String iconClass;
+		private Class<? extends Component> view;
 
-        }
-        return links;
-    }
+		public MenuItemInfo(String text, String iconClass, Class<? extends Component> view) {
+			this.text = text;
+			this.iconClass = iconClass;
+			this.view = view;
+		}
 
-    private static RouterLink createLink(MenuItemInfo menuItemInfo) {
-        RouterLink link = new RouterLink();
-        link.addClassNames("flex", "h-s", "items-center", "px-m", "relative", "text-secondary");
-        link.setRoute(menuItemInfo.getView());
+		public String getText() {
+			return text;
+		}
 
-        Span icon = new Span();
-        icon.addClassNames("me-l", "text-l");
-        if (!menuItemInfo.getIconClass().isEmpty()) {
-            icon.addClassNames(menuItemInfo.getIconClass());
-        }
-        if (menuItemInfo.getText().equals("Tabs")) {
-            icon.getStyle().set("transform", "rotate(90deg)");
-        }
+		public String getIconClass() {
+			return iconClass;
+		}
 
-        Span text = new Span(menuItemInfo.getText());
-        text.addClassNames("text-s");
+		public Class<? extends Component> getView() {
+			return view;
+		}
 
-        link.add(icon, text);
-        return link;
-    }
+	}
 }

@@ -12,42 +12,42 @@ import com.vaadin.flow.router.Route;
 @Route(value = "tabs", layout = MainLayout.class)
 public class TabsView extends Main {
 
-    private String OUTLINE = "outline";
+	private String OUTLINE = "outline";
 
-    public TabsView() {
-        addClassNames("flex", "flex-col", "pb-l", "px-l");
+	public TabsView() {
+		addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Tabs"));
-        createTabs();
-    }
+		add(new H2("Tabs"));
+		createTabs();
+	}
 
-    private void createTabs() {
-        Div div = new Div();
-        div.addClassNames("flex", "flex-col", "gap-m");
+	private void createTabs() {
+		Div div = new Div();
+		div.addClassNames("flex", "flex-col", "gap-m");
 
-        Tabs tabs = new Tabs(
-                new Tab("Tab label 1"),
-                new Tab("Tab label 2"),
-                new Tab("Tab label 3")
-        );
-        tabs.setWidth("2400px");
-        div.add(tabs);
+		Tabs tabs = new Tabs(
+				new Tab("Tab label 1"),
+				new Tab("Tab label 2"),
+				new Tab("Tab label 3")
+		);
+		tabs.setWidth("240px");
+		div.add(tabs);
 
-        tabs = new Tabs(
-                createTab("Tab label 1", OUTLINE),
-                createTab("Tab label 2", OUTLINE),
-                createTab("Tab label 3", OUTLINE)
-        );
-        tabs.addThemeName(OUTLINE);
-        tabs.setWidth("240px");
-        div.add(tabs);
+		tabs = new Tabs(
+				createTab("Tab label 1", OUTLINE),
+				createTab("Tab label 2", OUTLINE),
+				createTab("Tab label 3", OUTLINE)
+		);
+		tabs.addThemeName(OUTLINE);
+		tabs.setWidth("240px");
+		div.add(tabs);
 
-        add(div);
-    }
+		add(div);
+	}
 
-    private Tab createTab(String text, String... themeNames) {
-        Tab tab = new Tab(text);
-        tab.addThemeNames(themeNames);
-        return tab;
-    }
+	private Tab createTab(String text, String... themeNames) {
+		Tab tab = new Tab(text);
+		tab.addThemeNames(themeNames);
+		return tab;
+	}
 }

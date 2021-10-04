@@ -5,19 +5,22 @@
 
 /* === Hover === */
 :host(:hover) {
-    background-color: var(--hover-bg);
-    color: var(--lumo-primary-contrast-color);
+    --button-hover-bg: var(--hover-bg);
+    --button-hover-color: var(--lumo-primary-contrast-color);
 }
 
 /* === Active === */
 :host([active]) {
-    background-color: var(--active-bg);
+    --button-active-bg: var(--active-bg);
+    --button-active-color: var(--lumo-primary-contrast-color);
 }
 
 /* === Focus === */
-:host([focused]) {
-    border-color: white;
+:host([focused]),
+:host([focus-ring]) {
     box-shadow: none;
+    outline: 2px solid white;
+    outline-offset: -2px;
 }
 
 /* === Icon === */

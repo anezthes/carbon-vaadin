@@ -15,73 +15,73 @@ import org.apache.commons.lang3.StringUtils;
 @Route(value = "tag", layout = MainLayout.class)
 public class TagView extends Main {
 
-    public TagView() {
-        addClassNames("flex", "flex-col", "pb-l", "px-l");
+	public TagView() {
+		addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Tag"));
-        createTags();
-    }
+		add(new H2("Tag"));
+		createTags();
+	}
 
-    public enum Tag {
-        RED("error"), MAGENTA("magenta"), PURPLE("purple"),
-        BLUE(""), CYAN("cyan"), TEAL("teal"), GREEN("success"),
-        GRAY("contrast"), COOL_GRAY("cool-gray"), WARM_GRAY("warm-gray");
+	private void createTags() {
+		Div wrapper = new Div();
+		wrapper.addClassNames("flex", "flex-col", "gap-m");
 
-        private String themeName;
+		// Default
+		Div tags = new Div();
+		tags.addClassNames("flex", "flex-wrap", "gap-m");
+		for (Tag value : Tag.values()) {
+			Span tag = createTag(StringUtils.capitalize(value.getThemeName().replace("-", " ")));
+			tag.getElement().getThemeList().add(value.getThemeName());
+			tags.add(tag);
+		}
+		wrapper.add(tags);
 
-        Tag(String themeName) {
-            this.themeName = themeName;
-        }
+		// Filters
+		tags = new Div();
+		tags.addClassNames("flex", "flex-wrap", "gap-m");
+		for (Tag value : Tag.values()) {
+			Span tag = createTag(StringUtils.capitalize(value.getThemeName().replace("-", " ")));
+			tag.getElement().getThemeList().add(value.getThemeName());
+			Button button = new Button(VaadinIcon.CLOSE_SMALL.create());
+			button.addThemeVariants(ButtonVariant.LUMO_TERTIARY_INLINE);
+			tag.add(button);
+			tags.add(tag);
+		}
+		wrapper.add(tags);
 
-        public String getThemeName() {
-            return themeName;
-        }
-    }
+		// "Disabled" tags
+		tags = new Div();
+		tags.addClassNames("flex", "flex-wrap", "gap-m");
+		for (Tag value : Tag.values()) {
+			Span tag = createTag(StringUtils.capitalize(value.getThemeName().replace("-", " ")));
+			tag.getElement().getThemeList().add(value.getThemeName());
+			tag.addClassNames("disabled");
+			tags.add(tag);
+		}
+		wrapper.add(tags);
 
-    private void createTags() {
-        Div wrapper = new Div();
-        wrapper.addClassNames("flex", "flex-col", "gap-m");
+		add(wrapper);
+	}
 
-        // Default
-        Div tags = new Div();
-        tags.addClassNames("flex", "flex-wrap", "gap-m");
-        for (Tag value : Tag.values()) {
-            Span tag = createTag(StringUtils.capitalize(value.getThemeName().replace("-", " ")));
-            tag.getElement().getThemeList().add(value.getThemeName());
-            tags.add(tag);
-        }
-        wrapper.add(tags);
+	private Span createTag(String text) {
+		Span span = new Span(text.isEmpty() ? "Blue" : text);
+		span.getElement().getThemeList().add("badge");
+		return span;
+	}
 
-        // Filters
-        tags = new Div();
-        tags.addClassNames("flex", "flex-wrap", "gap-m");
-        for (Tag value : Tag.values()) {
-            Span tag = createTag(StringUtils.capitalize(value.getThemeName().replace("-", " ")));
-            tag.getElement().getThemeList().add(value.getThemeName());
-            Button button = new Button(VaadinIcon.CLOSE_SMALL.create());
-            button.addThemeVariants(ButtonVariant.LUMO_TERTIARY_INLINE);
-            tag.add(button);
-            tags.add(tag);
-        }
-        wrapper.add(tags);
+	public enum Tag {
+		RED("error"), MAGENTA("magenta"), PURPLE("purple"),
+		BLUE(""), CYAN("cyan"), TEAL("teal"), GREEN("success"),
+		GRAY("contrast"), COOL_GRAY("cool-gray"), WARM_GRAY("warm-gray");
 
-        // "Disabled" tags
-        tags = new Div();
-        tags.addClassNames("flex", "flex-wrap", "gap-m");
-        for (Tag value : Tag.values()) {
-            Span tag = createTag(StringUtils.capitalize(value.getThemeName().replace("-", " ")));
-            tag.getElement().getThemeList().add(value.getThemeName());
-            tag.addClassNames("disabled");
-            tags.add(tag);
-        }
-        wrapper.add(tags);
+		private String themeName;
 
-        add(wrapper);
-    }
+		Tag(String themeName) {
+			this.themeName = themeName;
+		}
 
-    private Span createTag(String text) {
-        Span span = new Span(text.isEmpty() ? "Blue" : text);
-        span.getElement().getThemeList().add("badge");
-        return span;
-    }
+		public String getThemeName() {
+			return themeName;
+		}
+	}
 }

@@ -14,58 +14,58 @@ import com.vaadin.flow.router.Route;
 @Route(value = "text-input", layout = MainLayout.class)
 public class TextInputView extends Main {
 
-    public TextInputView() {
-        addClassNames("flex", "flex-col", "pb-l", "px-l");
+	public TextInputView() {
+		addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Text input"));
-        createTextFields();
-    }
+		add(new H2("Text input"));
+		createTextFields();
+	}
 
-    private void createTextFields() {
-        Div fields = new Div();
-        fields.addClassNames("flex", "flex-wrap", "gap-m");
+	private void createTextFields() {
+		Div fields = new Div();
+		fields.addClassNames("flex", "flex-wrap", "gap-m");
 
-        TextField textField = createTextField();
-        textField.setClearButtonVisible(true);
-        fields.add(textField);
+		TextField textField = createTextField();
+		textField.setClearButtonVisible(true);
+		fields.add(textField);
 
-        textField = createTextField();
-        textField.setEnabled(false);
-        fields.add(textField);
+		textField = createTextField();
+		textField.setEnabled(false);
+		fields.add(textField);
 
-        textField = createTextField();
-        textField.setHelperText("");
-        textField.setInvalid(true);
-        textField.setErrorMessage("A valid value is required");
-        fields.add(textField);
+		textField = createTextField();
+		textField.setHelperText("");
+		textField.setInvalid(true);
+		textField.setErrorMessage("A valid value is required");
+		fields.add(textField);
 
-        textField = createTextField();
-        textField.addThemeVariants(TextFieldVariant.LUMO_SMALL);
-        fields.add(textField);
+		textField = createTextField();
+		textField.addThemeVariants(TextFieldVariant.LUMO_SMALL);
+		fields.add(textField);
 
-        textField = createTextField();
-        textField.addThemeName("large");
-        fields.add(textField);
+		textField = createTextField();
+		textField.addThemeName("large");
+		fields.add(textField);
 
-        PasswordField passwordField = new PasswordField("Text input label");
-        passwordField.setPlaceholder("Placeholder text");
-        passwordField.setHelperText("Optional helper text");
-        fields.add(passwordField);
+		PasswordField passwordField = new PasswordField("Text input label");
+		passwordField.setPlaceholder("Placeholder text");
+		passwordField.setHelperText("Optional helper text");
+		fields.add(passwordField);
 
-        TextArea textArea = new TextArea("Text input label");
-        textArea.setPlaceholder("Placeholder text");
-        textArea.setHelperText("Optional helper text");
-        textArea.setClearButtonVisible(true);
-        fields.add(textArea);
+		TextArea textArea = new TextArea("Text input label");
+		textArea.setPlaceholder("Placeholder text");
+		textArea.setHelperText("Optional helper text");
+		textArea.setClearButtonVisible(true);
+		fields.add(textArea);
 
-        add(fields);
-    }
+		add(fields);
+	}
 
-    private TextField createTextField() {
-        TextField textField = new TextField("Text input label");
-        textField.setPlaceholder("Placeholder text");
-        textField.setHelperText("Optional helper text");
-        textField.setClearButtonVisible(true);
-        return textField;
-    }
+	private TextField createTextField() {
+		TextField textField = new TextField("Text input label");
+		textField.setPlaceholder("Placeholder text");
+		textField.setHelperText("Optional helper text");
+		textField.setClearButtonVisible(true);
+		return textField;
+	}
 }

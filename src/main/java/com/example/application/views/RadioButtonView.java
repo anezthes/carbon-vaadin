@@ -12,40 +12,40 @@ import com.vaadin.flow.router.Route;
 @Route(value = "radio-button", layout = MainLayout.class)
 public class RadioButtonView extends Main {
 
-    public RadioButtonView() {
-        addClassNames("flex", "flex-col", "pb-l", "px-l");
+	public RadioButtonView() {
+		addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Radio button"));
-        createRadioButtonGroups();
-    }
+		add(new H2("Radio button"));
+		createRadioButtonGroups();
+	}
 
-    private void createRadioButtonGroups() {
-        Div radioButtonGroups = new Div();
-        radioButtonGroups.addClassNames("flex", "flex-col");
+	private void createRadioButtonGroups() {
+		Div radioButtonGroups = new Div();
+		radioButtonGroups.addClassNames("flex", "flex-col");
 
-        RadioButtonGroup radioButtonGroup = createRadioButtonGroup();
-        radioButtonGroups.add(radioButtonGroup);
+		RadioButtonGroup radioButtonGroup = createRadioButtonGroup();
+		radioButtonGroups.add(radioButtonGroup);
 
-        radioButtonGroup = createRadioButtonGroup();
-        radioButtonGroup.addThemeVariants(RadioGroupVariant.LUMO_VERTICAL);
-        radioButtonGroups.add(radioButtonGroup);
+		radioButtonGroup = createRadioButtonGroup();
+		radioButtonGroup.addThemeVariants(RadioGroupVariant.LUMO_VERTICAL);
+		radioButtonGroups.add(radioButtonGroup);
 
-        radioButtonGroup = createRadioButtonGroup();
-        radioButtonGroup.setEnabled(false);
-        radioButtonGroups.add(radioButtonGroup);
+		radioButtonGroup = createRadioButtonGroup();
+		radioButtonGroup.setEnabled(false);
+		radioButtonGroups.add(radioButtonGroup);
 
-        radioButtonGroup = createRadioButtonGroup();
-        radioButtonGroup.addThemeVariants(RadioGroupVariant.LUMO_VERTICAL);
-        radioButtonGroup.setEnabled(false);
-        radioButtonGroups.add(radioButtonGroup);
+		radioButtonGroup = createRadioButtonGroup();
+		radioButtonGroup.addThemeVariants(RadioGroupVariant.LUMO_VERTICAL);
+		radioButtonGroup.setEnabled(false);
+		radioButtonGroups.add(radioButtonGroup);
 
-        add(radioButtonGroups);
-    }
+		add(radioButtonGroups);
+	}
 
-    private RadioButtonGroup createRadioButtonGroup() {
-        RadioButtonGroup radioButtonGroup = new RadioButtonGroup();
-        radioButtonGroup.setItems("Radio button label 1", "Radio button label 2");
-        radioButtonGroup.setLabel("Radio button heading");
-        return radioButtonGroup;
-    }
+	private RadioButtonGroup createRadioButtonGroup() {
+		RadioButtonGroup radioButtonGroup = new RadioButtonGroup();
+		radioButtonGroup.setItems("Radio button label 1", "Radio button label 2");
+		radioButtonGroup.setLabel("Radio button heading");
+		return radioButtonGroup;
+	}
 }

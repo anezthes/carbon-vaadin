@@ -11,43 +11,43 @@ import com.vaadin.flow.router.Route;
 @Route(value = "date-picker", layout = MainLayout.class)
 public class DatePickerView extends Main {
 
-    public DatePickerView() {
-        addClassNames("flex", "flex-col", "pb-l", "px-l");
+	public DatePickerView() {
+		addClassNames("flex", "flex-col", "pb-l", "px-l");
 
-        add(new H2("Date picker"));
-        createDatePickers();
-    }
+		add(new H2("Date picker"));
+		createDatePickers();
+	}
 
-    private void createDatePickers() {
-        Div fields = new Div();
-        fields.addClassNames("flex", "flex-wrap", "gap-m");
+	private void createDatePickers() {
+		Div fields = new Div();
+		fields.addClassNames("flex", "flex-wrap", "gap-m");
 
-        DatePicker datePicker = new DatePicker("Date picker label");
-        datePicker.setPlaceholder("mm/dd/yyyy");
-        fields.add(datePicker);
+		DatePicker datePicker = new DatePicker("Date picker label");
+		datePicker.setPlaceholder("mm/dd/yyyy");
+		fields.add(datePicker);
 
-        datePicker = new DatePicker("Date picker label");
-        datePicker.setPlaceholder("mm/dd/yyyy");
-        datePicker.setEnabled(false);
-        fields.add(datePicker);
+		datePicker = new DatePicker("Date picker label");
+		datePicker.setPlaceholder("mm/dd/yyyy");
+		datePicker.setEnabled(false);
+		fields.add(datePicker);
 
-        datePicker = new DatePicker("Date picker label");
-        datePicker.setPlaceholder("mm/dd/yyyy");
-        datePicker.getElement().getThemeList().add("small");
-        fields.add(datePicker);
+		datePicker = new DatePicker("Date picker label");
+		datePicker.setPlaceholder("mm/dd/yyyy");
+		datePicker.getElement().getThemeList().add("small");
+		fields.add(datePicker);
 
-        datePicker = new DatePicker("Date picker label");
-        datePicker.setPlaceholder("mm/dd/yyyy");
-        datePicker.getElement().getThemeList().add("large");
-        fields.add(datePicker);
+		datePicker = new DatePicker("Date picker label");
+		datePicker.setPlaceholder("mm/dd/yyyy");
+		datePicker.getElement().getThemeList().add("large");
+		fields.add(datePicker);
 
-        datePicker = new DatePicker("Date picker label");
-        datePicker.setPlaceholder("mm/dd/yyyy");
-        datePicker.setInvalid(true);
-        datePicker.setErrorMessage("A valid value is required");
-        fields.add(datePicker);
+		datePicker = new DatePicker("Date picker label");
+		datePicker.setPlaceholder("mm/dd/yyyy");
+		datePicker.setInvalid(true);
+		datePicker.setErrorMessage("A valid value is required");
+		fields.add(datePicker);
 
-        add(fields);
+		add(fields);
 
         /*
         <vaadin-date-picker label="Start date"></vaadin-date-picker>
@@ -64,5 +64,5 @@ public class DatePickerView extends Main {
               <vaadin-date-time-picker label="Start date and time" value="2022-03-26T12:30" clear-button-visible></vaadin-date-time-picker>
               <vaadin-date-time-picker label="Start date and time" date-placeholder="DD/MM/YYYY" time-placeholder="HH:MM" helper-text="Format: DD/MM/YYYY and HH:MM"></vaadin-date-time-picker>
          */
-    }
+	}
 }
