@@ -3,6 +3,7 @@
 .settings
 .project
 .classpath
+.mvn
 
 *.iml
 .DS_Store
