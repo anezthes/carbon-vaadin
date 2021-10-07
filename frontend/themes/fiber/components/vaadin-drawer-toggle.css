@@ -16,11 +16,8 @@
 }
 
 /* === Focus === */
-:host([focused]),
-:host([focus-ring]) {
-    box-shadow: none;
-    outline: 2px solid white;
-    outline-offset: -2px;
+:host([focused]) {
+    box-shadow: inset 0 0 0 2px white;
 }
 
 /* === Icon === */

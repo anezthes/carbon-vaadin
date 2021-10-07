@@ -1,0 +1,15 @@
+:host([theme="menu-bar-item"]) {
+    --min-height: 0;
+}
+
+:host([theme="menu-bar-item"]) [part="content"] {
+    align-items: center;
+    border: none;
+    justify-content: center;
+    padding: 0;
+}
+
+:host([theme="menu-bar-item"]) [part="content"] ::slotted(iron-icon[icon^="vaadin:"]) {
+    color: var(--lumo-body-text-color);
+    padding: var(--lumo-space-xxxs);
+}

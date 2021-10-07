@@ -1,0 +1,19 @@
+.button-group vaadin-button::after {
+  background-color: var(--gray-20);
+  content: "";
+  filter: none;
+  height: 100%;
+  opacity: 1;
+  position: absolute;
+  right: auto;
+  top: 0px;
+  transition: none;
+  width: 1px;
+}
+
+.button-group vaadin-button[focused]::after,
+.button-group vaadin-button:first-child::after,
+.button-group vaadin-button[focused] + vaadin-button::after {
+  content: none;
+}
+

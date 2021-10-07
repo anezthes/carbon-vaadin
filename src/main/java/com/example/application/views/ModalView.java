@@ -80,7 +80,7 @@ public class ModalView extends Main {
 		}
 
 		Div buttons = new Div(cancel, save);
-		buttons.addClassNames("flex", "justify-end");
+		buttons.addClassNames("button-group", "flex", "justify-end");
 
 		/* Wrapper: needed for scrolling */
 		Div wrapper = new Div(header, content, buttons);

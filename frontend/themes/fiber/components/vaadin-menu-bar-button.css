@@ -1,0 +1,26 @@
+:host {
+    margin: 0;
+    min-width: var(--lumo-size-m);
+}
+
+:host(:first-of-type) {
+    margin-left: 0;
+}
+
+:host::before,
+:host::after {
+    content: none;
+}
+
+:host([expanded]) {
+    background-color: var(--gray-10);
+    box-shadow: var(--lumo-box-shadow-m);
+}
+
+[part="label"] {
+    padding: 0;
+}
+
+[part="label"] ::slotted(vaadin-context-menu-item) {
+    flex-grow: 1;
+}

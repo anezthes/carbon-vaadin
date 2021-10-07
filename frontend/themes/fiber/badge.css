@@ -75,42 +75,42 @@
   box-shadow: inset 0 0 0 1px var(--lumo-primary-color);
 }
 
-[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--blue-30);
 }
 
-[theme~="badge"][theme~="error"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="error"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--red-30);
 }
 
-[theme~="badge"][theme~="magenta"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="magenta"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--magenta-30);
 }
 
-[theme~="badge"][theme~="purple"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="purple"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--purple-30);
 }
 
-[theme~="badge"][theme~="cyan"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="cyan"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--cyan-30);
 }
 
-[theme~="badge"][theme~="teal"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="teal"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--teal-30);
 }
 
-[theme~="badge"][theme~="success"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="success"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--green-30);
 }
 
-[theme~="badge"][theme~="contrast"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="contrast"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--gray-30);
 }
 
-[theme~="badge"][theme~="cool-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="cool-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--cool-gray-30);
 }
 
-[theme~="badge"][theme~="warm-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"]:hover {
+[theme~="badge"][theme~="warm-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
   --button-hover-bg: var(--warm-gray-30);
 }

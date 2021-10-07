@@ -1,0 +1,23 @@
+:host(:first-of-type) {
+    padding: 0;
+}
+
+:host([opened])::after {
+    background-color: var(--gray-10);
+    content: "";
+    height: 4px;
+    left: 0;
+    position: absolute;
+    top: -4px;
+    width: var(--lumo-size-m);
+}
+
+[part="overlay"] {
+    background-color: var(--gray-10);
+    background-image: none;
+    box-shadow: var(--lumo-box-shadow-m);
+}
+
+[part="content"] {
+    padding: 0;
+}

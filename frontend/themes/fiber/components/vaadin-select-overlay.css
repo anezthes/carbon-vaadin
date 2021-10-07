@@ -1,9 +1,9 @@
 [part="overlay"] {
     background-color: var(--gray-10);
+    background-image: none;
     box-shadow: var(--lumo-box-shadow-m);
 }
 
 [part="content"] {
     padding: 0;
 }
-

@@ -97,6 +97,8 @@ public class MainLayout extends AppLayout {
 				new MenuItemInfo("Date picker", "la la-calendar", DatePickerView.class),
 				new MenuItemInfo("Modal", "la la-credit-card", ModalView.class),
 				new MenuItemInfo("Notification", "la la-bell", NotificationView.class),
+				new MenuItemInfo("Number input", "la la-calculator", NumberInputView.class),
+				new MenuItemInfo("Overflow menu", "la la-ellipsis-v", OverflowMenuView.class),
 				new MenuItemInfo("Radio button", "la la-dot-circle", RadioButtonView.class),
 				new MenuItemInfo("Search", "la la-search", SearchView.class),
 				new MenuItemInfo("Select", "la la-tasks", SelectView.class),

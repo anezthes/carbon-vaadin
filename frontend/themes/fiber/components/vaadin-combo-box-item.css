@@ -18,20 +18,25 @@
 }
 
 /* === Hover === */
-:host(:hover) {
+:host(:hover:not([disabled])) {
     background-color: var(--hover-bg);
     color: var(--lumo-body-text-color);
 }
 
-/* === Focus === */
-:host([focused]:not([disabled])) {
-    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+/* === Active === */
+:host(:active:not([disabled])) {
+    background-color: var(--gray-20);
 }
 
 /* === Selection === */
 :host([selected]) {
     background-color: var(--grid-column-hover-bg) !important;
     color: var(--lumo-body-text-color);
+}
+
+/* === Focus === */
+:host([focused]:not([disabled])) {
+    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
 }
 
 /* Hide border under these circumstances (pt 1/2 -- see styles.css) */

@@ -1,0 +1,26 @@
+:host(.vaadin-menu-list-box) [part="items"] ::slotted(.vaadin-menu-item) {
+    padding: 0 var(--lumo-space-m);
+}
+
+/* === Hover === */
+[part="items"] ::slotted(.vaadin-menu-item:hover:not([disabled])),
+[part="items"] ::slotted(.vaadin-menu-item[expanded]:not([disabled])) {
+    background-color: var(--hover-bg);
+    color: var(--lumo-body-text-color);
+}
+
+/* === Active === */
+[part="items"] ::slotted(.vaadin-menu-item:active:not([disabled])) {
+    background-color: var(--gray-20);
+}
+
+/* === Selection === */
+[part="items"] ::slotted(.vaadin-menu-item[selected]) {
+    background-color: var(--grid-column-hover-bg) !important;
+    color: var(--lumo-body-text-color);
+}
+
+/* === Focus === */
+[part="items"] ::slotted([focus-ring]:not([disabled])) {
+    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+}

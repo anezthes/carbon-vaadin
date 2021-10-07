@@ -5,14 +5,13 @@
     --button-active-bg: var(--active-bg);
     --button-active-color: var(--blue-70);
     background-color: transparent;
-    border: 1px solid transparent;
     display: inline-flex;
     font-size: var(--lumo-font-size-s);
     font-weight: normal;
     justify-content: center;
     line-height: normal;
     min-width: 0;
-    padding: 0 calc(var(--lumo-space-m) - 1px);
+    padding: 0 var(--lumo-space-m);
 }
 
 :host::before,
@@ -74,14 +73,14 @@
 
 /* === Tertiary === */
 :host([theme~="tertiary"]) {
-    border: 1px solid var(--lumo-primary-color);
-    padding: 0 calc(var(--lumo-space-m) - 1px);
+    box-shadow: inset 0 0 0 1px var(--lumo-primary-color);
+    padding: 0 var(--lumo-space-m);
 }
 
 :host([theme*="tertiary"]:hover) {
     --button-hover-bg: #0353e9; /* TODO: not in the palette? */
-    background-color: var(--button-hover-bg) !important;
     --button-hover-color: var(--lumo-primary-contrast-color);
+    background-color: var(--button-hover-bg) !important;
 }
 
 :host([theme~="tertiary"][active]),
@@ -102,40 +101,28 @@
 
 /* === Error === */
 :host([theme~="error"]) {
+    --button-hover-bg: var(--red-60-hover); /* #b81921 vs #b81922 */
+    --button-hover-color: var(--lumo-primary-contrast-color);
+    --button-active-bg: var(--red-80);
+    --button-active-color: var(--lumo-primary-contrast-color);
     background-color: var(--lumo-error-color);
     color: var(--lumo-primary-contrast-color);
 }
 
-:host([theme~="error"]:hover) {
-    --button-hover-bg: var(--red-60-hover); /* #b81921 vs #b81922 */
-    --button-hover-color: var(--lumo-primary-contrast-color);
-}
-
-:host([theme~="error"][active]) {
-    --button-active-bg: var(--red-80);
-    --button-active-color: var(--lumo-primary-contrast-color);
-}
-
 /* === Success === */
 :host([theme~="success"]) {
+    --button-hover-bg: var(--green-60-hover);
+    --button-hover-color: var(--lumo-primary-contrast-color);
+    --button-active-bg: var(--green-80);
+    --button-active-color: var(--lumo-primary-contrast-color);
     background-color: var(--lumo-success-color);
     color: var(--lumo-primary-contrast-color);
 }
 
-:host([theme~="success"]:hover) {
-    --button-hover-bg: var(--green-60-hover);
-    --button-hover-color: var(--lumo-primary-contrast-color);
-}
-
-:host([theme~="success"][active]) {
-    --button-active-bg: var(--green-80);
-    --button-active-color: var(--lumo-primary-contrast-color);
-}
-
 /* === Large === */
 :host([theme~="large"]) {
-    font-size: var(--lumo-font-size-s);
     --lumo-button-size: var(--lumo-size-l);
+    font-size: var(--lumo-font-size-s);
 }
 
 /* === Icon === */
@@ -177,20 +164,24 @@
 
 /* === Focus === */
 :host([focused]) {
-    border-color: var(--lumo-primary-color);
-    box-shadow: inset 0 0 0 1px var(--lumo-primary-color), inset 0 0 0 2px var(--gray-10);
+    box-shadow: inset 0 0 0 2px var(--lumo-primary-color), inset 0 0 0 3px var(--gray-10);
 }
 
 /* === Disabled === */
 :host([disabled][disabled]) {
     background-color: var(--gray-30) !important;
-    border-color: var(--gray-30);
+    box-shadow: none;
     color: var(--gray-50);
 }
 
 /* === Upload === */
 :host([theme~="upload"]) {
-    border: 1px dashed var(--gray-50);
+    --button-hover-bg: transparent;
+    --button-hover-color: var(--lumo-primary-color);
+    --button-active-bg: transparent;
+    --button-active-color: var(--lumo-body-text-color);
+    outline: 1px dashed var(--gray-50);
+    outline-offset: -1px;
     font-size: var(--lumo-font-size-m);
     height: 6rem;
     margin: 0;
@@ -200,16 +191,9 @@
 
 :host([theme~="upload"]:hover),
 :host([theme~="upload"][focused]) {
-    --button-hover-bg: transparent;
-    --button-hover-color: var(--lumo-primary-color);
     outline: 2px solid var(--lumo-primary-color);
     outline-offset: -2px;
     text-decoration: underline;
-}
-
-:host([theme~="upload"]:active) {
-    --button-active-bg: transparent;
-    --button-active-color: var(--lumo-body-text-color);
 }
 
 :host([theme~="upload"][focused]) {

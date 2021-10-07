@@ -1,0 +1,3 @@
+:host([theme~="overflow-menu"]) [part="container"] {
+    overflow: visible;
+}

@@ -1,3 +1,9 @@
 :host([opened]) {
     --iron-list-items-container_-_border-width: 0;
 }
+
+[part="overlay"] {
+    background-color: var(--gray-10);
+    background-image: none;
+    box-shadow: var(--lumo-box-shadow-m);
+}

@@ -1,0 +1,21 @@
+:host([has-controls]) [part="value"] {
+    padding: 0;
+}
+
+[part="value"] {
+    font-family: IBM Plex Mono, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier, monospace;
+}
+
+[part="decrease-button"],
+[part="increase-button"] {
+    color: var(--lumo-body-text-color);
+    font-size: var(--lumo-icon-size-m);
+    height: var(--lumo-text-field-size);
+    width: var(--lumo-text-field-size);
+}
+
+[part="decrease-button"]::before,
+[part="increase-button"]::before {
+    font-family: inherit;
+    margin-top: 0;
+}
