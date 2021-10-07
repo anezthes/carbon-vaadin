@@ -86,6 +86,9 @@ import vaadinCheckboxCss from 'themes/fiber/components/vaadin-checkbox.css';
 import vaadinComboBoxItemCss from 'themes/fiber/components/vaadin-combo-box-item.css';
 import vaadinComboBoxOverlayCss from 'themes/fiber/components/vaadin-combo-box-overlay.css';
 import vaadinComboBoxCss from 'themes/fiber/components/vaadin-combo-box.css';
+import vaadinContextMenuItemCss from 'themes/fiber/components/vaadin-context-menu-item.css';
+import vaadinContextMenuListBoxCss from 'themes/fiber/components/vaadin-context-menu-list-box.css';
+import vaadinContextMenuOverlayCss from 'themes/fiber/components/vaadin-context-menu-overlay.css';
 import vaadinDatePickerCss from 'themes/fiber/components/vaadin-date-picker.css';
 import vaadinDialogOverlayCss from 'themes/fiber/components/vaadin-dialog-overlay.css';
 import vaadinDialogCss from 'themes/fiber/components/vaadin-dialog.css';
@@ -94,7 +97,10 @@ import vaadinGridSorterCss from 'themes/fiber/components/vaadin-grid-sorter.css'
 import vaadinGridCss from 'themes/fiber/components/vaadin-grid.css';
 import vaadinItemCss from 'themes/fiber/components/vaadin-item.css';
 import vaadinListBoxCss from 'themes/fiber/components/vaadin-list-box.css';
+import vaadinMenuBarButtonCss from 'themes/fiber/components/vaadin-menu-bar-button.css';
+import vaadinMenuBarCss from 'themes/fiber/components/vaadin-menu-bar.css';
 import vaadinNotificationCardCss from 'themes/fiber/components/vaadin-notification-card.css';
+import vaadinNumberFieldCss from 'themes/fiber/components/vaadin-number-field.css';
 import vaadinPasswordFieldCss from 'themes/fiber/components/vaadin-password-field.css';
 import vaadinProgressBarCss from 'themes/fiber/components/vaadin-progress-bar.css';
 import vaadinRadioButtonCss from 'themes/fiber/components/vaadin-radio-button.css';
@@ -205,6 +211,24 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
+      'vaadin-context-menu-item',
+      css`
+        ${unsafeCSS(vaadinContextMenuItemCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-context-menu-list-box',
+      css`
+        ${unsafeCSS(vaadinContextMenuListBoxCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-context-menu-overlay',
+      css`
+        ${unsafeCSS(vaadinContextMenuOverlayCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-date-picker',
       css`
         ${unsafeCSS(vaadinDatePickerCss.toString())}
@@ -253,9 +277,27 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
+      'vaadin-menu-bar-button',
+      css`
+        ${unsafeCSS(vaadinMenuBarButtonCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-menu-bar',
+      css`
+        ${unsafeCSS(vaadinMenuBarCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-notification-card',
       css`
         ${unsafeCSS(vaadinNotificationCardCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-number-field',
+      css`
+        ${unsafeCSS(vaadinNumberFieldCss.toString())}
       `
     );
     registerStyles(
