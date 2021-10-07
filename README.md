@@ -1,13 +1,13 @@
 # Fiber
 
-A theme for Vaadin 14 based on IBM's Carbon.
+A theme for [Vaadin 14](https://vaadin.com/docs/v14/) based on [IBM's Carbon](https://www.carbondesignsystem.com/).
 
 ## Running the application
 
 `mvn`
 
 ## Disclaimer
-It's not perfect. There are some discrepancies between Carbon and Vaadin (Lumo) that simply cannot be amended with CSS.
+It's not perfect. There are some discrepancies between Carbon and Vaadin that simply cannot be amended with CSS.
 
 ## Missing
 ### Carbon themes
