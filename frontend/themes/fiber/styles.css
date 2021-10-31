@@ -12,6 +12,7 @@
 
 html {
     /* === Lumo variables === */
+
     --lumo-font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
     --lumo-font-size-xxs: 0.75rem;
@@ -58,6 +59,7 @@ html {
     --lumo-box-shadow-m: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 
     /* === Misc === */
+
     --numeric-font-family: IBM Plex Mono, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier, monospace;
 
     --hover-bg: #e5e5e5; /* TODO: not in the palette? */
@@ -69,11 +71,15 @@ html {
     --input-disabled-bg: var(--gray-10);
     --input-focus-color: var(--blue-60);
 
-    --button-focus: inset 0 0 0 2px var(--blue-60), inset 0 0 0 3px var(--gray-10);
+    --accordion-border-color: var(--gray-20);
+    --accordion-disabled-border-color: var(--gray-10);
+    --accordion-hover-bg: #e5e5e5;
+    --accordion-focus-color: var(--white);
 
     --button-color: var(--blue-60);
     --button-hover-bg: #e5e5e5; /* TODO: not in the palette? */
     --button-hover-color: var(--blue-70);
+    --button-focus: inset 0 0 0 2px var(--blue-60), inset 0 0 0 3px var(--gray-10);
     --button-active-bg: var(--gray-30);
     --button-active-color: var(--blue-70);
 
@@ -146,6 +152,11 @@ html {
 
     --hover-bg: var(--black-hover);
     --active-bg: var(--gray-80);
+
+    --accordion-border-color: var(--gray-80);
+    --accordion-disabled-border-color: var(--gray-90);
+    --accordion-hover-bg: #353535;
+    --accordion-focus-color: var(--white);
 
     --input-bg: var(--gray-90);
     --input-hover-bg: #353535;

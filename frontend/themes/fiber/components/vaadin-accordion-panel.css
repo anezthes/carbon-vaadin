@@ -1,16 +1,17 @@
 :host(:first-child) {
-    border-top: 1px solid var(--gray-20);
+    border-top: 1px solid var(--accordion-border-color);
 }
 
 :host(:last-child) {
-    border-bottom: 1px solid var(--gray-20);
+    border-bottom: 1px solid var(--accordion-border-color);
 }
 
 :host([focus-ring]) [part="summary"] {
-    box-shadow: 0 0 0 2px var(--lumo-primary-color);
+    box-shadow: 0 0 0 2px var(--accordion-focus-color);
 }
 
 [part="summary"] {
+    color: var(--lumo-body-text-color);
     font-size: var(--lumo-font-size-s);
     font-weight: normal;
     min-height: var(--lumo-size-m);
@@ -18,7 +19,7 @@
 }
 
 [part="summary"]:hover {
-    background-color: var(--hover-bg);
+    background-color: var(--accordion-hover-bg);
 }
 
 [part="summary-content"] {
@@ -26,6 +27,7 @@
 }
 
 [part="toggle"] {
+    color: currentColor;
     margin: 0 0 0 var(--lumo-space-s);
     transform: rotate(90deg);
 }
@@ -43,5 +45,12 @@
 }
 
 :host([disabled]) {
-    border-color: var(--gray-10);
+    border-color: var(--accordion-disabled-border-color);
+}
+
+@media (hover: hover) {
+    :host(:not([disabled])) [part="summary"]:hover,
+    :host(:not([disabled])) [part="summary"]:hover [part="toggle"] {
+        color: var(--lumo-body-text-color);
+    }
 }

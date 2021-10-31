@@ -79,9 +79,7 @@ import '@vaadin/vaadin-lumo-styles/spacing.js';
 import '@vaadin/vaadin-lumo-styles/badge.js';
 import inputButtonCss from 'themes/fiber/components/input-button.css';
 import inputFieldCss from 'themes/fiber/components/input-field.css';
-import inputLabelCss from 'themes/fiber/components/input-label.css';
 import vaadinAccordionPanelCss from 'themes/fiber/components/vaadin-accordion-panel.css';
-import vaadinAccordionCss from 'themes/fiber/components/vaadin-accordion.css';
 import vaadinAppLayoutCss from 'themes/fiber/components/vaadin-app-layout.css';
 import vaadinButtonCss from 'themes/fiber/components/vaadin-button.css';
 import vaadinCheckboxGroupCss from 'themes/fiber/components/vaadin-checkbox-group.css';
@@ -173,21 +171,9 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
-      'input-label',
-      css`
-        ${unsafeCSS(inputLabelCss.toString())}
-      `
-    );
-    registerStyles(
       'vaadin-accordion-panel',
       css`
         ${unsafeCSS(vaadinAccordionPanelCss.toString())}
-      `
-    );
-    registerStyles(
-      'vaadin-accordion',
-      css`
-        ${unsafeCSS(vaadinAccordionCss.toString())}
       `
     );
     registerStyles(
