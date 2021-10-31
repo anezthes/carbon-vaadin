@@ -77,6 +77,9 @@ import '@vaadin/vaadin-lumo-styles/typography.js';
 import '@vaadin/vaadin-lumo-styles/color.js';
 import '@vaadin/vaadin-lumo-styles/spacing.js';
 import '@vaadin/vaadin-lumo-styles/badge.js';
+import inputButtonCss from 'themes/fiber/components/input-button.css';
+import inputFieldCss from 'themes/fiber/components/input-field.css';
+import inputLabelCss from 'themes/fiber/components/input-label.css';
 import vaadinAccordionPanelCss from 'themes/fiber/components/vaadin-accordion-panel.css';
 import vaadinAccordionCss from 'themes/fiber/components/vaadin-accordion.css';
 import vaadinAppLayoutCss from 'themes/fiber/components/vaadin-app-layout.css';
@@ -89,6 +92,7 @@ import vaadinComboBoxCss from 'themes/fiber/components/vaadin-combo-box.css';
 import vaadinContextMenuItemCss from 'themes/fiber/components/vaadin-context-menu-item.css';
 import vaadinContextMenuListBoxCss from 'themes/fiber/components/vaadin-context-menu-list-box.css';
 import vaadinContextMenuOverlayCss from 'themes/fiber/components/vaadin-context-menu-overlay.css';
+import vaadinDatePickerTextFieldCss from 'themes/fiber/components/vaadin-date-picker-text-field.css';
 import vaadinDatePickerCss from 'themes/fiber/components/vaadin-date-picker.css';
 import vaadinDialogOverlayCss from 'themes/fiber/components/vaadin-dialog-overlay.css';
 import vaadinDialogCss from 'themes/fiber/components/vaadin-dialog.css';
@@ -156,6 +160,24 @@ export const applyTheme = (target) => {
     
   
   if (!document['_vaadintheme_fiber_componentCss']) {
+    registerStyles(
+      'input-button',
+      css`
+        ${unsafeCSS(inputButtonCss.toString())}
+      `
+    );
+    registerStyles(
+      'input-field',
+      css`
+        ${unsafeCSS(inputFieldCss.toString())}
+      `
+    );
+    registerStyles(
+      'input-label',
+      css`
+        ${unsafeCSS(inputLabelCss.toString())}
+      `
+    );
     registerStyles(
       'vaadin-accordion-panel',
       css`
@@ -226,6 +248,12 @@ export const applyTheme = (target) => {
       'vaadin-context-menu-overlay',
       css`
         ${unsafeCSS(vaadinContextMenuOverlayCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-date-picker-text-field',
+      css`
+        ${unsafeCSS(vaadinDatePickerTextFieldCss.toString())}
       `
     );
     registerStyles(

@@ -9,6 +9,7 @@
 }
 
 /* === Sort icon === */
+
 :host(:not([direction])) [part="indicators"]::before {
     opacity: 0;
 }

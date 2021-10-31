@@ -3,6 +3,7 @@
 }
 
 /* === Label === */
+
 label {
     align-items: flex-start;
 }
@@ -16,6 +17,7 @@ label {
 }
 
 /* === Radio === */
+
 [part="radio"] {
     background-color: transparent;
     border: 1px solid var(--gray-100);
@@ -27,22 +29,26 @@ label {
 }
 
 /* === Active === */
+
 :host([active]) [part="radio"] {
     transform: none;
 }
 
 /* === Hover === */
+
 :host(:not([checked]):not([indeterminate]):not([disabled]):hover) [part="radio"] {
     background-color: transparent;
 }
 
 /* === Focus === */
+
 :host([focus-ring]) [part="radio"] {
     box-shadow: none;
     outline: 2px solid var(--lumo-primary-color);
 }
 
 /* === Checked === */
+
 :host([checked]) [part="radio"] {
     background-color: transparent;
 }
@@ -53,6 +59,7 @@ label {
 }
 
 /* === Disabled === */
+
 :host([disabled]) [part="radio"] {
     background-color: transparent;
     border-color: var(--gray-30);

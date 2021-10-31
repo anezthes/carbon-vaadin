@@ -1,8 +1,17 @@
+:host {
+    padding: 0;
+}
+
 :host::before {
     content: none;
 }
 
+:host([has-label]) {
+    padding-top: 0;
+}
+
 /* === Label === */
+
 [part="label"] {
     font-size: var(--lumo-font-size-xs);
     font-weight: normal;
@@ -11,6 +20,7 @@
 }
 
 /* === Value === */
+
 [part="value"],
 [part="input-field"] ::slotted(input),
 [part="input-field"] ::slotted(textarea),
@@ -25,7 +35,7 @@
 }
 
 [part="input-field"] {
-    background-color: var(--gray-10);
+    background-color: var(--input-bg);
     box-shadow: inset 0 -1px 0 0 var(--gray-50);
     font-weight: normal;
     padding-bottom: calc((var(--lumo-text-field-size) - var(--lumo-font-size-s) * 1.2) / 2);
@@ -37,14 +47,17 @@
 }
 
 /* === Helper === */
+
 :host([has-helper]) [part="helper-text"]::before {
     height: var(--lumo-space-xxs);
 }
 
 /* === Buttons === */
+
 [part$="button"] {
     align-items: center;
     align-self: flex-start;
+    color: currentColor;
     display: flex;
     font-size: var(--lumo-icon-size-l);
     height: var(--lumo-text-field-size);
@@ -53,33 +66,63 @@
     width: var(--lumo-text-field-size);
 }
 
+:host(:not([readonly])) [part$="button"]:hover {
+    color: currentColor;
+}
+
 [part$="button"]:not([hidden]) {
     display: flex;
 }
 
+/* === Read-only === */
+
+:host([readonly]) [part="input-field"] {
+    border: none;
+    box-shadow: none;
+    color: var(--lumo-body-text-color);
+}
+
 /* === Invalid === */
+
 :host([invalid]) [part='input-field'] {
-    background-color: var(--gray-10);
+    background-color: var(--input-bg);
     box-shadow: inset 0 0 0 2px var(--lumo-error-color);
 }
 
 /* === Hover === */
+
 :host(:hover:not([readonly]):not([focused])) [part="input-field"] {
-    background-color: var(--hover-bg);
+    background-color: var(--input-hover-bg);
+}
+
+:host(:hover:not([readonly]):not([focused])) [part="label"],
+:host(:hover:not([readonly])) [part="helper-text"],
+:host(:hover:not([readonly])) [part="helper-text"] ::slotted(*) {
+    color: var(--lumo-secondary-text-color);
 }
 
 /* === Focus === */
+
 :host([focused]) [part='input-field'],
-:host([focus-ring]) [part='input-field'] {
-    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+:host([focus-ring]) [part='input-field'],
+:host([invalid][focus-ring]) [part="input-field"] {
+    box-shadow: inset 0 0 0 2px var(--input-focus-color);
 }
 
 /* === Disabled === */
+
 :host([disabled]) [part="input-field"] {
+    background-color: var(--input-disabled-bg);
     box-shadow: none;
 }
 
+:host([disabled]) [part$="button"],
+:host([readonly]) [part$="button"] {
+    display: none;
+}
+
 /* === Prefix & suffix === */
+
 [part="input-field"] ::slotted(iron-icon[icon^="vaadin:"]) {
     padding: calc((var(--lumo-text-field-size) - var(--lumo-icon-size-m)) / 2);
 }

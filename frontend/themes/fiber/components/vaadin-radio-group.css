@@ -1,4 +1,5 @@
 /* === Label === */
+
 [part="label"] {
     font-size: var(--lumo-font-size-xs);
     font-weight: normal;
@@ -8,6 +9,7 @@
 }
 
 /* === Disabled === */
+
 :host([disabled]) [part="label"] {
     color: var(--lumo-secondary-text-color);
     -webkit-text-fill-color: var(--lumo-secondary-text-color);

@@ -7,6 +7,7 @@
 }
 
 /* === Common === */
+
 :host([theme~="primary"]),
 :host([theme~="success"]),
 :host([theme~="error"]),
@@ -25,6 +26,7 @@
 }
 
 /* === Primary === */
+
 :host([theme~="primary"][theme~="dark"]) [part="overlay"] {
     border-color: var(--blue-50);
 }
@@ -34,6 +36,7 @@
 }
 
 /* === Success === */
+
 :host([theme~="success"][theme~="dark"]) [part="overlay"] {
     border-color: var(--green-40);
 }
@@ -43,6 +46,7 @@
 }
 
 /* === Error === */
+
 :host([theme~="error"][theme~="dark"]) [part="overlay"] {
     border-color: var(--red-50);
 }
@@ -52,6 +56,7 @@
 }
 
 /* === Warning === */
+
 :host([theme~="warning"][theme~="dark"]) [part="overlay"] {
     border-color: var(--yellow-30);
 }
@@ -60,6 +65,7 @@
 }
 
 /* === Dark === */
+
 :host([theme~="dark"]) [part="overlay"] {
     background-color: var(--gray-80);
 }

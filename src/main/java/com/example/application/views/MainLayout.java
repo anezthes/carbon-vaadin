@@ -4,6 +4,7 @@ import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.select.Select;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.RouterLink;
 import com.vaadin.flow.server.PWA;
@@ -20,6 +21,9 @@ import java.util.List;
 @Theme(themeFolder = "fiber")
 @PageTitle("Fiber")
 public class MainLayout extends AppLayout {
+
+	public static final String WHITE = "White";
+	public static final String GRAY_100 = "Gray 100";
 
 	public MainLayout() {
 		setPrimarySection(Section.NAVBAR);
@@ -53,9 +57,19 @@ public class MainLayout extends AppLayout {
 		toggle.getElement().setAttribute("aria-label", "Menu toggle");
 
 		H1 title = new H1("Fiber");
-		title.addClassNames("ms-xs", "my-0", "text-m");
+		title.addClassNames("me-xl", "ms-xs", "my-0", "text-m");
 
-		Header header = new Header(toggle, title);
+		Select theme = new Select(WHITE, GRAY_100);
+		theme.setValue(WHITE);
+		theme.addValueChangeListener(e -> {
+			if (e.getValue().equals(WHITE)) {
+				getElement().getThemeList().remove(Lumo.DARK);
+			} else {
+				getElement().getThemeList().add(Lumo.DARK);
+			}
+		});
+
+		Header header = new Header(toggle, title, theme);
 		header.addClassNames("bg-base", "box-border", "flex", "h-l", "items-center",
 				"w-full");
 		header.getElement().getThemeList().add(Lumo.DARK);

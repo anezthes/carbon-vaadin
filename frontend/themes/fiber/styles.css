@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 html {
-    /* === Tweaking Lumo to match Carbon === */
+    /* === Lumo variables === */
     --lumo-font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
     --lumo-font-size-xxs: 0.75rem;
@@ -45,67 +45,111 @@ html {
     --lumo-border-radius-s: 1px;
     --lumo-border-radius: 0;
 
-    --lumo-shade-10pct: var(--gray-10);
-    --lumo-shade-20pct: var(--gray-20);
-    --lumo-shade-30pct: var(--gray-30);
-    --lumo-shade-40pct: var(--gray-40);
-    --lumo-shade-50pct: var(--gray-50);
-    --lumo-shade-60pct: var(--gray-60);
-    --lumo-shade-70pct: var(--gray-70);
-    --lumo-shade-80pct: var(--gray-80);
-    --lumo-shade-90pct: var(--gray-90);
-    --lumo-shade: var(--gray-100);
-
     --lumo-primary-color: var(--blue-60);
     --lumo-success-color: var(--green-60);
     --lumo-error-color: var(--red-60);
+    --lumo-error-text-color: var(--red-60);
 
+    --lumo-header-text-color: var(--gray-100);
     --lumo-body-text-color: var(--gray-100);
     --lumo-secondary-text-color: var(--gray-70);
     --lumo-disabled-text-color: var(--gray-30);
-    --lumo-error-text-color: var(--red-60);
 
     --lumo-box-shadow-m: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 
-    /* === Misc colors used in Carbon === */
+    /* === Misc === */
+    --numeric-font-family: IBM Plex Mono, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier, monospace;
 
-    /* === Hover === */
     --hover-bg: #e5e5e5; /* TODO: not in the palette? */
+    --selected-bg: #cacaca; /* TODO: not in the palette? */
+    --active-bg: var(--gray-30);
+
+    --input-bg: var(--gray-10);
+    --input-hover-bg: #e5e5e5;
+    --input-disabled-bg: var(--gray-10);
+    --input-focus-color: var(--blue-60);
+
+    --button-focus: inset 0 0 0 2px var(--blue-60), inset 0 0 0 3px var(--gray-10);
+
+    --button-color: var(--blue-60);
+    --button-hover-bg: #e5e5e5; /* TODO: not in the palette? */
+    --button-hover-color: var(--blue-70);
+    --button-active-bg: var(--gray-30);
+    --button-active-color: var(--blue-70);
+
+    --button-disabled-bg: var(--gray-30);
+    --button-disabled-color: var(--gray-50);
+
+    --button-primary-bg: var(--blue-60);
+    --button-primary-color: var(--white);
+    --button-primary-hover-bg: #0353e9; /* TODO: not in the palette? */
+    --button-primary-hover-color: var(--white);
+    --button-primary-active-bg: var(--blue-80);
+    --button-primary-active-color: var(--white);
+
+    --button-contrast-bg: var(--gray-80);
+    --button-contrast-color: var(--white);
+    --button-contrast-hover-bg: #4c4c4c; /* TODO: not in the palette? */
+    --button-contrast-hover-color: var(--white);
+    --button-contrast-active-bg: var(--gray-60);
+    --button-contrast-active-color: var(--white);
+
+    --button-tertiary-bg: transparent;
+    --button-tertiary-color: var(--blue-60);
+    --button-tertiary-hover-bg: #0353e9; /* TODO: not in the palette? */
+    --button-tertiary-hover-color: var(--white);
+    --button-tertiary-focus-bg: var(--blue-60);
+    --button-tertiary-focus-color: var(--white);
+    --button-tertiary-active-bg: var(--blue-80);
+    --button-tertiary-active-color: var(--white);
+
+    --button-error-bg: var(--red-60);
+    --button-error-color: var(--white);
+    --button-error-hover-bg: var(--red-60-hover); /* #b81921 vs #b81922 */
+    --button-error-hover-color: var(--white);
+    --button-error-active-bg: var(--red-80);
+    --button-error-active-color: var(--white);
+
+    --button-success-bg: var(--green-60);
+    --button-success-color: var(--white);
+    --button-success-hover-bg: var(--green-60-hover);
+    --button-success-hover-color: var(--white);
+    --button-success-active-bg: var(--green-80);
+    --button-success-active-color: var(--white);
+
+    --button-upload-hover-bg: transparent;
+    --button-upload-hover-color: var(--blue-60);
+    --button-upload-active-bg: transparent;
+    --button-upload-active-color: var(--lumo-body-text-color);
+
     --grid-column-hover-bg: #cacaca; /* TODO: not in the palette? */
 
-    /* === Active === */
-    --active-bg: var(--gray-30);
+    --duration-fast: 70ms;
+    --easing-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
 }
 
 [theme~="dark"] {
-    /* === Tweaking Lumo to match Carbon === */
-    --lumo-shade-10pct: var(--gray-10);
-    --lumo-shade-20pct: var(--gray-20);
-    --lumo-shade-30pct: var(--gray-30);
-    --lumo-shade-40pct: var(--gray-40);
-    --lumo-shade-50pct: var(--gray-50);
-    --lumo-shade-60pct: var(--gray-60);
-    --lumo-shade-70pct: var(--gray-70);
-    --lumo-shade-80pct: var(--gray-80);
-    --lumo-shade-90pct: var(--gray-90);
-    --lumo-shade: var(--gray-100);
-
     --lumo-base-color: var(--gray-100);
     --lumo-primary-color: var(--blue-40);
     --lumo-primary-text-color: var(--blue-40);
     --lumo-success-color: var(--green-40);
     --lumo-success-text-color: var(--green-40);
     --lumo-error-color: var(--red-50);
-    --lumo-error-text-color: var(--red-50);
+    --lumo-error-text-color: var(--red-40);
 
     --lumo-header-text-color: white;
-    --lumo-body-text-color: white;
+    --lumo-body-text-color: var(--gray-10);
+    --lumo-secondary-text-color: var(--gray-30);
+    --lumo-disabled-text-color: var(--gray-70);
 
     /* === Misc colors used in Carbon === */
 
-    /* === Hover === */
     --hover-bg: var(--black-hover);
-
-    /* === Active === */
     --active-bg: var(--gray-80);
+
+    --input-bg: var(--gray-90);
+    --input-hover-bg: #353535;
+    --input-disabled-bg: var(--gray-90);
+    --input-focus-color: #fff;
+
 }

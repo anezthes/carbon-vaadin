@@ -1,8 +1,17 @@
+:host {
+    padding: 0;
+}
+
 :host::before {
     content: none;
 }
 
+:host([has-label]) {
+    padding-top: 0;
+}
+
 /* === Label === */
+
 [part="label"] {
     font-size: var(--lumo-font-size-xs);
     font-weight: normal;
@@ -11,11 +20,12 @@
 }
 
 /* === Value === */
+
 [part="value"],
 [part="input-field"] ::slotted(input),
 [part="input-field"] ::slotted(textarea),
 [part="input-field"] ::slotted([part="value"]) {
-    padding: 0 0 0 var(--lumo-space-m);
+    padding: 0 var(--lumo-space-m);
 }
 
 [part="value"],
@@ -25,7 +35,7 @@
 }
 
 [part="input-field"] {
-    background-color: var(--gray-10);
+    background-color: var(--input-bg);
     box-shadow: inset 0 -1px 0 0 var(--gray-50);
     font-weight: normal;
 }
@@ -35,51 +45,85 @@
 }
 
 /* === Helper === */
+
 :host([has-helper]) [part="helper-text"]::before {
     height: var(--lumo-space-xxs);
 }
 
 /* === Buttons === */
+
 [part$="button"] {
     align-items: center;
+    color: currentColor;
     font-size: var(--lumo-icon-size-l);
     height: var(--lumo-text-field-size);
     justify-content: center;
+    margin-inline-start: calc(var(--lumo-space-m) * -1);
     width: var(--lumo-text-field-size);
+}
+
+:host(:not([readonly])) [part$="button"]:hover {
+    color: currentColor;
 }
 
 [part$="button"]:not([hidden]) {
     display: flex;
 }
 
+/* === Read-only === */
+
+:host([readonly]) [part="input-field"] {
+    box-shadow: none;
+    color: var(--lumo-body-text-color);
+}
+
 /* === Invalid === */
+
 :host([invalid]) [part='input-field'] {
-    background-color: var(--gray-10);
+    background-color: var(--input-bg);
     box-shadow: inset 0 0 0 2px var(--lumo-error-color);
 }
 
 /* === Hover === */
+
 :host(:hover:not([readonly]):not([focused])) [part="input-field"] {
-    background-color: var(--hover-bg);
+    background-color: var(--input-hover-bg);
+}
+
+:host(:hover:not([readonly]):not([focused])) [part="label"],
+:host(:hover:not([readonly])) [part="helper-text"],
+:host(:hover:not([readonly])) [part="helper-text"] ::slotted(*) {
+    color: var(--lumo-secondary-text-color);
 }
 
 /* === Focus === */
+
 :host([focused]) [part='input-field'],
-:host([focus-ring]) [part='input-field'] {
-    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+:host([focus-ring]) [part='input-field'],
+:host([invalid][focus-ring]) [part="input-field"] {
+    box-shadow: inset 0 0 0 2px var(--input-focus-color);
 }
 
 /* === Disabled === */
+
 :host([disabled]) [part="input-field"] {
+    background-color: var(--input-disabled-bg);
     box-shadow: none;
 }
 
+:host([disabled]) [part$="button"],
+:host([readonly]) [part$="button"] {
+    display: none;
+}
+
 /* === Large theme variant === */
+
 :host([theme~="large"]) {
     --lumo-text-field-size: var(--lumo-size-l);
 }
 
 /* === Prefix & suffix === */
+
 [part="input-field"] ::slotted(iron-icon[icon^="vaadin:"]) {
     padding: calc((var(--lumo-text-field-size) - var(--lumo-icon-size-m)) / 2);
 }
@@ -91,4 +135,8 @@
 
 [name="prefix"]::slotted(iron-icon) {
     margin-inline-end: calc(var(--lumo-space-m) * -1);
+}
+
+[name="suffix"]::slotted(iron-icon) {
+    margin-inline-start: calc(var(--lumo-space-m) * -1);
 }

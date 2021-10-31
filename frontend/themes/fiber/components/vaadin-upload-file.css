@@ -18,12 +18,14 @@
 }
 
 /* === Name === */
+
 [part="name"] {
     line-height: var(--height);
     padding: 0 var(--lumo-space-m);
 }
 
 /* === Icons === */
+
 [part="done-icon"],
 [part="warning-icon"] {
     align-items: center;
@@ -43,6 +45,7 @@
 }
 
 /* === Border === */
+
 :host([uploading])::before,
 :host([error])::before {
     background-color: var(--gray-20);
@@ -55,6 +58,7 @@
 }
 
 /* === Status === */
+
 [part="status"],
 [part="error"] {
     align-items: center;
@@ -65,6 +69,7 @@
 }
 
 /* === Buttons === */
+
 [part="commands"] {
     align-items: center;
     height: var(--height);
@@ -85,6 +90,7 @@
 }
 
 /* Display flex when not hidden */
+
 [part="done-icon"]:not([hidden]),
 [part="warning-icon"]:not([hidden]),
 [part$="button"]:not([hidden]),
@@ -94,6 +100,7 @@
 }
 
 /* === Progress bar === */
+
 [part="progress"] {
     margin: 0 var(--lumo-space-m) var(--lumo-space-s) var(--lumo-space-m);
 }

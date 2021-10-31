@@ -16,6 +16,7 @@
 }
 
 /* === Focus === */
+
 :host(:focus),
 :host([focused]),
 :host([focus-ring]) {
@@ -25,12 +26,14 @@
 }
 
 /* === Selection === */
+
 :host([selected]) {
     color: var(--lumo-body-text-color);
     font-weight: 600;
 }
 
 /* === Underline === */
+
 :host::before {
     background-color: var(--gray-20);
     left: 0;
@@ -53,6 +56,7 @@
 }
 
 /* === Outline theme variant === */
+
 :host([theme~="outline"]) {
     background-color: var(--gray-20);
     box-shadow: inset 1px 0 0 0 var(--gray-50);

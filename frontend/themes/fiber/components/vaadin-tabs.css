@@ -12,6 +12,7 @@
 }
 
 /* === Buttons === */
+
 [part="forward-button"],
 [part="back-button"] {
     color: var(--lumo-body-text-color);
@@ -25,6 +26,7 @@
 }
 
 /* === Outline theme variant === */
+
 :host([theme~="outline"]) {
     background-color: var(--gray-20);
     min-height: var(--lumo-size-l);

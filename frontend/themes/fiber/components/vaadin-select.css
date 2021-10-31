@@ -1,11 +1,14 @@
-[part="toggle-button"] {
-    align-items: center;
-    font-size: var(--lumo-icon-size-l);
-    height: var(--lumo-text-field-size);
-    justify-content: center;
-    width: var(--lumo-text-field-size);
+@import "input-button.css";
+@import "input-field.css";
+
+/* === Opened === */
+
+:host([opened]) [part="toggle-button"] {
+    transform: rotate(180deg);
 }
 
-[part$="button"]:not([hidden]) {
-    display: flex;
+/* === Selected === */
+
+[selected] {
+    color: currentColor;
 }

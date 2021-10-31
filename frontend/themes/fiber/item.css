@@ -3,7 +3,7 @@
 vaadin-item:hover + vaadin-item,
 vaadin-item:active + vaadin-item,
 vaadin-item[focus-ring] + vaadin-item,
-vaadin-item[selected] + vaadin-item     {
+vaadin-item[selected] + vaadin-item {
     --border-top-color: transparent;
 }
 

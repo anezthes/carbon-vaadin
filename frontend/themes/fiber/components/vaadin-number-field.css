@@ -3,12 +3,12 @@
 }
 
 [part="value"] {
-    font-family: IBM Plex Mono, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier, monospace;
+    font-family: var(--numeric-font-family);
 }
 
 [part="decrease-button"],
 [part="increase-button"] {
-    color: var(--lumo-body-text-color);
+    color: currentColor;
     font-size: var(--lumo-icon-size-m);
     height: var(--lumo-text-field-size);
     width: var(--lumo-text-field-size);
@@ -18,4 +18,9 @@
 [part="increase-button"]::before {
     font-family: inherit;
     margin-top: 0;
+}
+
+[part="decrease-button"] {
+    margin-inline-start: 0;
+    margin-inline-end: calc(var(--lumo-space-m) * -1);
 }
