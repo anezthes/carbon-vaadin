@@ -18,7 +18,7 @@
 /* === Selection === */
 
 [part="items"] ::slotted(vaadin-item[selected]) {
-    background-color: var(--selected-bg) !important;
+    background-color: var(--item-selected-bg) !important;
     color: var(--lumo-body-text-color);
 }
 

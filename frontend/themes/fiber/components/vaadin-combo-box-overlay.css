@@ -3,7 +3,7 @@
 }
 
 [part="overlay"] {
-    background-color: var(--gray-10);
+    background-color: var(--overlay-bg);
     background-image: none;
     box-shadow: var(--lumo-box-shadow-m);
 }

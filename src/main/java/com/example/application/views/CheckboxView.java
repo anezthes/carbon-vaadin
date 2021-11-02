@@ -21,7 +21,7 @@ public class CheckboxView extends Main {
 
 	private void createCheckboxGroups() {
 		Div checkboxGroups = new Div();
-		checkboxGroups.addClassNames("flex", "flex-col");
+		checkboxGroups.addClassNames("flex", "flex-col", "gap-l");
 
 		CheckboxGroup checkboxGroup = createCheckboxGroup();
 		checkboxGroups.add(checkboxGroup);

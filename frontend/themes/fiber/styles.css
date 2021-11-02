@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
 html {
-    /* === Lumo variables === */
+    /* === Lumo === */
 
     --lumo-font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
 
@@ -58,28 +58,27 @@ html {
 
     --lumo-box-shadow-m: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 
-    /* === Misc === */
+    /* === Fiber === */
 
     --numeric-font-family: IBM Plex Mono, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier, monospace;
 
     --hover-bg: #e5e5e5; /* TODO: not in the palette? */
-    --selected-bg: #cacaca; /* TODO: not in the palette? */
     --active-bg: var(--gray-30);
 
+    --focus-color: var(--blue-60);
+
     --input-bg: var(--gray-10);
-    --input-hover-bg: #e5e5e5;
+    --input-hover-bg: var(--hover-bg);
     --input-disabled-bg: var(--gray-10);
-    --input-focus-color: var(--blue-60);
 
     --accordion-border-color: var(--gray-20);
     --accordion-disabled-border-color: var(--gray-10);
-    --accordion-hover-bg: #e5e5e5;
-    --accordion-focus-color: var(--white);
+    --accordion-hover-bg: var(--hover-bg);
 
     --button-color: var(--blue-60);
-    --button-hover-bg: #e5e5e5; /* TODO: not in the palette? */
+    --button-hover-bg: var(--hover-bg);
     --button-hover-color: var(--blue-70);
-    --button-focus: inset 0 0 0 2px var(--blue-60), inset 0 0 0 3px var(--gray-10);
+    --button-focus: inset 0 0 0 2px var(--focus-color), inset 0 0 0 3px var(--gray-10);
     --button-active-bg: var(--gray-30);
     --button-active-color: var(--blue-70);
 
@@ -128,6 +127,21 @@ html {
     --button-upload-active-bg: transparent;
     --button-upload-active-color: var(--lumo-body-text-color);
 
+    --checkbox-bg: transparent;
+    --checkbox-border-color: var(--gray-100);
+    --checkbox-hover-bg: var(--hover-bg); /* @diff */
+    --checkbox-checked-bg: var(--gray-100);
+    --checkbox-checkmark-color: var(--white);
+    --checkbox-disabled-border-color: var(--gray-30);
+    --checkbox-disabled-checked-bg: var(--gray-30);
+
+    --item-border-color: var(--gray-20);
+    --item-hover-bg: var(--hover-bg);
+    --item-active-bg: var(--gray-20);
+    --item-selected-bg: #cacaca;
+
+    --overlay-bg: var(--gray-10);
+
     --grid-column-hover-bg: #cacaca; /* TODO: not in the palette? */
 
     --duration-fast: 70ms;
@@ -135,6 +149,8 @@ html {
 }
 
 [theme~="dark"] {
+    /* === Lumo ==== */
+
     --lumo-base-color: var(--gray-100);
     --lumo-primary-color: var(--blue-40);
     --lumo-primary-text-color: var(--blue-40);
@@ -148,19 +164,34 @@ html {
     --lumo-secondary-text-color: var(--gray-30);
     --lumo-disabled-text-color: var(--gray-70);
 
-    /* === Misc colors used in Carbon === */
+    /* === Fiber === */
 
     --hover-bg: var(--black-hover);
     --active-bg: var(--gray-80);
 
+    --focus-color: var(--white);
+
     --accordion-border-color: var(--gray-80);
     --accordion-disabled-border-color: var(--gray-90);
-    --accordion-hover-bg: #353535;
-    --accordion-focus-color: var(--white);
+    --accordion-hover-bg: #353535; /* TODO: not in the palette */
 
     --input-bg: var(--gray-90);
     --input-hover-bg: #353535;
     --input-disabled-bg: var(--gray-90);
-    --input-focus-color: #fff;
+
+    --checkbox-bg: transparent;
+    --checkbox-border-color: var(--gray-10);
+    --checkbox-hover-bg: #353535; /* @diff */
+    --checkbox-checked-bg: var(--gray-10);
+    --checkbox-checkmark-color: var(--gray-100);
+    --checkbox-disabled-border-color: var(--gray-70);
+    --checkbox-disabled-checked-bg: var(--gray-70);
+
+    --item-border-color: var(--gray-80);
+    --item-hover-bg: #353535;
+    --item-active-bg: var(--gray-80);
+    --item-selected-bg: #4c4c4c;
+
+    --overlay-bg: var(--gray-90);
 
 }

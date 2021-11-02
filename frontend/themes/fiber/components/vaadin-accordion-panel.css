@@ -7,7 +7,7 @@
 }
 
 :host([focus-ring]) [part="summary"] {
-    box-shadow: 0 0 0 2px var(--accordion-focus-color);
+    box-shadow: 0 0 0 2px var(--focus-color);
 }
 
 [part="summary"] {

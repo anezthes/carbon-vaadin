@@ -1,3 +1,15 @@
+:host {
+    padding: 0;
+}
+
+:host::before {
+    content: none;
+}
+
+:host([has-label]) {
+    padding-top: 0;
+}
+
 /* === Label === */
 
 [part="label"] {
@@ -6,6 +18,14 @@
     line-height: var(--lumo-line-height-s);
     margin-bottom: var(--lumo-space-xs);
     padding: 0;
+}
+
+/* === Hover === */
+
+:host(:hover:not([disabled]):not([focused])) [part="label"],
+:host(:hover:not([disabled]):not([focused])) [part="helper-text"],
+:host(:hover:not([disabled]):not([focused])) [part="helper-text"] ::slotted(*) {
+    color: var(--lumo-secondary-text-color);
 }
 
 /* === Disabled === */

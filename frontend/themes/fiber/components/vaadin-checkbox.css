@@ -8,10 +8,6 @@ label {
     align-items: flex-start;
 }
 
-[part="label"] {
-
-}
-
 [part="label"]:not([empty]) {
     margin: 0 var(--lumo-space-m) 0 var(--lumo-space-xxs);
 }
@@ -19,8 +15,8 @@ label {
 /* === Checkbox === */
 
 [part="checkbox"] {
-    background-color: transparent;
-    border: 1px solid var(--gray-100);
+    background-color: var(--checkbox-bg);
+    border: 1px solid var(--checkbox-border-color);
     border-radius: var(--lumo-border-radius-s);
     box-sizing: border-box;
     height: var(--lumo-icon-size-m);
@@ -33,6 +29,7 @@ label {
 }
 
 [part="checkbox"]::after {
+    border-color: var(--checkbox-checkmark-color);
     top: 0.625rem;
     left: 0.375rem;
 }
@@ -46,14 +43,14 @@ label {
 /* === Hover === */
 
 :host(:not([checked]):not([indeterminate]):not([disabled]):hover) [part="checkbox"] {
-    background-color: transparent;
+    background-color: var(--checkbox-hover-bg);
 }
 
 /* === Focus === */
 
 :host([focus-ring]) [part="checkbox"] {
     box-shadow: none;
-    outline: 2px solid var(--lumo-primary-color);
+    outline: 2px solid var(--focus-color);
     outline-offset: 1px;
 }
 
@@ -61,20 +58,20 @@ label {
 
 :host([indeterminate]) [part="checkbox"],
 :host([checked]) [part="checkbox"] {
-    background-color: var(--gray-100);
+    background-color: var(--checkbox-checked-bg);
 }
 
 /* === Disabled === */
 
 :host([disabled]) [part="checkbox"] {
     background-color: transparent;
-    border-color: var(--gray-30);
+    border-color: var(--checkbox-disabled-border-color);
 }
 
-:host([disabled][checked]) [part="checkbox"] {
-    background-color: var(--gray-30);
+:host([checked][checkedchecke]) [part="checkbox"] {
+    background-color: var(--checkbox-disabled-checked-bg);
 }
 
 :host([disabled]) [part="checkbox"]::after {
-    border-color: var(--lumo-primary-contrast-color);
+    border-color: var(--checkbox-checkmark-color);
 }
