@@ -34,3 +34,9 @@
     color: var(--lumo-secondary-text-color);
     -webkit-text-fill-color: var(--lumo-secondary-text-color);
 }
+
+/* === Focused === */
+
+:host([focused]:not([disabled])) [part="label"] {
+    color: var(--lumo-secondary-text-color);
+}

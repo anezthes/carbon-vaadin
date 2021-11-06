@@ -1,13 +1,6 @@
 /* === Carbon's color palette === */
+
 html {
-  --black: #000000;
-  --black-100: black;
-  --black-hover: #212121;
-
-  --white: #ffffff;
-  --white-0: white;
-  --white-hover: #e8e8e8;
-
   --yellow-10: #fcf4d6;
   --yellow-20: #fddc69;
   --yellow-30: #f1c21b;

@@ -1,8 +1,8 @@
 :host {
-    --_lumo-grid-border-color: var(--gray-20);
-    --_lumo-grid-secondary-border-color: var(--gray-20);
-    --_lumo-grid-selected-row-color: var(--blue-20);
-    background-color: var(--gray-10);
+    --_lumo-grid-border-color: var(--grid-border-color);
+    --_lumo-grid-secondary-border-color: var(--grid-border-color);
+    --_lumo-grid-selected-row-color: var(--grid-selected-bg);
+    background-color: var(--grid-bg);
 }
 
 /* === Misc fixes === */
@@ -21,30 +21,39 @@
     min-height: var(--lumo-size-l);
 }
 
-/* === Body cell === */
+:host(:not([theme~="no-row-borders"])) [part~="row"][selected] [part~="cell"]:not([part~="details-cell"]) {
+    box-shadow: none;
+}
+
+/* === Body & details cell === */
+
+[part~="body-cell"],
+[part~="details-cell"] {
+    background-color: var(--grid-bg);
+    color: var(--lumo-secondary-text-color);
+}
 
 [part~="body-cell"] {
-    background-color: var(--gray-10);
-    color: var(--lumo-secondary-text-color);
     font-size: var(--lumo-font-size-s);
 }
 
-[part="row"]:hover [part~="body-cell"] {
-    background-color: var(--hover-bg);
+[part="row"]:hover {
+    --_lumo-grid-secondary-border-color: var(--grid-hover-border-color);
+}
+
+[part="row"]:hover [part~="body-cell"],
+[part="row"]:hover [part~="details-cell"] {
+    background-color: var(--grid-hover-bg);
     color: var(--lumo-body-text-color);
 }
 
-/* === Details cell === */
-
 [part~="details-cell"] {
     align-items: center;
-    background-color: var(--gray-10);
-    color: var(--lumo-secondary-text-color);
     display: flex;
 }
 
-[part~="details-cell"][aria-expanded]::before {
-    background-color: var(--_lumo-grid-secondary-border-color);
+[part~="details-cell"]::before {
+    background-color: var(--grid-details-border-color);
     content: "";
     height: var(--_lumo-grid-border-width);
     left: var(--lumo-space-m);
@@ -53,15 +62,10 @@
     top: 0;
 }
 
-[part="row"]:hover [part~="details-cell"] {
-    background-color: var(--hover-bg);
-    color: var(--lumo-body-text-color);
-}
-
 /* === Header === */
 
 [part~="header-cell"] {
-    background-color: var(--gray-20);
+    background-color: var(--grid-th-bg);
     color: var(--lumo-body-text-color);
     font-size: var(--lumo-font-size-s);
 }
@@ -80,25 +84,32 @@
 
 /* === Row stripes === */
 
-:host([theme~="row-stripes"]) [part~="row"]:not([odd]) [part~="body-cell"],
-:host([theme~="row-stripes"]) [part~="row"]:not([odd]) [part~="details-cell"] {
+:host([theme~="row-stripes"]) [part~="row"][odd] {
+    --_lumo-grid-secondary-border-color: var(--grid-odd-border-color);
+}
+
+:host([theme~="row-stripes"]) [part~="row"]:not([odd]) [part~="body-cell"] {
     background-image: none;
-    background-color: var(--gray-10);
+    background-color: var(--grid-bg);
 }
 
-:host([theme~="row-stripes"]) [part~="row"][odd] [part~="body-cell"],
-:host([theme~="row-stripes"]) [part~="row"][odd] [part~="details-cell"] {
-    background-color: var(--gray-20);
-}
-
-:host([theme~="row-stripes"]) [part~="row"][odd] [part~="details-cell"]::before {
-    background-color: var(--gray-30);
+:host([theme~="row-stripes"]) [part~="row"][odd] [part~="body-cell"] {
+    background-color: var(--grid-odd-bg);
 }
 
 /* === Sorting === */
 
+[part~="header-cell"][aria-sort="ascending"],
+[part~="header-cell"][aria-sort="descending"] {
+    background-color: var(--grid-th-active-bg);
+}
+
 [part~="header-cell"][aria-sort]:hover {
-    background-color: var(--grid-column-hover-bg);
+    background-color: var(--grid-th-hover-bg);
+}
+
+:host(:not([navigating])) [part~="header-cell"][aria-sort]:focus {
+    box-shadow: inset 0 0 0 2px var(--focus-color);
 }
 
 [part~="header-cell"][aria-sort] ::slotted(vaadin-grid-cell-content) {
@@ -109,21 +120,36 @@
 
 :host([navigating]) [part~='row']:focus::before,
 :host([navigating]) [part~='cell']:focus::before {
-    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+    box-shadow: inset 0 0 0 2px var(--focus-color);
 }
 
 /* === Selection === */
 
-:host(:not([reordering])) [part~="row"][selected] [part~="body-cell"]:not([part~="details-cell"]),
-:host(:not([reordering])) [part~="row"][selected] [part~="details-cell"] {
-    background-image: none;
-    background-color: var(--_lumo-grid-selected-row-color);
-    border-color: var(--gray-30);
+[part~="row"][selected] {
+    --_lumo-grid-secondary-border-color: var(--grid-selected-border-color);
+}
+
+[part~="row"][selected]:hover {
+    --_lumo-grid-selected-row-color: var(--grid-selected-hover-bg);
+    --_lumo-grid-secondary-border-color: var(--grid-selected-hover-border-color);
+}
+
+[part~="row"][selected] [part~="body-cell"] {
     color: var(--lumo-body-text-color);
 }
 
-:host(:not([reordering])) [part~="row"][selected] [part~="details-cell"]::before {
-    background-color: var(--gray-30);
+:host([theme~="row-stripes"]) [part~="row"][selected] {
+    --_lumo-grid-selected-row-color: var(--grid-bg);
+    --_lumo-grid-secondary-border-color: var(--grid-selected-border-color);
+}
+
+:host([theme~="row-stripes"]) [part~="row"][selected][odd] {
+    --_lumo-grid-selected-row-color: var(--grid-odd-bg);
+}
+
+:host([theme~="row-stripes"]) [part~="row"][selected]:hover {
+    --_lumo-grid-selected-row-color: var(--grid-selected-hover-bg);
+    --_lumo-grid-secondary-border-color: var(--grid-selected-hover-border-color);
 }
 
 /* === Sizing variants === */

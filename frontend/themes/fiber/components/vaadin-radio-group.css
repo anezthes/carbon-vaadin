@@ -8,9 +8,23 @@
     padding: 0;
 }
 
+/* === Hover === */
+
+:host(:hover:not([disabled]):not([focused])) [part="label"],
+:host(:hover:not([disabled]):not([focused])) [part="helper-text"],
+:host(:hover:not([disabled]):not([focused])) [part="helper-text"] ::slotted(*) {
+    color: var(--lumo-secondary-text-color);
+}
+
 /* === Disabled === */
 
 :host([disabled]) [part="label"] {
     color: var(--lumo-secondary-text-color);
     -webkit-text-fill-color: var(--lumo-secondary-text-color);
+}
+
+/* === Focused === */
+
+:host([focused]:not([disabled])) [part="label"] {
+    color: var(--lumo-secondary-text-color);
 }

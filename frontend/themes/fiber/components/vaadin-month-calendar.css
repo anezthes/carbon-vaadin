@@ -1,0 +1,81 @@
+:host {
+    font-size: var(--lumo-font-size-s);
+    padding: 0 var(--lumo-space-xxs);
+}
+
+[part="date"] {
+    transition: all var(--duration-fast) var(--easing-standard);
+}
+
+[part="date"]::before {
+    content: none;
+}
+
+/* === Today === */
+
+[part="date"][today] {
+    font-weight: 600;
+}
+
+[part="date"][today]::after {
+    background-color: var(--lumo-primary-color);
+    bottom: 0.4375rem;
+    content: "";
+    height: 0.25rem;
+    position: absolute;
+    width: 0.25rem;
+}
+
+/* === Selected === */
+
+[part="date"][selected] {
+    background-color: var(--datepicker-selected-bg);
+    color: var(--datepicker-selected-color);
+}
+
+[part="date"][today][selected] {
+    /* @strange: gray-100 theme uses white here instead of blue */
+    box-shadow: inset 0 0 0 2px var(--focus-color);
+}
+
+[part="date"][today][selected]::after {
+    content: none;
+}
+
+/* === Focus === */
+
+[part="date"][focused] {
+    box-shadow: var(--datepicker-focus);
+}
+
+[part="date"][selected][focused] {
+    box-shadow: var(--datepicker-selected-focus);
+}
+
+:host(:not([focused])) [part="date"][focused]::before {
+    animation: none;
+}
+
+/* === Weekdays, weekday and week numbers === */
+
+[part="weekdays"], [part="weekday"], [part="week-numbers"] {
+    color: var(--lumo-body-text-color);
+    font-size: var(--lumo-font-size-s);
+}
+
+[part="weekdays"] {
+    margin-bottom: 0;
+}
+
+[part="weekday"] {
+    line-height: var(--lumo-size-m);
+}
+
+/* === Month header === */
+
+[part="month-header"] {
+    font-size: var(--lumo-font-size-s);
+    font-weight: 600;
+    line-height: var(--lumo-size-m);
+    margin-bottom: 0;
+}

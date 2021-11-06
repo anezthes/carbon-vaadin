@@ -90,6 +90,7 @@ import vaadinComboBoxCss from 'themes/fiber/components/vaadin-combo-box.css';
 import vaadinContextMenuItemCss from 'themes/fiber/components/vaadin-context-menu-item.css';
 import vaadinContextMenuListBoxCss from 'themes/fiber/components/vaadin-context-menu-list-box.css';
 import vaadinContextMenuOverlayCss from 'themes/fiber/components/vaadin-context-menu-overlay.css';
+import vaadinDatePickerOverlayContentCss from 'themes/fiber/components/vaadin-date-picker-overlay-content.css';
 import vaadinDatePickerTextFieldCss from 'themes/fiber/components/vaadin-date-picker-text-field.css';
 import vaadinDatePickerCss from 'themes/fiber/components/vaadin-date-picker.css';
 import vaadinDialogOverlayCss from 'themes/fiber/components/vaadin-dialog-overlay.css';
@@ -101,6 +102,7 @@ import vaadinItemCss from 'themes/fiber/components/vaadin-item.css';
 import vaadinListBoxCss from 'themes/fiber/components/vaadin-list-box.css';
 import vaadinMenuBarButtonCss from 'themes/fiber/components/vaadin-menu-bar-button.css';
 import vaadinMenuBarCss from 'themes/fiber/components/vaadin-menu-bar.css';
+import vaadinMonthCalendarCss from 'themes/fiber/components/vaadin-month-calendar.css';
 import vaadinNotificationCardCss from 'themes/fiber/components/vaadin-notification-card.css';
 import vaadinNumberFieldCss from 'themes/fiber/components/vaadin-number-field.css';
 import vaadinPasswordFieldCss from 'themes/fiber/components/vaadin-password-field.css';
@@ -237,6 +239,12 @@ export const applyTheme = (target) => {
       `
     );
     registerStyles(
+      'vaadin-date-picker-overlay-content',
+      css`
+        ${unsafeCSS(vaadinDatePickerOverlayContentCss.toString())}
+      `
+    );
+    registerStyles(
       'vaadin-date-picker-text-field',
       css`
         ${unsafeCSS(vaadinDatePickerTextFieldCss.toString())}
@@ -300,6 +308,12 @@ export const applyTheme = (target) => {
       'vaadin-menu-bar',
       css`
         ${unsafeCSS(vaadinMenuBarCss.toString())}
+      `
+    );
+    registerStyles(
+      'vaadin-month-calendar',
+      css`
+        ${unsafeCSS(vaadinMonthCalendarCss.toString())}
       `
     );
     registerStyles(

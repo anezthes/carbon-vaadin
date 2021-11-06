@@ -9,11 +9,11 @@ import com.vaadin.flow.component.upload.Upload;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
-@PageTitle("Upload")
-@Route(value = "upload", layout = MainLayout.class)
-public class UploadView extends Main {
+@PageTitle("File uploader")
+@Route(value = "file-upload", layout = MainLayout.class)
+public class FileUploaderView extends Main {
 
-	public UploadView() {
+	public FileUploaderView() {
 		addClassNames("flex", "flex-col", "pb-l", "px-l");
 
 		add(new H2("Upload"));

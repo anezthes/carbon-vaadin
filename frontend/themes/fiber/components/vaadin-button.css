@@ -67,7 +67,7 @@
     --button-hover-color: var(--button-tertiary-hover-color);
     --button-active-bg: var(--button-tertiary-active-bg);
     --button-active-color: var(--button-tertiary-active-color);
-    box-shadow: inset 0 0 0 1px var(--blue-60);
+    box-shadow: inset 0 0 0 1px var(--button-tertiary-border-color);
     color: var(--button-tertiary-color);
     padding: 0 var(--lumo-space-m);
 }
@@ -120,6 +120,11 @@
     font-size: var(--lumo-font-size-s);
 }
 
+:host([theme~="large"]) [part] ::slotted(iron-icon) {
+    height: var(--lumo-icon-size-l);
+    width: var(--lumo-icon-size-l);
+}
+
 /* === Icon === */
 
 :host([theme~="icon"]:not([theme~="tertiary-inline"])) {
@@ -135,7 +140,7 @@
 }
 
 [part] ::slotted(iron-icon[icon^="vaadin:"]) {
-    padding: 0;
+    /* padding: 0; */
 }
 
 :host(:not([theme~="icon"])) [part="prefix"] ::slotted(iron-icon[icon^="vaadin:"]) {
@@ -166,22 +171,41 @@
     box-shadow: var(--button-focus);
 }
 
+:host([theme~="primary"][focused]),
+:host([theme~="tertiary"][focused]),
+:host([theme~="contrast"][focused]),
+:host([theme~="error"][focused]),
+:host([theme~="success"][focused]) {
+    box-shadow: var(--button-focus-inset);
+}
+
 /* === Disabled === */
 
 :host([disabled][disabled]) {
-    background-color: var(--button-disabled-bg) !important;
-    box-shadow: none;
+    background-color: transparent !important;
     color: var(--button-disabled-color);
+}
+
+:host([theme~="tertiary"][disabled][disabled]) {
+    box-shadow: inset 0 0 0 1px var(--button-tertiary-disabled-border-color);
+}
+
+:host([theme~="primary"][disabled][disabled]),
+:host([theme~="contrast"][disabled][disabled]),
+:host([theme~="error"][disabled][disabled]),
+:host([theme~="success"][disabled][disabled]) {
+    background-color: var(--button-disabled-bg) !important;
 }
 
 /* === Upload === */
 
 :host([theme~="upload"]) {
-    --button-hover-bg: var(--button-upload-hover-bg);
-    --button-hover-color: var(--button-upload-hover-color);
-    --button-active-bg: var(--button-upload-active-bg);
-    --button-active-color: var(--button-upload-active-color);
-    outline: 1px dashed var(--gray-50);
+    --button-color: var(--upload-color);
+    --button-hover-bg: var(--upload-hover-bg);
+    --button-hover-color: var(--upload-hover-color);
+    --button-active-bg: var(--upload-active-bg);
+    --button-active-color: var(--upload-active-color);
+    outline: 1px dashed var(--upload-border-color);
     outline-offset: -1px;
     font-size: var(--lumo-font-size-m);
     height: 6rem;
@@ -192,7 +216,7 @@
 
 :host([theme~="upload"]:hover),
 :host([theme~="upload"][focused]) {
-    outline: 2px solid var(--lumo-primary-color);
+    outline: 2px solid var(--focus-color);
     outline-offset: -2px;
     text-decoration: underline;
 }
@@ -209,4 +233,10 @@
 :host([theme~="upload"]) [part="label"] {
     text-align: left;
     white-space: normal;
+}
+
+:host([theme~="upload"][disabled][disabled]) {
+    color: var(--upload-disabled-color);
+    background-color: var(--upload-bg) !important;
+    outline-color: var(--upload-disabled-border-color);
 }

@@ -1,6 +1,7 @@
 package com.example.application.views;
 
 import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.UI;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.*;
@@ -63,9 +64,9 @@ public class MainLayout extends AppLayout {
 		theme.setValue(WHITE);
 		theme.addValueChangeListener(e -> {
 			if (e.getValue().equals(WHITE)) {
-				getElement().getThemeList().remove(Lumo.DARK);
+				UI.getCurrent().getElement().getThemeList().remove(Lumo.DARK);
 			} else {
-				getElement().getThemeList().add(Lumo.DARK);
+				UI.getCurrent().getElement().getThemeList().add(Lumo.DARK);
 			}
 		});
 
@@ -109,6 +110,7 @@ public class MainLayout extends AppLayout {
 				new MenuItemInfo("Combo box", "la la-caret-down", ComboBoxView.class),
 				new MenuItemInfo("Data table", "la la-table", DataTableView.class),
 				new MenuItemInfo("Date picker", "la la-calendar", DatePickerView.class),
+				new MenuItemInfo("File uploader", "la la-upload", FileUploaderView.class),
 				new MenuItemInfo("Modal", "la la-credit-card", ModalView.class),
 				new MenuItemInfo("Notification", "la la-bell", NotificationView.class),
 				new MenuItemInfo("Number input", "la la-calculator", NumberInputView.class),
@@ -119,7 +121,6 @@ public class MainLayout extends AppLayout {
 				new MenuItemInfo("Tabs", "la la-database", TabsView.class),
 				new MenuItemInfo("Tag", "la la-tag", TagView.class),
 				new MenuItemInfo("Text input", "la la-terminal", TextInputView.class),
-				new MenuItemInfo("Upload", "la la-upload", UploadView.class),
 		};
 		List<RouterLink> links = new ArrayList<>();
 		for (MenuItemInfo menuItemInfo : menuItems) {

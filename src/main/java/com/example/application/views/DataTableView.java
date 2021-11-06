@@ -23,15 +23,15 @@ public class DataTableView extends Main {
 
 	private void createDataTables() {
 		Grid<LoadBalancer> grid = createGrid();
-		add(grid);
-
-		grid = createGrid();
-		grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
-		add(new H3("Stripes"), grid);
+		add(new H3("Default"), grid);
 
 		grid = createGrid();
 		grid.getColumns().forEach(column -> column.setSortable(true));
 		add(new H3("Sortable"), grid);
+
+		grid = createGrid();
+		grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
+		add(new H3("Zebra"), grid);
 
 		grid = createGrid();
 		grid.addThemeVariants(GridVariant.LUMO_COMPACT);
@@ -47,15 +47,22 @@ public class DataTableView extends Main {
 
 		grid = createGrid();
 		grid.setSelectionMode(Grid.SelectionMode.MULTI);
-		add(new H3("Multi-select"), grid);
+		add(new H3("Selection"), grid);
 
 		grid = createGrid();
-		grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
 		grid.setSelectionMode(Grid.SelectionMode.MULTI);
-		add(new H3("Multi-select with stripes"), grid);
+		grid.addThemeVariants(GridVariant.LUMO_ROW_STRIPES);
+		add(new H3("Selection & zebra"), grid);
+
+		grid = createGrid(true);
+		add(new H3("Expansion"), grid);
 	}
 
 	private Grid<LoadBalancer> createGrid() {
+		return createGrid(false);
+	}
+
+	private Grid<LoadBalancer> createGrid(boolean expansion) {
 		Grid<LoadBalancer> grid = new Grid();
 		grid.addThemeVariants(GridVariant.LUMO_NO_BORDER);
 		grid.setAllRowsVisible(true);
@@ -68,7 +75,9 @@ public class DataTableView extends Main {
 		grid.addColumn(LoadBalancer::getAttachedGroups).setHeader("Attached Groups");
 		grid.addColumn(LoadBalancer::getStatus).setHeader("Status");
 
-		grid.setItemDetailsRenderer(new ComponentRenderer<>(loadBalancer -> new Span("Aux squad rules")));
+		if (expansion) {
+			grid.setItemDetailsRenderer(new ComponentRenderer<>(loadBalancer -> new Span("Aux squad rules")));
+		}
 
 		grid.setItems(
 				new LoadBalancer("Load Balance 3", "HTTP", 3000, "Round robin", "Kevins VM Groups", "Disabled"),

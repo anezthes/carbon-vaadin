@@ -1,0 +1,10 @@
+:host {
+  background-color: var(--datepicker-overlay-bg);
+  background-image: linear-gradient(var(--datepicker-yearscroller-bg), var(--datepicker-yearscroller-bg));
+}
+
+/* === Years === */
+
+[part="years"]::before {
+  background-image: linear-gradient(var(--datepicker-overlay-bg), var(--datepicker-overlay-bg));
+}

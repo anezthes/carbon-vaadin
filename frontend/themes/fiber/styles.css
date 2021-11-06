@@ -62,7 +62,7 @@ html {
 
     --numeric-font-family: IBM Plex Mono, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier, monospace;
 
-    --hover-bg: #e5e5e5; /* TODO: not in the palette? */
+    --hover-bg: #e5e5e5; /* @palette */
     --active-bg: var(--gray-30);
 
     --focus-color: var(--blue-60);
@@ -78,62 +78,96 @@ html {
     --button-color: var(--blue-60);
     --button-hover-bg: var(--hover-bg);
     --button-hover-color: var(--blue-70);
-    --button-focus: inset 0 0 0 2px var(--focus-color), inset 0 0 0 3px var(--gray-10);
-    --button-active-bg: var(--gray-30);
+    --button-focus: inset 0 0 0 2px var(--focus-color);
+    --button-focus-inset: inset 0 0 0 2px var(--focus-color), inset 0 0 0 3px var(--gray-10);
+    --button-active-bg: var(--active-bg);
     --button-active-color: var(--blue-70);
-
     --button-disabled-bg: var(--gray-30);
     --button-disabled-color: var(--gray-50);
 
     --button-primary-bg: var(--blue-60);
-    --button-primary-color: var(--white);
-    --button-primary-hover-bg: #0353e9; /* TODO: not in the palette? */
-    --button-primary-hover-color: var(--white);
+    --button-primary-color: white;
+    --button-primary-hover-bg: #0353e9; /* @palette */
+    --button-primary-hover-color: white;
     --button-primary-active-bg: var(--blue-80);
-    --button-primary-active-color: var(--white);
+    --button-primary-active-color: white;
 
     --button-contrast-bg: var(--gray-80);
-    --button-contrast-color: var(--white);
-    --button-contrast-hover-bg: #4c4c4c; /* TODO: not in the palette? */
-    --button-contrast-hover-color: var(--white);
+    --button-contrast-color: white;
+    --button-contrast-hover-bg: #4c4c4c; /* @palette */
+    --button-contrast-hover-color: white;
     --button-contrast-active-bg: var(--gray-60);
-    --button-contrast-active-color: var(--white);
+    --button-contrast-active-color: white;
 
     --button-tertiary-bg: transparent;
+    --button-tertiary-border-color: var(--blue-60);
     --button-tertiary-color: var(--blue-60);
-    --button-tertiary-hover-bg: #0353e9; /* TODO: not in the palette? */
-    --button-tertiary-hover-color: var(--white);
+    --button-tertiary-hover-bg: #0353e9; /* @palette */
+    --button-tertiary-hover-color: white;
     --button-tertiary-focus-bg: var(--blue-60);
-    --button-tertiary-focus-color: var(--white);
+    --button-tertiary-focus-color: white;
     --button-tertiary-active-bg: var(--blue-80);
-    --button-tertiary-active-color: var(--white);
+    --button-tertiary-active-color: white;
+    --button-tertiary-disabled-border-color: var(--gray-30);
 
     --button-error-bg: var(--red-60);
-    --button-error-color: var(--white);
+    --button-error-color: white;
     --button-error-hover-bg: var(--red-60-hover); /* #b81921 vs #b81922 */
-    --button-error-hover-color: var(--white);
+    --button-error-hover-color: white;
     --button-error-active-bg: var(--red-80);
-    --button-error-active-color: var(--white);
+    --button-error-active-color: white;
 
     --button-success-bg: var(--green-60);
-    --button-success-color: var(--white);
+    --button-success-color: white;
     --button-success-hover-bg: var(--green-60-hover);
-    --button-success-hover-color: var(--white);
+    --button-success-hover-color: white;
     --button-success-active-bg: var(--green-80);
-    --button-success-active-color: var(--white);
+    --button-success-active-color: white;
 
-    --button-upload-hover-bg: transparent;
-    --button-upload-hover-color: var(--blue-60);
-    --button-upload-active-bg: transparent;
-    --button-upload-active-color: var(--lumo-body-text-color);
+    --button-group-border-color: var(--gray-20);
 
     --checkbox-bg: transparent;
     --checkbox-border-color: var(--gray-100);
-    --checkbox-hover-bg: var(--hover-bg); /* @diff */
+    --checkbox-hover-bg: transparent;
     --checkbox-checked-bg: var(--gray-100);
-    --checkbox-checkmark-color: var(--white);
+    --checkbox-checkmark-color: white;
     --checkbox-disabled-border-color: var(--gray-30);
     --checkbox-disabled-checked-bg: var(--gray-30);
+
+    --datepicker-focus-color: var(--blue-60);
+    --datepicker-focus: inset 0 0 0 2px var(--datepicker-focus-color);
+    --datepicker-selected-focus: inset 0 0 0 2px var(--datepicker-focus-color), inset 0 0 0 3px white;
+    --datepicker-selected-bg: var(--blue-60);
+    --datepicker-selected-color: white;
+    --datepicker-overlay-bg: var(--gray-10);
+    --datepicker-yearscroller-bg: var(--gray-20);
+
+    --upload-bg: transparent;
+    --upload-color: var(--blue-60);
+    --upload-border-color: var(--gray-50);
+    --upload-hover-bg: transparent;
+    --upload-hover-color: var(--blue-60);
+    --upload-active-bg: transparent;
+    --upload-active-color: var(--lumo-body-text-color);
+    --upload-disabled-color: var(--gray-30);
+    --upload-disabled-border-color: var(--gray-30);
+    --upload-file-bg: var(--gray-10);
+    --upload-file-border-color: var(--gray-20);
+
+    --grid-bg: var(--gray-10);
+    --grid-border-color: var(--gray-20);
+    --grid-details-border-color: var(--gray-20);
+    --grid-hover-bg: var(--hover-bg);
+    --grid-hover-border-color: var(--hover-bg);
+    --grid-odd-bg: var(--gray-20);
+    --grid-odd-border-color: var(--gray-20);
+    --grid-th-bg: var(--gray-20);
+    --grid-th-hover-bg: #cacaca; /* @palette */
+    --grid-th-active-bg: #cacaca; /* @palette */
+    --grid-selected-bg: var(--gray-20);
+    --grid-selected-border-color: var(--gray-30);
+    --grid-selected-hover-bg: #cacaca; /* @palette */
+    --grid-selected-hover-border-color: #cacaca; /* @palette */
 
     --item-border-color: var(--gray-20);
     --item-hover-bg: var(--hover-bg);
@@ -141,8 +175,6 @@ html {
     --item-selected-bg: #cacaca;
 
     --overlay-bg: var(--gray-10);
-
-    --grid-column-hover-bg: #cacaca; /* TODO: not in the palette? */
 
     --duration-fast: 70ms;
     --easing-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
@@ -166,32 +198,105 @@ html {
 
     /* === Fiber === */
 
-    --hover-bg: var(--black-hover);
+    --hover-bg: #353535; /* @palette */
     --active-bg: var(--gray-80);
 
-    --focus-color: var(--white);
+    --focus-color: white;
 
     --accordion-border-color: var(--gray-80);
     --accordion-disabled-border-color: var(--gray-90);
-    --accordion-hover-bg: #353535; /* TODO: not in the palette */
+    --accordion-hover-bg: var(--hover-bg);
+
+    --button-color: var(--blue-40);
+    --button-hover-bg: var(--hover-bg);
+    --button-hover-color: var(--blue-30);
+    --button-focus: inset 0 0 0 2px var(--focus-color);
+    --button-focus-inset: inset 0 0 0 2px var(--focus-color), inset 0 0 0 3px var(--gray-100);
+    --button-active-bg: var(--active-bg);
+    --button-active-color: var(--blue-30);
+
+    --button-disabled-bg: var(--gray-70);
+    --button-disabled-color: var(--gray-50);
+
+    --button-primary-bg: var(--blue-60);
+    --button-primary-color: white;
+    --button-primary-hover-bg: #0353e9; /* @palette */
+    --button-primary-hover-color: white;
+    --button-primary-active-bg: var(--blue-80);
+    --button-primary-active-color: white;
+
+    --button-contrast-bg: var(--gray-60);
+    --button-contrast-color: white;
+    --button-contrast-hover-bg: #606060; /* @palette */
+    --button-contrast-hover-color: white;
+    --button-contrast-active-bg: var(--gray-80);
+    --button-contrast-active-color: white;
+
+    --button-tertiary-bg: transparent;
+    --button-tertiary-border-color: white;
+    --button-tertiary-color: white;
+    --button-tertiary-hover-bg: var(--gray-10);
+    --button-tertiary-hover-color: var(--gray-100);
+    --button-tertiary-focus-bg: white;
+    --button-tertiary-focus-color: var(--gray-100);
+    --button-tertiary-active-bg: var(--gray-30);
+    --button-tertiary-active-color: var(--gray-100);
+    --button-tertiary-disabled-border-color: var(--gray-70);
+
+    --button-group-border-color: var(--gray-80);
 
     --input-bg: var(--gray-90);
-    --input-hover-bg: #353535;
+    --input-hover-bg: var(--hover-bg);
     --input-disabled-bg: var(--gray-90);
 
     --checkbox-bg: transparent;
     --checkbox-border-color: var(--gray-10);
-    --checkbox-hover-bg: #353535; /* @diff */
+    --checkbox-hover-bg: transparent;
     --checkbox-checked-bg: var(--gray-10);
     --checkbox-checkmark-color: var(--gray-100);
     --checkbox-disabled-border-color: var(--gray-70);
     --checkbox-disabled-checked-bg: var(--gray-70);
 
+    --datepicker-focus-color: var(--blue-60);
+    --datepicker-focus: inset 0 0 0 2px var(--datepicker-focus-color);
+    --datepicker-selected-focus: inset 0 0 0 2px var(--datepicker-focus-color), inset 0 0 0 3px var(--gray-80);
+    --datepicker-selected-bg: var(--blue-60);
+    --datepicker-selected-color: white;
+    --datepicker-overlay-bg: var(--gray-90);
+    --datepicker-yearscroller-bg: var(--gray-80);
+
+    --upload-bg: transparent;
+    --upload-color: var(--blue-40);
+    --upload-border-color: var(--gray-60);
+    --upload-hover-bg: transparent;
+    --upload-hover-color: var(--blue-40);
+    --upload-active-bg: transparent;
+    --upload-active-color: var(--lumo-body-text-color);
+    --upload-disabled-color: var(--gray-70);
+    --upload-disabled-border-color: var(--gray-70);
+
+    --upload-file-bg: var(--gray-90);
+    --upload-file-border-color: var(--gray-80);
+
+    --grid-bg: var(--gray-90);
+    --grid-border-color: var(--gray-80);
+    --grid-details-border-color: var(--gray-80);
+    --grid-hover-bg: var(--hover-bg);
+    --grid-hover-border-color: var(--hover-bg);
+    --grid-odd-bg: var(--gray-80);
+    --grid-odd-border-color: var(--gray-80);
+    --grid-th-bg: var(--gray-80);
+    --grid-th-hover-bg: #4c4c4c; /* @palette */
+    --grid-th-active-bg: #4c4c4c; /* @palette */
+    --grid-selected-bg: var(--gray-80);
+    --grid-selected-border-color: var(--gray-70);
+    --grid-selected-hover-bg: #4c4c4c; /* @palette */
+    --grid-selected-hover-border-color: #4c4c4c; /* @palette */
+
     --item-border-color: var(--gray-80);
-    --item-hover-bg: #353535;
+    --item-hover-bg: var(--hover-bg);
     --item-active-bg: var(--gray-80);
-    --item-selected-bg: #4c4c4c;
+    --item-selected-bg: #4c4c4c; /* @palette */
 
     --overlay-bg: var(--gray-90);
-
 }

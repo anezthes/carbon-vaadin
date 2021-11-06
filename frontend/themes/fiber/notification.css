@@ -3,19 +3,27 @@ vaadin-notification-card flow-component-renderer {
 }
 
 /* === Close button === */
+
 vaadin-notification-card vaadin-button[theme~="icon"] {
+  --button-color: var(--gray-100);
   --button-hover-bg: transparent;
-  --button-hover-color: var(--lumo-body-text-color);
+  --button-hover-color: var(--gray-100);
   --button-active-bg: transparent;
-  --button-active-color: var(--lumo-body-text-color);
+  --button-active-color: var(--gray-100);
 }
 
+vaadin-notification-card[theme~="dark"] vaadin-button[theme~="icon"] {
+  --button-color: white;
+  --button-hover-color: white;
+  --button-active-color: white;
+}
 
-vaadin-notification-card[theme~="dark"] vaadin-button[focused] {
-  box-shadow: inset 0 0 0 2px white;
+vaadin-notification-card[theme~="dark"] vaadin-button[theme~="icon"][focused] {
+  box-shadow: inset 0 0 0 2px var(--focus-color);
 }
 
 /* === Notification icon === */
+
 vaadin-notification-card iron-icon.text-warning {
   color: var(--yellow-30);
   position: relative;

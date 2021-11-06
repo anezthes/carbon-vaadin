@@ -1,5 +1,5 @@
 .button-group vaadin-button::after {
-  background-color: var(--gray-20);
+  background-color: var(--button-group-border-color);
   content: "";
   filter: none;
   height: 100%;

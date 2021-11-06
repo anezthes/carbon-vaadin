@@ -8,6 +8,7 @@
 }
 
 [part="overlay"] {
+    background-color: var(--overlay-bg);
     box-shadow: none;
 }
 
