@@ -1,5 +1,3 @@
-# Fiber
-
 A theme for [Vaadin 14](https://vaadin.com/docs/v14/) based on [IBM's Carbon](https://www.carbondesignsystem.com/).
 
 ## Running the application
