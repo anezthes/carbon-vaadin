@@ -19,8 +19,8 @@ label {
 /* === Radio === */
 
 [part="radio"] {
-    background-color: transparent;
-    border: 1px solid var(--gray-100);
+    background-color: var(--radio-button-bg);
+    border: 1px solid var(--radio-button-border-color);
     border-radius: var(--lumo-icon-size-m);
     box-sizing: border-box;
     height: var(--lumo-icon-size-m);
@@ -37,38 +37,38 @@ label {
 /* === Hover === */
 
 :host(:not([checked]):not([indeterminate]):not([disabled]):hover) [part="radio"] {
-    background-color: transparent;
+    background-color: var(--radio-button-hover-bg);
 }
 
 /* === Focus === */
 
 :host([focus-ring]) [part="radio"] {
     box-shadow: none;
-    outline: 2px solid var(--lumo-primary-color);
+    outline: 2px solid var(--focus-color);
 }
 
 /* === Checked === */
 
 :host([checked]) [part="radio"] {
-    background-color: transparent;
+    background-color: var(--radio-button-checked-bg);
 }
 
 [part="radio"]::after {
-    border-color: var(--gray-100);
+    border-color: var(--radio-button-checkmark-color);
     border-width: 0.25rem;
 }
 
 /* === Disabled === */
 
 :host([disabled]) [part="radio"] {
-    background-color: transparent;
-    border-color: var(--gray-30);
+    background-color: var(--radio-button-disabled-bg);
+    border-color: var(--radio-button-disabled-border-color);
 }
 
 :host([disabled][checked]) [part="radio"] {
-    background-color: var(--gray-30);
+    background-color: var(--radio-button-disabled-checked-bg);
 }
 
 :host([disabled]) [part="radio"]::after {
-    border-color: var(--lumo-primary-contrast-color);
+    border-color: var(--radio-button-checkmark-color);
 }

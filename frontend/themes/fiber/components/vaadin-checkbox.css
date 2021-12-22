@@ -64,7 +64,7 @@ label {
 /* === Disabled === */
 
 :host([disabled]) [part="checkbox"] {
-    background-color: transparent;
+    background-color: var(--checkbox-disabled-bg);
     border-color: var(--checkbox-disabled-border-color);
 }
 

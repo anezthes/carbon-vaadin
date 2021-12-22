@@ -58,7 +58,7 @@ html {
 
     --lumo-box-shadow-m: 0 2px 6px 0 rgba(0, 0, 0, 0.2);
 
-    /* === Fiber === */
+    /* === Carbon === */
 
     --numeric-font-family: IBM Plex Mono, Menlo, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier, monospace;
 
@@ -131,8 +131,18 @@ html {
     --checkbox-hover-bg: transparent;
     --checkbox-checked-bg: var(--gray-100);
     --checkbox-checkmark-color: white;
+    --checkbox-disabled-bg: transparent;
     --checkbox-disabled-border-color: var(--gray-30);
     --checkbox-disabled-checked-bg: var(--gray-30);
+
+    --radio-button-bg: transparent;
+    --radio-button-border-color: var(--gray-100);
+    --radio-button-hover-bg: transparent;
+    --radio-button-checked-bg: transparent;
+    --radio-button-checkmark-color: var(--gray-100);
+    --radio-button-disabled-bg: transparent;
+    --radio-button-disabled-border-color: var(--gray-30);
+    --radio-button-disabled-checked-bg: var(--gray-30);
 
     --datepicker-focus-color: var(--blue-60);
     --datepicker-focus: inset 0 0 0 2px var(--datepicker-focus-color);
@@ -227,7 +237,7 @@ html {
     --lumo-secondary-text-color: var(--gray-30);
     --lumo-disabled-text-color: var(--gray-70);
 
-    /* === Fiber === */
+    /* === Carbon === */
 
     --hover-bg: #353535; /* @palette */
     --active-bg: var(--gray-80);
@@ -285,8 +295,18 @@ html {
     --checkbox-hover-bg: transparent;
     --checkbox-checked-bg: var(--gray-10);
     --checkbox-checkmark-color: var(--gray-100);
+    --checkbox-disabled-bg: transparent;
     --checkbox-disabled-border-color: var(--gray-70);
     --checkbox-disabled-checked-bg: var(--gray-70);
+
+    --radio-button-bg: transparent;
+    --radio-button-border-color: var(--gray-10);
+    --radio-button-hover-bg: transparent;
+    --radio-button-checked-bg: transparent;
+    --radio-button-checkmark-color: var(--gray-10);
+    --radio-button-disabled-bg: transparent;
+    --radio-button-disabled-border-color: var(--gray-70);
+    --radio-button-disabled-checked-bg: var(--gray-70);
 
     --datepicker-focus-color: var(--blue-60);
     --datepicker-focus: inset 0 0 0 2px var(--datepicker-focus-color);
