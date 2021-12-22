@@ -5,6 +5,9 @@
     line-height: normal;
     margin-inline-start: 1px;
     padding: 0 var(--lumo-space-m);
+    transition: background-color var(--duration-fast) var(--easing-standard),
+                color var(--duration-fast) var(--easing-standard),
+                outline var(--duration-fast) var(--easing-standard);
 }
 
 :host:first-child {
@@ -21,7 +24,7 @@
 :host([focused]),
 :host([focus-ring]) {
     box-shadow: none;
-    outline: 2px solid var(--lumo-primary-color);
+    outline: 2px solid var(--focus-color);
     outline-offset: -2px;
 }
 
@@ -35,36 +38,42 @@
 /* === Underline === */
 
 :host::before {
-    background-color: var(--gray-20);
+    background-color: var(--tab-underline-color);
     left: 0;
     transform: none;
+    transition: background-color var(--duration-fast) var(--easing-standard);
     width: 100%;
 }
 
 :host(:hover)::before {
-    background-color: var(--gray-50);
+    background-color: var(--tab-underline-hover-color);
 }
 
 :host([selected])::before {
+    background-color: var(--tab-underline-selected-color);
     transform: none;
 }
 
 :host(:focus)::before,
 :host([focused])::before,
 :host([focus-ring])::before {
-    background-color: var(--lumo-primary-color);
+    background-color: var(--focus-color);
 }
 
 /* === Outline theme variant === */
 
 :host([theme~="outline"]) {
-    background-color: var(--gray-20);
-    box-shadow: inset 1px 0 0 0 var(--gray-50);
+    background-color: var(--tab-outline-bg);
+    box-shadow: inset 1px 0 0 0 var(--tab-outline-border-color);
     margin-inline-start: 0;
 }
 
+:host([theme~="outline"]:hover) {
+    background-color: var(--tab-outline-hover-bg);
+}
+
 :host([theme~="outline"][selected]) {
-    background-color: var(--gray-10);
+    background-color: var(--tab-outline-selected-bg);
     box-shadow: none;
 }
 
@@ -76,4 +85,10 @@
 
 :host([theme~="outline"][selected])::before {
     background-color: var(--lumo-primary-color);
+}
+
+:host([theme~="outline"]:focus)::before,
+:host([theme~="outline"][focused])::before,
+:host([theme~="outline"][focus-ring])::before {
+    background-color: var(--focus-color);
 }

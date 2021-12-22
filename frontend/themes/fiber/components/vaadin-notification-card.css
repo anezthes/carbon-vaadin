@@ -26,16 +26,19 @@
     --notification-border-color: var(--notification-primary-border-color);
     --notification-icon-color: var(--notification-primary-icon-color);
 }
+
 :host([theme~="success"]) {
     --notification-bg: var(--notification-success-bg);
     --notification-border-color: var(--notification-success-border-color);
     --notification-icon-color: var(--notification-success-icon-color);
 }
+
 :host([theme~="error"]) {
     --notification-bg: var(--notification-error-bg);
     --notification-border-color: var(--notification-error-border-color);
     --notification-icon-color: var(--notification-error-icon-color);
 }
+
 :host([theme~="warning"]) {
     --notification-bg: var(--notification-warning-bg);
     --notification-border-color: var(--notification-warning-border-color);
@@ -51,18 +54,22 @@
     --notification-color: var(--notification-high-contrast-color);
     --notification-focus-color: var(--notification-high-contrast-focus-color);
 }
+
 :host([theme~="high-contrast"][theme~="primary"]) {
     --notification-border-color: var(--notification-high-contrast-primary-border-color);
     --notification-icon-color: var(--notification-high-contrast-primary-icon-color);
 }
+
 :host([theme~="high-contrast"][theme~="success"]) {
     --notification-border-color: var(--notification-high-contrast-success-border-color);
     --notification-icon-color: var(--notification-high-contrast-success-icon-color);
 }
+
 :host([theme~="high-contrast"][theme~="error"]) {
     --notification-border-color: var(--notification-high-contrast-error-border-color);
     --notification-icon-color: var(--notification-high-contrast-error-icon-color);
 }
+
 :host([theme~="high-contrast"][theme~="warning"]) {
     --notification-border-color: var(--notification-high-contrast-warning-border-color);
     --notification-icon-color: var(--notification-high-contrast-warning-icon-color);

@@ -220,6 +220,14 @@ html {
     --notification-high-contrast-error-icon-color: var(--red-50);
     --notification-high-contrast-warning-icon-color: var(--yellow-30);
 
+    --tab-underline-color: var(--gray-20);
+    --tab-underline-hover-color: var(--gray-50);
+    --tab-underline-selected-color: var(--blue-60);
+    --tab-outline-bg: var(--gray-20);
+    --tab-outline-hover-bg: #cacaca; /* @palette */
+    --tab-outline-border-color: var(--gray-50);
+    --tab-outline-selected-bg: var(--gray-10);
+
     --duration-fast: 70ms;
     --easing-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
 }
@@ -387,4 +395,12 @@ html {
     --notification-high-contrast-success-icon-color: var(--green-50);
     --notification-high-contrast-error-icon-color: var(--red-60);
     --notification-high-contrast-warning-icon-color: var(--yellow-30);
+
+    --tab-underline-color: var(--gray-80);
+    --tab-underline-hover-color: var(--gray-60);
+    --tab-underline-selected-color: var(--blue-50);
+    --tab-outline-bg: var(--gray-80);
+    --tab-outline-hover-bg: #4c4c4c; /* @palette */
+    --tab-outline-border-color: var(--gray-60);
+    --tab-outline-selected-bg: var(--gray-90);
 }
