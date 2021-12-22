@@ -5,6 +5,22 @@ vaadin-notification-card flow-component-renderer {
 /* === Close button === */
 
 vaadin-notification-card vaadin-button[theme~="icon"] {
+  --button-color: var(--notification-color);
+  --button-hover-bg: transparent;
+  --button-hover-color: var(--notification-color);
+  --button-active-bg: transparent;
+  --button-active-color: var(--notification-color);
+  --button-focus: inset 0 0 0 2px var(--notification-focus-color);
+}
+
+/* === Icon === */
+
+vaadin-notification-card iron-icon:not(vaadin-button iron-icon) {
+  color: var(--notification-icon-color);
+}
+
+/*
+vaadin-notification-card vaadin-button[theme~="icon"] {
   --button-color: var(--gray-100);
   --button-hover-bg: transparent;
   --button-hover-color: var(--gray-100);
@@ -21,9 +37,9 @@ vaadin-notification-card[theme~="dark"] vaadin-button[theme~="icon"] {
 vaadin-notification-card[theme~="dark"] vaadin-button[theme~="icon"][focused] {
   box-shadow: inset 0 0 0 2px var(--focus-color);
 }
-
+*/
 /* === Notification icon === */
-
+/*
 vaadin-notification-card iron-icon.text-warning {
   color: var(--yellow-30);
   position: relative;
@@ -38,3 +54,4 @@ vaadin-notification-card iron-icon.text-warning::before {
   width: 0.5rem;
   z-index: -1;
 }
+*/

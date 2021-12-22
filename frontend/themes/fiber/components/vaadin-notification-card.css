@@ -3,69 +3,68 @@
 }
 
 [part="overlay"] {
+    border-inline-start: 3px solid var(--notification-border-color);
     flex-grow: 1;
 }
 
 /* === Common === */
-
-:host([theme~="primary"]),
-:host([theme~="success"]),
-:host([theme~="error"]),
-:host([theme~="warning"]) {
-    --_lumo-button-color: var(--lumo-body-text-color);
-}
 
 :host([theme~="primary"]) [part="overlay"],
 :host([theme~="success"]) [part="overlay"],
 :host([theme~="error"]) [part="overlay"],
 :host([theme~="warning"]) [part="overlay"] {
     background-image: none;
-    border-left: 3px solid;
+    background-color: var(--notification-bg);
     box-shadow: var(--lumo-box-shadow-m);
-    color: var(--lumo-body-text-color);
+    color: var(--notification-color);
 }
 
-/* === Primary === */
+/* === Low contrast === */
 
-:host([theme~="primary"][theme~="dark"]) [part="overlay"] {
-    border-color: var(--blue-50);
+:host([theme~="primary"]) {
+    --notification-bg: var(--notification-primary-bg);
+    --notification-border-color: var(--notification-primary-border-color);
+    --notification-icon-color: var(--notification-primary-icon-color);
 }
-:host([theme~="primary"]) [part="overlay"] {
-    background-color: var(--blue-10);
-    border-color: var(--blue-60);
+:host([theme~="success"]) {
+    --notification-bg: var(--notification-success-bg);
+    --notification-border-color: var(--notification-success-border-color);
+    --notification-icon-color: var(--notification-success-icon-color);
 }
-
-/* === Success === */
-
-:host([theme~="success"][theme~="dark"]) [part="overlay"] {
-    border-color: var(--green-40);
+:host([theme~="error"]) {
+    --notification-bg: var(--notification-error-bg);
+    --notification-border-color: var(--notification-error-border-color);
+    --notification-icon-color: var(--notification-error-icon-color);
 }
-:host([theme~="success"]) [part="overlay"] {
-    background-color: var(--green-10);
-    border-color: var(--green-60);
-}
-
-/* === Error === */
-
-:host([theme~="error"][theme~="dark"]) [part="overlay"] {
-    border-color: var(--red-50);
-}
-:host([theme~="error"]) [part="overlay"] {
-    background-color: var(--red-10);
-    border-color: var(--red-60);
+:host([theme~="warning"]) {
+    --notification-bg: var(--notification-warning-bg);
+    --notification-border-color: var(--notification-warning-border-color);
+    --notification-icon-color: var(--notification-warning-icon-color);
 }
 
-/* === Warning === */
+/* === High contrast === */
 
-:host([theme~="warning"][theme~="dark"]) [part="overlay"] {
-    border-color: var(--yellow-30);
+:host([theme~="high-contrast"]) {
+    --lumo-header-text-color: var(--notification-high-contrast-color);
+    --lumo-primary-text-color: var(--notification-high-contrast-primary-color);
+    --notification-bg: var(--notification-high-contrast-bg);
+    --notification-color: var(--notification-high-contrast-color);
+    --notification-focus-color: var(--notification-high-contrast-focus-color);
 }
-:host([theme~="warning"]) [part="overlay"] {
-    background-color: var(--yellow-10); /* fcf4d6 vs #fdf6dd */
+:host([theme~="high-contrast"][theme~="primary"]) {
+    --notification-border-color: var(--notification-high-contrast-primary-border-color);
+    --notification-icon-color: var(--notification-high-contrast-primary-icon-color);
+}
+:host([theme~="high-contrast"][theme~="success"]) {
+    --notification-border-color: var(--notification-high-contrast-success-border-color);
+    --notification-icon-color: var(--notification-high-contrast-success-icon-color);
+}
+:host([theme~="high-contrast"][theme~="error"]) {
+    --notification-border-color: var(--notification-high-contrast-error-border-color);
+    --notification-icon-color: var(--notification-high-contrast-error-icon-color);
+}
+:host([theme~="high-contrast"][theme~="warning"]) {
+    --notification-border-color: var(--notification-high-contrast-warning-border-color);
+    --notification-icon-color: var(--notification-high-contrast-warning-icon-color);
 }
 
-/* === Dark === */
-
-:host([theme~="dark"]) [part="overlay"] {
-    background-color: var(--gray-80);
-}

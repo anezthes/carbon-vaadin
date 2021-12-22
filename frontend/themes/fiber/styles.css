@@ -176,6 +176,37 @@ html {
 
     --overlay-bg: var(--gray-10);
 
+    --notification-bg: var(--gray-10);
+    --notification-primary-bg: var(--blue-10);
+    --notification-success-bg: var(--green-10);
+    --notification-error-bg: var(--red-10);
+    --notification-warning-bg: var(--yellow-10);
+
+    --notification-primary-border-color: var(--blue-70);
+    --notification-success-border-color: var(--green-60);
+    --notification-error-border-color: var(--red-60);
+    --notification-warning-border-color: var(--yellow-30);
+
+    --notification-primary-icon-color: var(--blue-70);
+    --notification-success-icon-color: var(--green-60);
+    --notification-error-icon-color: var(--red-60);
+    --notification-warning-icon-color: var(--yellow-30);
+
+    --notification-high-contrast-bg: var(--gray-80);
+    --notification-high-contrast-color: white;
+    --notification-high-contrast-focus-color: white;
+    --notification-high-contrast-primary-color: var(--blue-40);
+
+    --notification-high-contrast-primary-border-color: var(--blue-50);
+    --notification-high-contrast-success-border-color: var(--green-40);
+    --notification-high-contrast-error-border-color: var(--red-50);
+    --notification-high-contrast-warning-border-color: var(--yellow-30);
+
+    --notification-high-contrast-primary-icon-color: var(--blue-50);
+    --notification-high-contrast-success-icon-color: var(--green-40);
+    --notification-high-contrast-error-icon-color: var(--red-50);
+    --notification-high-contrast-warning-icon-color: var(--yellow-30);
+
     --duration-fast: 70ms;
     --easing-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
 }
@@ -299,4 +330,35 @@ html {
     --item-selected-bg: #4c4c4c; /* @palette */
 
     --overlay-bg: var(--gray-90);
+
+    --notification-bg: var(--gray-80);
+    --notification-primary-bg: var(--blue-100); /* Guessing, no documentation */
+    --notification-success-bg: var(--green-100); /* Guessing, no documentation */
+    --notification-error-bg: var(--red-100); /* Guessing, no documentation */
+    --notification-warning-bg: var(--yellow-100); /* Guessing, no documentation */
+
+    --notification-primary-border-color: var(--blue-50);
+    --notification-success-border-color: var(--green-40);
+    --notification-error-border-color: var(--red-50);
+    --notification-warning-border-color: var(--yellow-30);
+
+    --notification-primary-icon-color: var(--blue-50);
+    --notification-success-icon-color: var(--green-40);
+    --notification-error-icon-color: var(--red-50);
+    --notification-warning-icon-color: var(--yellow-30);
+
+    --notification-high-contrast-bg: var(--gray-10);
+    --notification-high-contrast-color: var(--gray-100);
+    --notification-high-contrast-focus-color: var(--blue-60);
+    --notification-high-contrast-primary-color: var(--blue-60);
+
+    --notification-high-contrast-primary-border-color: var(--blue-60);
+    --notification-high-contrast-success-border-color: var(--green-50);
+    --notification-high-contrast-error-border-color: var(--red-60);
+    --notification-high-contrast-warning-border-color: var(--yellow-30);
+
+    --notification-high-contrast-primary-icon-color: var(--blue-60);
+    --notification-high-contrast-success-icon-color: var(--green-50);
+    --notification-high-contrast-error-icon-color: var(--red-60);
+    --notification-high-contrast-warning-icon-color: var(--yellow-30);
 }
