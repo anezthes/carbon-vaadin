@@ -73,6 +73,11 @@
     padding: 0 var(--lumo-space-m);
 }
 
+:host([theme~="tertiary"]),
+:host([theme~="tertiary-inline"]) {
+    transition: background-color var(--duration-fast) var(--easing-standard), box-shadow var(--duration-fast) var(--easing-standard);
+}
+
 :host([theme*="tertiary"]:hover) {
     background-color: var(--button-hover-bg) !important;
 }
@@ -138,10 +143,6 @@
 :host([theme~="icon"]) [part="prefix"],
 :host([theme~="icon"]) [part="suffix"] {
     line-height: 1;
-}
-
-[part] ::slotted(iron-icon[icon^="vaadin:"]) {
-    /* padding: 0; */
 }
 
 :host(:not([theme~="icon"])) [part="prefix"] ::slotted(iron-icon[icon^="vaadin:"]) {

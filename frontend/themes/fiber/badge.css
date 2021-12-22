@@ -1,7 +1,7 @@
 [theme~="badge"] {
-  background-color: var(--blue-20);
+  background-color: var(--tag-blue-bg);
   border-radius: var(--lumo-size-m);
-  color: var(--blue-80);
+  color: var(--tag-blue-color);
   font-size: var(--lumo-font-size-xs);
   font-weight: normal;
   line-height: 1rem;
@@ -9,108 +9,104 @@
 }
 
 [theme~="badge"][theme~="error"] {
-  background-color: var(--red-20);
-  color: var(--red-80);
+  background-color: var(--tag-red-bg);
+  color: var(--tag-red-color);
 }
 
 [theme~="badge"][theme~="magenta"] {
-  background-color: var(--magenta-20);
-  color: var(--magenta-80);
+  background-color: var(--tag-magenta-bg);
+  color: var(--tag-magenta-color);
 }
 
 [theme~="badge"][theme~="purple"] {
-  background-color: var(--purple-20);
-  color: var(--purple-80);
+  background-color: var(--tag-purple-bg);
+  color: var(--tag-purple-color);
 }
 
 [theme~="badge"][theme~="cyan"] {
-  background-color: var(--cyan-20);
-  color: var(--cyan-80);
+  background-color: var(--tag-cyan-bg);
+  color: var(--tag-cyan-color);
 }
 
 [theme~="badge"][theme~="teal"] {
-  background-color: var(--teal-20);
-  color: var(--teal-80);
+  background-color: var(--tag-teal-bg);
+  color: var(--tag-teal-color);
 }
 
 [theme~="badge"][theme~="success"] {
-  background-color: var(--green-20);
-  color: var(--green-80);
+  background-color: var(--tag-green-bg);
+  color: var(--tag-green-color);
 }
 
 [theme~="badge"][theme~="contrast"] {
-  background-color: var(--gray-20);
-  color: var(--gray-80);
+  background-color: var(--tag-gray-bg);
+  color: var(--tag-gray-color);
 }
 
 [theme~="badge"][theme~="cool-gray"] {
-  background-color: var(--cool-gray-20);
-  color: var(--cool-gray-80);
+  background-color: var(--tag-cool-gray-bg);
+  color: var(--tag-cool-gray-color);
 }
 
 [theme~="badge"][theme~="warm-gray"] {
-  background-color: var(--warm-gray-20);
-  color: var(--warm-gray-80);
+  background-color: var(--tag-warm-gray-bg);
+  color: var(--tag-warm-gray-color);
 }
 
 [theme~="badge"][class~="disabled"] {
-  background-color: var(--gray-10);
-  color: var(--gray-30);
+  background-color: var(--tag-disabled-bg);
+  color: var(--tag-disabled-color);
 }
 
 /* === Button === */
-[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
+
+[theme~="badge"] vaadin-button {
+  --button-color: currentColor;
+  --button-hover-color: currentColor;
+  --button-focus: inset 0 0 0 1px var(--focus-color);
   border: none;
   border-radius: var(--lumo-size-xs);
-  color: currentColor;
   height: var(--lumo-size-xs);
-  margin-bottom: calc(var(--lumo-space-xxs) * -1);
-  margin-inline-end: calc(var(--lumo-space-xs) * -1);
-  margin-inline-start: var(--lumo-space-xxxs);
-  margin-top: calc(var(--lumo-space-xxs) * -1);
+  margin: calc(var(--lumo-space-xxs) * -1) calc(var(--lumo-space-xs) * -1) calc(var(--lumo-space-xxs) * -1) var(--lumo-space-xxxs);
   width: var(--lumo-size-xs);
 }
 
-[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"][focused] {
-  box-shadow: inset 0 0 0 1px var(--lumo-primary-color);
-}
-
-[theme~="badge"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
+[theme~="badge"] vaadin-button {
   --button-hover-bg: var(--blue-30);
 }
 
-[theme~="badge"][theme~="error"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--red-30);
+[theme~="badge"][theme~="error"] vaadin-button {
+  --button-hover-bg: var(--tag-red-hover-bg);
 }
 
-[theme~="badge"][theme~="magenta"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--magenta-30);
+[theme~="badge"][theme~="magenta"] vaadin-button {
+  --button-hover-bg: var(--tag-magenta-hover-bg);
 }
 
-[theme~="badge"][theme~="purple"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--purple-30);
+[theme~="badge"][theme~="purple"] vaadin-button {
+  --button-hover-bg: var(--tag-purple-hover-bg);
 }
 
-[theme~="badge"][theme~="cyan"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--cyan-30);
+[theme~="badge"][theme~="cyan"] vaadin-button {
+  --button-hover-bg: var(--tag-cyan-hover-bg);
 }
 
-[theme~="badge"][theme~="teal"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--teal-30);
+[theme~="badge"][theme~="teal"] vaadin-button {
+  --button-hover-bg: var(--tag-teal-hover-bg);
 }
 
-[theme~="badge"][theme~="success"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--green-30);
+[theme~="badge"][theme~="success"] vaadin-button {
+  --button-hover-bg: var(--tag-green-hover-bg);
 }
 
-[theme~="badge"][theme~="contrast"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--gray-30);
+[theme~="badge"][theme~="contrast"] vaadin-button {
+  --button-hover-bg: var(--tag-gray-hover-bg);
 }
 
-[theme~="badge"][theme~="cool-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--cool-gray-30);
+[theme~="badge"][theme~="cool-gray"] vaadin-button {
+  --button-hover-bg: var(--tag-cool-gray-hover-bg);
 }
 
-[theme~="badge"][theme~="warm-gray"] vaadin-button[theme~="tertiary-inline"][theme~="icon"] {
-  --button-hover-bg: var(--warm-gray-30);
+[theme~="badge"][theme~="warm-gray"] vaadin-button {
+  --button-hover-bg: var(--tag-warm-gray-hover-bg);
 }

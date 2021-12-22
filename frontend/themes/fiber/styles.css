@@ -228,6 +228,39 @@ html {
     --tab-outline-border-color: var(--gray-50);
     --tab-outline-selected-bg: var(--gray-10);
 
+    --tag-blue-bg: var(--blue-20);
+    --tag-blue-hover-bg: var(--blue-30);
+    --tag-blue-color: var(--blue-80);
+    --tag-red-bg: var(--red-20);
+    --tag-red-hover-bg: var(--red-30);
+    --tag-red-color: var(--red-80);
+    --tag-magenta-bg: var(--magenta-20);
+    --tag-magenta-hover-bg: var(--magenta-30);
+    --tag-magenta-color: var(--magenta-80);
+    --tag-purple-bg: var(--purple-20);
+    --tag-purple-hover-bg: var(--purple-30);
+    --tag-purple-color: var(--purple-80);
+    --tag-cyan-bg: var(--cyan-20);
+    --tag-cyan-hover-bg: var(--cyan-30);
+    --tag-cyan-color: var(--cyan-80);
+    --tag-teal-bg: var(--teal-20);
+    --tag-teal-hover-bg: var(--teal-30);
+    --tag-teal-color: var(--teal-80);
+    --tag-green-bg: var(--green-20);
+    --tag-green-hover-bg: var(--green-30);
+    --tag-green-color: var(--green-80);
+    --tag-gray-bg: var(--gray-20);
+    --tag-gray-hover-bg: var(--gray-30);
+    --tag-gray-color: var(--gray-80);
+    --tag-cool-gray-bg: var(--cool-gray-20);
+    --tag-cool-gray-hover-bg: var(--cool-gray-30);
+    --tag-cool-gray-color: var(--cool-gray-80);
+    --tag-warm-gray-bg: var(--warm-gray-20);
+    --tag-warm-gray-hover-bg: var(--warm-gray-30);
+    --tag-warm-gray-color: var(--warm-gray-80);
+    --tag-disabled-bg: var(--gray-10);
+    --tag-disabled-color: var(--gray-30);
+
     --duration-fast: 70ms;
     --easing-standard: cubic-bezier(0.2, 0, 0.38, 0.9);
 }
@@ -403,4 +436,37 @@ html {
     --tab-outline-hover-bg: #4c4c4c; /* @palette */
     --tab-outline-border-color: var(--gray-60);
     --tab-outline-selected-bg: var(--gray-90);
+
+    --tag-blue-bg: var(--blue-80);
+    --tag-blue-hover-bg: var(--blue-70);
+    --tag-blue-color: var(--blue-30);
+    --tag-red-bg: var(--red-80);
+    --tag-red-hover-bg: var(--red-70);
+    --tag-red-color: var(--red-30);
+    --tag-magenta-bg: var(--magenta-80);
+    --tag-magenta-hover-bg: var(--magenta-70);
+    --tag-magenta-color: var(--magenta-30);
+    --tag-purple-bg: var(--purple-80);
+    --tag-purple-hover-bg: var(--purple-70);
+    --tag-purple-color: var(--purple-30);
+    --tag-cyan-bg: var(--cyan-80);
+    --tag-cyan-hover-bg: var(--cyan-70);
+    --tag-cyan-color: var(--cyan-30);
+    --tag-teal-bg: var(--teal-80);
+    --tag-teal-hover-bg: var(--teal-70);
+    --tag-teal-color: var(--teal-30);
+    --tag-green-bg: var(--green-80);
+    --tag-green-hover-bg: var(--green-70);
+    --tag-green-color: var(--green-30);
+    --tag-gray-bg: var(--gray-80);
+    --tag-gray-hover-bg: var(--gray-70);
+    --tag-gray-color: var(--gray-30);
+    --tag-cool-gray-bg: var(--cool-gray-80);
+    --tag-cool-gray-hover-bg: var(--cool-gray-70);
+    --tag-cool-gray-color: var(--cool-gray-30);
+    --tag-warm-gray-bg: var(--warm-gray-80);
+    --tag-warm-gray-hover-bg: var(--warm-gray-70);
+    --tag-warm-gray-color: var(--warm-gray-30);
+    --tag-disabled-bg: var(--gray-90);
+    --tag-disabled-color: var(--gray-70);
 }
