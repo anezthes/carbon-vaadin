@@ -28,7 +28,7 @@
 /* === Outline theme variant === */
 
 :host([theme~="outline"]) {
-    background-color: var(--gray-20);
+    background-color: var(--tab-outline-bg);
     min-height: var(--lumo-size-l);
 }
 
@@ -38,7 +38,7 @@
 
 :host([theme~="outline"]) [part="forward-button"],
 :host([theme~="outline"]) [part="back-button"] {
-    background-color: var(--gray-20);
+    background-color: var(--tab-outline-bg);
     height: var(--lumo-size-l);
     width: var(--lumo-size-l);
 }
