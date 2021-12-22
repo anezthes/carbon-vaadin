@@ -3,7 +3,7 @@
 }
 
 :host([opened])::after {
-    background-color: var(--gray-10);
+    background-color: var(--overlay-bg);
     content: "";
     height: 4px;
     left: 0;
@@ -13,7 +13,7 @@
 }
 
 [part="overlay"] {
-    background-color: var(--gray-10);
+    background-color: var(--overlay-bg);
     background-image: none;
     box-shadow: var(--lumo-box-shadow-m);
 }

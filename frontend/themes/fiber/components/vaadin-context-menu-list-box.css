@@ -26,5 +26,5 @@
 /* === Focus === */
 
 [part="items"] ::slotted([focus-ring]:not([disabled])) {
-    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+    box-shadow: inset 0 0 0 2px var(--focus-color);
 }

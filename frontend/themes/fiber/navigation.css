@@ -1,5 +1,6 @@
 nav a {
   color: var(--lumo-secondary-text-color);
+  transition: background-color 0.11s, box-shadow 0.11s, color 0.11s;
 }
 
 nav a:focus {
