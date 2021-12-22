@@ -72,7 +72,7 @@
 }
 
 [theme~="badge"] vaadin-button {
-  --button-hover-bg: var(--blue-30);
+  --button-hover-bg: var(--tag-blue-hover-bg);
 }
 
 [theme~="badge"][theme~="error"] vaadin-button {
