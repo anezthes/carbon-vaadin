@@ -6,13 +6,12 @@ A theme for [Vaadin 14](https://vaadin.com/docs/v14/) based on [IBM's Carbon](ht
 `mvn`
 
 ## Disclaimer
-It's not perfect. There are some discrepancies between Carbon and Vaadin that simply cannot be amended with CSS.
+It's not perfect. Some of the differences between Carbon and Vaadin cannot be amended with CSS. There are also a few things I wasn't able to figure out based on Carbon's current documentation and source code.
 
 ## Missing
 ### Carbon themes
 - Gray 10
 - Gray 90
-- Gray 100
 
 ### Carbon components
 - Breadcrumb
@@ -23,7 +22,6 @@ It's not perfect. There are some discrepancies between Carbon and Vaadin that si
 - Link
 - List
 - Loading
-- Overflow menu
 - Pagination
 - Progress indicator
 - Slider
@@ -31,8 +29,6 @@ It's not perfect. There are some discrepancies between Carbon and Vaadin that si
 - Tile
 - Toggle
 - Tooltip
-- UI shell header
-- UI shell left panel
 - UI shell right panel
 
 ### Vaadin components
