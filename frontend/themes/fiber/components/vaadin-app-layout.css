@@ -1,9 +1,5 @@
-[part='drawer'] {
-    background-color: white;
-}
-
 [part='navbar'] ::slotted(header) {
-    box-shadow: inset 0 -1px 0 0 var(--gray-80);
+    box-shadow: inset 0 -1px 0 0 var(--navigation-border-color);
 }
 
 [part="navbar"],
@@ -24,8 +20,4 @@
 [part="backdrop"] {
     background-color: var(--gray-100);
     opacity: 0.5;
-}
-
-[content] {
-    /* background-color: var(--gray-10); */
 }

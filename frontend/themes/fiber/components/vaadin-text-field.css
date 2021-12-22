@@ -129,6 +129,7 @@
 }
 
 [part="input-field"] ::slotted(iron-icon) {
+    color: var(--lumo-secondary-text-color);
     height: var(--lumo-text-field-size);
     width: var(--lumo-text-field-size);
 }

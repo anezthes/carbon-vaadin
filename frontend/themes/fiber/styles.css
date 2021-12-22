@@ -2,7 +2,7 @@
 @import url('./button.css');
 @import url('./color.css');
 @import url('./item.css');
-@import url('./nav.css');
+@import url('./navigation.css');
 @import url('./notification.css');
 @import url('./tab.css');
 @import url('lumo-css-framework/all-classes.css');
@@ -66,6 +66,9 @@ html {
     --active-bg: var(--gray-30);
 
     --focus-color: var(--blue-60);
+
+    --navigation-border-color: var(--gray-80);
+    --navigation-highlight-bg: var(--gray-20);
 
     --input-bg: var(--gray-10);
     --input-hover-bg: var(--hover-bg);
@@ -243,6 +246,9 @@ html {
     --active-bg: var(--gray-80);
 
     --focus-color: white;
+
+    --navigation-border-color: var(--gray-80); /* Guessing, no documentation */
+    --navigation-highlight-bg: var(--gray-80); /* Guessing, no documentation */
 
     --accordion-border-color: var(--gray-80);
     --accordion-disabled-border-color: var(--gray-90);

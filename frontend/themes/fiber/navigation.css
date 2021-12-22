@@ -3,7 +3,7 @@ nav a {
 }
 
 nav a:focus {
-  box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
+  box-shadow: inset 0 0 0 2px var(--focus-color);
   outline: none;
 }
 
@@ -14,13 +14,13 @@ nav a:hover {
 }
 
 nav a[highlight] {
-  background-color: var(--gray-20);
+  background-color: var(--navigation-highlight-bg);
   color: var(--lumo-body-text-color);
   font-weight: 600;
 }
 
 nav a[highlight]::before {
-  background-color: var(--lumo-primary-color);
+  background-color: var(--focus-color);
   content: "";
   height: 100%;
   left: 0;
