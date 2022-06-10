@@ -4,12 +4,12 @@
 
 /* === Label === */
 
-label {
-    align-items: flex-start;
-}
-
-[part="label"]:not([empty]) {
-    margin: 0 var(--lumo-space-m) 0 var(--lumo-space-xxs);
+:host([has-label]) ::slotted(label) {
+    margin-bottom: calc((var(--lumo-size-xs) - (var(--lumo-font-size-s) * var(--lumo-line-height-s))) / 2);
+    margin-inline-end: var(--lumo-space-m);
+    margin-inline-start: calc(var(--lumo-space-xxs) * 1.5);
+    margin-top: calc((var(--lumo-size-xs) - (var(--lumo-font-size-s) * var(--lumo-line-height-s))) / 2);
+    padding: 0;
 }
 
 /* === Checkbox === */
@@ -20,7 +20,7 @@ label {
     border-radius: var(--lumo-border-radius-s);
     box-sizing: border-box;
     height: var(--lumo-icon-size-m);
-    margin: var(--lumo-space-xxxs);
+    margin: calc((var(--lumo-size-xs) - var(--lumo-icon-size-m)) / 2) var(--lumo-space-xxxs);
     width: var(--lumo-icon-size-m);
 }
 
@@ -29,9 +29,9 @@ label {
 }
 
 [part="checkbox"]::after {
-    border-color: var(--checkbox-checkmark-color);
-    top: 0.625rem;
-    left: 0.375rem;
+    color: var(--checkbox-checkmark-color);
+    font-size: var(--lumo-font-size-m);
+    font-weight: bold;
 }
 
 /* === Active === */
@@ -68,10 +68,10 @@ label {
     border-color: var(--checkbox-disabled-border-color);
 }
 
-:host([checked][checkedchecke]) [part="checkbox"] {
+:host([disabled][checked]) [part="checkbox"] {
     background-color: var(--checkbox-disabled-checked-bg);
 }
 
-:host([disabled]) [part="checkbox"]::after {
-    border-color: var(--checkbox-checkmark-color);
+:host([disabled]) [part="checkbox"] {
+    color: var(--checkbox-checkmark-color);
 }

@@ -126,7 +126,7 @@
     font-size: var(--lumo-font-size-s);
 }
 
-:host([theme~="large"]) [part] ::slotted(iron-icon) {
+:host([theme~="large"]) [part] ::slotted(vaadin-icon) {
     height: var(--lumo-icon-size-l);
     width: var(--lumo-icon-size-l);
 }
@@ -145,11 +145,11 @@
     line-height: 1;
 }
 
-:host(:not([theme~="icon"])) [part="prefix"] ::slotted(iron-icon[icon^="vaadin:"]) {
+:host(:not([theme~="icon"])) [part="prefix"] ::slotted(vaadin-icon[icon^="vaadin:"]) {
     margin: 0 var(--lumo-space-xs) 0 0;
 }
 
-:host(:not([theme~="icon"])) [part="suffix"] ::slotted(iron-icon[icon^="vaadin:"]) {
+:host(:not([theme~="icon"])) [part="suffix"] ::slotted(vaadin-icon[icon^="vaadin:"]) {
     margin: 0 0 0 var(--lumo-space-xs);
 }
 

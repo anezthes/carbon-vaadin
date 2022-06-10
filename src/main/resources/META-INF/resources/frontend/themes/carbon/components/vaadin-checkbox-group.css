@@ -10,13 +10,23 @@
     padding-top: 0;
 }
 
+/* === Group field === */
+
+[part='group-field'] {
+    display: flex;
+}
+
+:host([theme~='vertical']) [part='group-field'] {
+    gap: var(--lumo-space-xxs);
+}
+
 /* === Label === */
 
 [part="label"] {
     font-size: var(--lumo-font-size-xs);
     font-weight: normal;
     line-height: var(--lumo-line-height-s);
-    margin-bottom: var(--lumo-space-xs);
+    margin-bottom: calc(var(--lumo-space-xxs) * 1.5);
     padding: 0;
 }
 

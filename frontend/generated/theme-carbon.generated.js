@@ -52,6 +52,7 @@ import { typography } from '@vaadin/vaadin-lumo-styles/typography.js';
 import { color } from '@vaadin/vaadin-lumo-styles/color.js';
 import { spacing } from '@vaadin/vaadin-lumo-styles/spacing.js';
 import { badge } from '@vaadin/vaadin-lumo-styles/badge.js';
+import { utility } from '@vaadin/vaadin-lumo-styles/utility.js';
 import inputButtonCss from 'themes/carbon/components/input-button.css?inline';
 import inputFieldCss from 'themes/carbon/components/input-field.css?inline';
 import vaadinAccordionPanelCss from 'themes/carbon/components/vaadin-accordion-panel.css?inline';
@@ -302,5 +303,6 @@ export const applyTheme = (target) => {
 injectGlobalCss(color.cssText, target, true);
 injectGlobalCss(spacing.cssText, target, true);
 injectGlobalCss(badge.cssText, target, true);
+injectGlobalCss(utility.cssText, target, true);
 
 }

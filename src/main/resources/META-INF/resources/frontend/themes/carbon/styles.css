@@ -5,8 +5,6 @@
 @import url('./navigation.css');
 @import url('./notification.css');
 @import url('./tab.css');
-@import url('lumo-css-framework/all-classes.css');
-@import url('line-awesome/dist/line-awesome/css/line-awesome.min.css');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
 
@@ -186,8 +184,6 @@ html {
     --item-hover-bg: var(--hover-bg);
     --item-active-bg: var(--gray-20);
     --item-selected-bg: #cacaca;
-
-
 
     --overlay-bg: var(--gray-10);
 

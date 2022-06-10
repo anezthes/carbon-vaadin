@@ -4,16 +4,12 @@
 
 /* === Label === */
 
-label {
-    align-items: flex-start;
-}
-
-[part="label"] {
-
-}
-
-[part="label"]:not([empty]) {
-    margin: 0 var(--lumo-space-m) 0 var(--lumo-space-xxs);
+:host([has-label]) ::slotted(label) {
+    margin-bottom: calc((var(--lumo-size-xs) - (var(--lumo-font-size-s) * var(--lumo-line-height-s))) / 2);
+    margin-inline-end: var(--lumo-space-m);
+    margin-inline-start: calc(var(--lumo-space-xxs) * 1.5);
+    margin-top: calc((var(--lumo-size-xs) - (var(--lumo-font-size-s) * var(--lumo-line-height-s))) / 2);
+    padding: 0;
 }
 
 /* === Radio === */
