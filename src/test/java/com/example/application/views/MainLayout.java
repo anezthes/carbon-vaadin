@@ -18,9 +18,6 @@ import java.util.List;
 /**
  * The main view is a top-level placeholder for other views.
  */
-@PWA(name = "Fiber", shortName = "Fiber", enableInstallPrompt = false)
-@Theme(themeFolder = "fiber")
-@PageTitle("Fiber")
 public class MainLayout extends AppLayout {
 
 	public static final String WHITE = "White";
