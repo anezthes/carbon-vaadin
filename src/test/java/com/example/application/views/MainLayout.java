@@ -54,7 +54,7 @@ public class MainLayout extends AppLayout {
 		DrawerToggle toggle = new DrawerToggle();
 		toggle.getElement().setAttribute("aria-label", "Menu toggle");
 
-		H1 title = new H1("Fiber");
+		H1 title = new H1("Carbon for Vaadin");
 		title.addClassNames("me-xl", "ms-xs", "my-0", "text-m");
 
 		Select theme = new Select(WHITE, GRAY_100);

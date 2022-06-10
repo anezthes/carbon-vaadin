@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <!-- Vaadin project from https://start.vaadin.com/project/30f32ad0-00b3-4473-a5ed-6cb30da62948 -->
     <groupId>org.vaadin.addons.anezthes</groupId>
-    <artifactId>fiber</artifactId>
+    <artifactId>carbon-vaadin</artifactId>
     <name>A Carbon inspired theme for Vaadin</name>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
@@ -35,15 +35,15 @@
     </licenses>
 
     <scm>
-        <url>https://github.com/anezthes/carbon-vaadin14</url>
-        <connection>scm:git:git://github.com/anezthes/carbon-vaadin14.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com:/anezthes/carbon-vaadin14.git</developerConnection>
+        <url>https://github.com/anezthes/carbon-vaadin23</url>
+        <connection>scm:git:git://github.com/anezthes/carbon-vaadin23.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com:/anezthes/carbon-vaadin23.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/anezthes/carbon-vaadin14/issues</url>
+        <url>https://github.com/anezthes/carbon-vaadin23/issues</url>
     </issueManagement>
 
     <repositories>
