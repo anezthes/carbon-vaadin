@@ -1,9 +1,7 @@
 package com.example.application;
 
-import com.vaadin.flow.component.dependency.NpmPackage;
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.router.PageTitle;
-import com.vaadin.flow.server.PWA;
 import com.vaadin.flow.theme.Theme;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,8 +16,8 @@ import org.vaadin.artur.helpers.LaunchUtil;
 @PageTitle("Carbon for Vaadin")
 public class Application extends SpringBootServletInitializer implements AppShellConfigurator {
 
-    public static void main(String[] args) {
-        LaunchUtil.launchBrowserInDevelopmentMode(SpringApplication.run(Application.class, args));
-    }
+	public static void main(String[] args) {
+		LaunchUtil.launchBrowserInDevelopmentMode(SpringApplication.run(Application.class, args));
+	}
 
 }
