@@ -1,14 +1,5 @@
-@import "input-button.css";
 @import "input-field.css";
 
-/* === Opened === */
-
-:host([opened]) [part="toggle-button"] {
-    transform: rotate(180deg);
-}
-
-/* === Selected === */
-
-[selected] {
-    color: currentColor;
+[part='input-field'] ::slotted([slot='value']) {
+    font-weight: normal;
 }

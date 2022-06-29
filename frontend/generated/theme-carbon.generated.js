@@ -62,6 +62,7 @@ import vaadinCheckboxGroupCss from 'themes/carbon/components/vaadin-checkbox-gro
 import vaadinCheckboxCss from 'themes/carbon/components/vaadin-checkbox.css?inline';
 import vaadinComboBoxItemCss from 'themes/carbon/components/vaadin-combo-box-item.css?inline';
 import vaadinComboBoxOverlayCss from 'themes/carbon/components/vaadin-combo-box-overlay.css?inline';
+import vaadinComboBoxScrollerCss from 'themes/carbon/components/vaadin-combo-box-scroller.css?inline';
 import vaadinComboBoxCss from 'themes/carbon/components/vaadin-combo-box.css?inline';
 import vaadinContextMenuItemCss from 'themes/carbon/components/vaadin-context-menu-item.css?inline';
 import vaadinContextMenuListBoxCss from 'themes/carbon/components/vaadin-context-menu-list-box.css?inline';
@@ -74,6 +75,7 @@ import vaadinDialogCss from 'themes/carbon/components/vaadin-dialog.css?inline';
 import vaadinDrawerToggleCss from 'themes/carbon/components/vaadin-drawer-toggle.css?inline';
 import vaadinGridSorterCss from 'themes/carbon/components/vaadin-grid-sorter.css?inline';
 import vaadinGridCss from 'themes/carbon/components/vaadin-grid.css?inline';
+import vaadinInputContainerCss from 'themes/carbon/components/vaadin-input-container.css?inline';
 import vaadinItemCss from 'themes/carbon/components/vaadin-item.css?inline';
 import vaadinListBoxCss from 'themes/carbon/components/vaadin-list-box.css?inline';
 import vaadinMenuBarButtonCss from 'themes/carbon/components/vaadin-menu-bar-button.css?inline';
@@ -81,6 +83,7 @@ import vaadinMenuBarCss from 'themes/carbon/components/vaadin-menu-bar.css?inlin
 import vaadinMonthCalendarCss from 'themes/carbon/components/vaadin-month-calendar.css?inline';
 import vaadinNotificationCardCss from 'themes/carbon/components/vaadin-notification-card.css?inline';
 import vaadinNumberFieldCss from 'themes/carbon/components/vaadin-number-field.css?inline';
+import vaadinPasswordFieldButtonCss from 'themes/carbon/components/vaadin-password-field-button.css?inline';
 import vaadinPasswordFieldCss from 'themes/carbon/components/vaadin-password-field.css?inline';
 import vaadinProgressBarCss from 'themes/carbon/components/vaadin-progress-bar.css?inline';
 import vaadinRadioButtonCss from 'themes/carbon/components/vaadin-radio-button.css?inline';
@@ -173,6 +176,10 @@ export const applyTheme = (target) => {
       unsafeCSS(vaadinComboBoxOverlayCss.toString())
     );
     registerStyles(
+      'vaadin-combo-box-scroller',
+      unsafeCSS(vaadinComboBoxScrollerCss.toString())
+    );
+    registerStyles(
       'vaadin-combo-box',
       unsafeCSS(vaadinComboBoxCss.toString())
     );
@@ -221,6 +228,10 @@ export const applyTheme = (target) => {
       unsafeCSS(vaadinGridCss.toString())
     );
     registerStyles(
+      'vaadin-input-container',
+      unsafeCSS(vaadinInputContainerCss.toString())
+    );
+    registerStyles(
       'vaadin-item',
       unsafeCSS(vaadinItemCss.toString())
     );
@@ -247,6 +258,10 @@ export const applyTheme = (target) => {
     registerStyles(
       'vaadin-number-field',
       unsafeCSS(vaadinNumberFieldCss.toString())
+    );
+    registerStyles(
+      'vaadin-password-field-button',
+      unsafeCSS(vaadinPasswordFieldButtonCss.toString())
     );
     registerStyles(
       'vaadin-password-field',

@@ -4,6 +4,7 @@
 
 [part="overlay"] {
     border-inline-start: 3px solid var(--notification-border-color);
+    border-radius: 0;
     flex-grow: 1;
 }
 

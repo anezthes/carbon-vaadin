@@ -1,9 +1,13 @@
+@import "input-field.css";
+
 :host([has-controls]) [part="value"] {
     padding: 0;
 }
 
-[part="value"] {
+::slotted(input) {
+    --_lumo-text-field-overflow-mask-image: none;
     font-family: var(--numeric-font-family);
+    padding: 0;
 }
 
 [part="decrease-button"],
@@ -11,16 +15,16 @@
     color: currentColor;
     font-size: var(--lumo-icon-size-m);
     height: var(--lumo-text-field-size);
+    margin: 0;
     width: var(--lumo-text-field-size);
+}
+
+[part="decrease-button"]:focus,
+[part="increase-button"]:focus {
+    box-shadow: inset 0 0 0 2px var(--lumo-primary-color);
 }
 
 [part="decrease-button"]::before,
 [part="increase-button"]::before {
-    font-family: inherit;
-    margin-top: 0;
-}
-
-[part="decrease-button"] {
-    margin-inline-start: 0;
-    margin-inline-end: calc(var(--lumo-space-m) * -1);
+    margin: 0;
 }

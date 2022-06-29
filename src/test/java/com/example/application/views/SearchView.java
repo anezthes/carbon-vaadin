@@ -23,7 +23,7 @@ public class SearchView extends Main {
 	private void createSearchFields() {
 		/* Prefix */
 		Div fields = new Div();
-		fields.addClassNames("flex", "flex-wrap", "gap-m");
+		fields.addClassNames("flex", "flex-wrap", "gap-m", "mb-m");
 
 		TextField searchField = createSearchField(Slot.PREFIX);
 		fields.add(searchField);

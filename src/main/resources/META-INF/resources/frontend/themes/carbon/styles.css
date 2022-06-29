@@ -1,7 +1,6 @@
 @import url('./badge.css');
 @import url('./button.css');
 @import url('./color.css');
-@import url('./item.css');
 @import url('./navigation.css');
 @import url('./notification.css');
 @import url('./tab.css');
@@ -184,7 +183,8 @@ html {
     --item-border-color: var(--gray-20);
     --item-hover-bg: var(--hover-bg);
     --item-active-bg: var(--gray-20);
-    --item-selected-bg: #cacaca;
+    --item-selected-bg: var(--gray-20);
+    --item-selected-hover-bg: var(--gray-20-hover);
 
     --overlay-bg: var(--gray-10);
 
@@ -393,7 +393,8 @@ html {
     --item-border-color: var(--gray-80);
     --item-hover-bg: var(--hover-bg);
     --item-active-bg: var(--gray-80);
-    --item-selected-bg: #4c4c4c; /* @palette */
+    --item-selected-bg: var(--gray-80);
+    --item-selected-hover-bg: var(--gray-80-hover);
 
     --overlay-bg: var(--gray-90);
 

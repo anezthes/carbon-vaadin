@@ -1,12 +1,18 @@
 :host {
     --min-height: var(--lumo-size-m);
-    --border-top-color: var(--item-border-color);
-    align-items: stretch;
     color: var(--lumo-secondary-text-color);
     font-size: var(--lumo-font-size-s);
     min-height: var(--min-height);
     padding: 0 var(--lumo-space-m);
-    position: relative;
+}
+
+:host(:not([focused]):not([selected]):not(:last-child))::after {
+    background-color: var(--item-border-color);
+    content: "";
+    height: 1px;
+    inset: auto var(--lumo-space-m) 0 var(--lumo-space-m);
+    pointer-events: none;
+    position: absolute;
 }
 
 :host([theme~="small"]) {
@@ -17,11 +23,36 @@
     --min-height: var(--lumo-size-l);
 }
 
+/* Checkmark */
+
+[part='checkmark'] {
+    order: 1;
+}
+
+[part='checkmark']::before {
+    color: var(--lumo-body-text-color);
+    height: 1rem;
+    font-size: var(--lumo-icon-size-l);
+    line-height: 1rem;
+    margin: 0;
+    width: 1rem;
+}
+
+/* Content */
+
+[part='content'] {
+    padding-inline-end: var(--lumo-space-xs);
+}
+
 /* === Hover === */
 
 :host(:hover:not([disabled])) {
     background-color: var(--item-hover-bg);
     color: var(--lumo-body-text-color);
+}
+
+:host([selected]:hover:not([disabled])) {
+    background-color: var(--item-selected-hover-bg);
 }
 
 /* === Active === */
@@ -33,7 +64,7 @@
 /* === Selection === */
 
 :host([selected]) {
-    background-color: var(--item-selected-bg) !important;
+    background-color: var(--item-selected-bg);
     color: var(--lumo-body-text-color);
 }
 
@@ -43,30 +74,4 @@
     box-shadow: inset 0 0 0 2px var(--focus-color);
 }
 
-/* Hide border under these circumstances (pt 1/2 -- see styles.css) */
-:host(:first-of-type),
-:host(:hover),
-:host(:active),
-:host([focused]),
-:host([selected]) {
-    --border-top-color: transparent;
-}
-
-:host([tabindex])::before {
-    color: var(--lumo-body-text-color);
-    font-size: var(--lumo-icon-size-l);
-    margin: 0;
-    order: 1;
-    position: absolute;
-    right: var(--lumo-space-m);
-    top: calc((var(--min-height) - var(--lumo-icon-size-l)) / 2);
-}
-
-[part="content"] {
-    align-items: center;
-    border-bottom: 1px solid transparent;
-    border-top: 1px solid var(--border-top-color);
-    display: flex;
-    padding-inline-end: var(--lumo-icon-size-l);
-}
 
