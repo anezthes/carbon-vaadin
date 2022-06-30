@@ -4,9 +4,10 @@
     <!-- Vaadin project from https://start.vaadin.com/project/30f32ad0-00b3-4473-a5ed-6cb30da62948 -->
     <groupId>org.vaadin.addons.anezthes</groupId>
     <artifactId>carbon-vaadin</artifactId>
-    <name>A Carbon inspired theme for Vaadin</name>
+    <name>Carbon for Vaadin</name>
     <version>1.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
+    <description>A Carbon inspired theme for Vaadin</description>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
@@ -251,6 +252,16 @@
                                     META-INF/VAADIN/config/flow-build-info.json
                                 </exclude>
                             </excludes>
+                            <archive>
+                                <index>true</index>
+                                <manifest>
+                                    <addClasspath>false</addClasspath>
+                                    <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                                </manifest>
+                                <manifestEntries>
+                                    <Vaadin-Package-Version>1</Vaadin-Package-Version>
+                                </manifestEntries>
+                            </archive>
                         </configuration>
                     </plugin>
                 </plugins>
