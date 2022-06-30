@@ -1,0 +1,7 @@
+vaadin-select-overlay[theme~="small"] vaadin-select-item[role="option"] {
+  --min-height: var(--lumo-size-s);
+}
+
+vaadin-select-overlay[theme~="large"] vaadin-select-item[role="option"] {
+  --min-height: var(--lumo-size-l);
+}

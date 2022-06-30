@@ -2,6 +2,8 @@
     --_vaadin-combo-box-items-container-border-width: 0;
 }
 
+/* === Overlay === */
+
 [part="overlay"] {
     background-color: var(--overlay-bg);
     background-image: none;

@@ -1,8 +1,12 @@
+/* === Overlay === */
+
 [part="overlay"] {
     background-color: var(--overlay-bg);
     background-image: none;
     box-shadow: var(--lumo-box-shadow-m);
 }
+
+/* === Content === */
 
 [part="content"] {
     padding: 0;

@@ -1,13 +1,4 @@
-/* Menu Bar */
-
-:host([theme="menu-bar-item"]) [part="content"] ::slotted(vaadin-icon[icon^="vaadin:"]) {
-    color: var(--lumo-body-text-color);
-    padding: var(--lumo-space-xxxs);
-}
-
-/* Overlay */
-
-:host([role="menuitem"]) {
+:host([role="option"]) {
     --min-height: var(--lumo-size-m);
     color: var(--lumo-secondary-text-color);
     font-size: var(--lumo-font-size-s);
@@ -15,21 +6,30 @@
     padding: 0 var(--lumo-space-m);
 }
 
-:host([role="menuitem"][theme~="small"]) {
+:host([role="option"]:not([focused]):not([selected]):not(:last-child))::after {
+    background-color: var(--item-border-color);
+    content: "";
+    height: 1px;
+    inset: auto var(--lumo-space-m) 0 var(--lumo-space-m);
+    pointer-events: none;
+    position: absolute;
+}
+
+:host([role="option"][theme~="small"]) {
     --min-height: var(--lumo-size-s);
 }
 
-:host([role="menuitem"][theme~="large"]) {
+:host([role="option"][theme~="large"]) {
     --min-height: var(--lumo-size-l);
 }
 
 /* Checkmark */
 
-:host([role="menuitem"]) [part='checkmark'] {
+:host([role="option"]) [part='checkmark'] {
     order: 1;
 }
 
-:host([role="menuitem"]) [part='checkmark']::before {
+:host([role="option"]) [part='checkmark']::before {
     color: var(--lumo-body-text-color);
     height: 1rem;
     font-size: var(--lumo-icon-size-l);
@@ -40,36 +40,38 @@
 
 /* Content */
 
-:host([role="menuitem"]) [part='content'] {
+:host([role="option"]) [part='content'] {
     padding-inline-end: var(--lumo-space-xs);
 }
 
 /* === Hover === */
 
-:host([role="menuitem"]:hover:not([disabled])) {
+:host([role="option"]:hover:not([disabled])) {
     background-color: var(--item-hover-bg);
     color: var(--lumo-body-text-color);
 }
 
-:host([role="menuitem"][selected]:hover:not([disabled])) {
+:host([role="option"][selected]:hover:not([disabled])) {
     background-color: var(--item-selected-hover-bg);
 }
 
 /* === Active === */
 
-:host([role="menuitem"]:active:not([disabled])) {
+:host([role="option"]:active:not([disabled])) {
     background-color: var(--item-active-bg);
 }
 
 /* === Selection === */
 
-:host([role="menuitem"][selected]) {
+:host([role="option"][selected]) {
     background-color: var(--item-selected-bg);
     color: var(--lumo-body-text-color);
 }
 
 /* === Focus === */
 
-:host([role="menuitem"][focused]:not([disabled])) {
+:host([role="option"][focused]:not([disabled])) {
     box-shadow: inset 0 0 0 2px var(--focus-color);
 }
+
+

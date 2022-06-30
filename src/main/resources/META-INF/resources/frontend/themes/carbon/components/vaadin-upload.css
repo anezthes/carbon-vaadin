@@ -1,20 +1,30 @@
 :host(:not([nodrop])) {
     border: none;
+    border-radius: 0;
     padding: 0;
 }
+
+/* === Buttons === */
 
 [part="primary-buttons"] > * {
     display: block;
 }
 
+/* === Label === */
+
 [part="drop-label"] {
     display: none;
 }
+
+/* === File list === */
 
 [part="file-list"] {
     display: flex;
     flex-direction: column;
     gap: var(--lumo-space-xxs);
+}
+
+[part="file-list"] li:first-of-type {
     margin-top: var(--lumo-space-m);
 }
 

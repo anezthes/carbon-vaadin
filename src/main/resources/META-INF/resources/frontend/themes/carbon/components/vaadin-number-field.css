@@ -1,14 +1,14 @@
 @import "input-field.css";
 
-:host([has-controls]) [part="value"] {
-    padding: 0;
-}
+/* === Input === */
 
 ::slotted(input) {
     --_lumo-text-field-overflow-mask-image: none;
     font-family: var(--numeric-font-family);
     padding: 0;
 }
+
+/* === Buttons === */
 
 [part="decrease-button"],
 [part="increase-button"] {

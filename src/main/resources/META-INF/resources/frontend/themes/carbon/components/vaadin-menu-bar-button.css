@@ -13,10 +13,14 @@
     content: none;
 }
 
+/* === Expanded === */
+
 :host([expanded]) {
     background-color: var(--overlay-bg);
     box-shadow: var(--lumo-box-shadow-m);
 }
+
+/* === Label === */
 
 [part="label"] {
     padding: 0;

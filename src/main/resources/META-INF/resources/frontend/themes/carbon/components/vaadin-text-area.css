@@ -1,13 +1,14 @@
 @import "input-field.css";
 
-/* Input */
+/* === Input === */
 
 [part='input-field'] {
     align-items: start;
     padding: 0;
 }
 
-/* Hover */
+/* === Hover === */
+
 :host(:hover:not([readonly]):not([focused]):not([invalid])) [part='input-field'] {
     background-color: var(--input-hover-bg);
 }

@@ -43,7 +43,8 @@
     width: var(--lumo-size-l);
 }
 
-/* Overflow */
+/* === Overflow === */
+
 :host([overflow~='start'][overflow~='end']:not([orientation='vertical'])) [part='tabs'] {
     --_lumo-tabs-overflow-mask-image: linear-gradient(90deg, transparent var(--lumo-size-l), #000 var(--lumo-size-xl), #000 calc(100% - var(--lumo-size-xl)), transparent calc(100% - var(--lumo-size-l)));
 }

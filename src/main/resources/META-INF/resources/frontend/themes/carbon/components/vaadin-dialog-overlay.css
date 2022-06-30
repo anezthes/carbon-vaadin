@@ -1,14 +1,15 @@
-:host([theme~="no-padding"]) [part="content"] {
-    padding: 0;
-}
+/* === Backdrop === */
 
 [part="backdrop"] {
     background-color: var(--gray-100);
     opacity: 0.5;
 }
 
+/* === Overlay === */
+
 [part="overlay"] {
     background-color: var(--overlay-bg);
+    border-radius: 0;
     box-shadow: none;
 }
 

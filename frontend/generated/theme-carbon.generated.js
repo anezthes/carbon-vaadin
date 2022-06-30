@@ -88,7 +88,9 @@ import vaadinPasswordFieldCss from 'themes/carbon/components/vaadin-password-fie
 import vaadinProgressBarCss from 'themes/carbon/components/vaadin-progress-bar.css?inline';
 import vaadinRadioButtonCss from 'themes/carbon/components/vaadin-radio-button.css?inline';
 import vaadinRadioGroupCss from 'themes/carbon/components/vaadin-radio-group.css?inline';
+import vaadinSelectItemCss from 'themes/carbon/components/vaadin-select-item.css?inline';
 import vaadinSelectOverlayCss from 'themes/carbon/components/vaadin-select-overlay.css?inline';
+import vaadinSelectValueButtonCss from 'themes/carbon/components/vaadin-select-value-button.css?inline';
 import vaadinSelectCss from 'themes/carbon/components/vaadin-select.css?inline';
 import vaadinTabCss from 'themes/carbon/components/vaadin-tab.css?inline';
 import vaadinTabsCss from 'themes/carbon/components/vaadin-tabs.css?inline';
@@ -280,8 +282,16 @@ export const applyTheme = (target) => {
       unsafeCSS(vaadinRadioGroupCss.toString())
     );
     registerStyles(
+      'vaadin-select-item',
+      unsafeCSS(vaadinSelectItemCss.toString())
+    );
+    registerStyles(
       'vaadin-select-overlay',
       unsafeCSS(vaadinSelectOverlayCss.toString())
+    );
+    registerStyles(
+      'vaadin-select-value-button',
+      unsafeCSS(vaadinSelectValueButtonCss.toString())
     );
     registerStyles(
       'vaadin-select',

@@ -6,9 +6,7 @@
     border-bottom: 1px solid var(--accordion-border-color);
 }
 
-:host([focus-ring]) [part="summary"] {
-    box-shadow: 0 0 0 2px var(--focus-color);
-}
+/* === Summary === */
 
 [part="summary"] {
     color: var(--lumo-body-text-color);
@@ -18,13 +16,11 @@
     padding: var(--lumo-space-s) 0;
 }
 
-[part="summary"]:hover {
-    background-color: var(--accordion-hover-bg);
-}
-
 [part="summary-content"] {
     margin-inline-start: var(--lumo-space-m);
 }
+
+/* === Toggle === */
 
 [part="toggle"] {
     color: currentColor;
@@ -40,12 +36,22 @@
     transform: rotate(-90deg);
 }
 
+/* === Content === */
+
 [part="content"] {
     padding: var(--lumo-space-s) var(--lumo-space-m) var(--lumo-space-l) var(--lumo-space-m);
 }
 
+/* === Disabled === */
+
 :host([disabled]) {
     border-color: var(--accordion-disabled-border-color);
+}
+
+/* === Hover === */
+
+[part="summary"]:hover {
+    background-color: var(--accordion-hover-bg);
 }
 
 @media (hover: hover) {
@@ -53,4 +59,10 @@
     :host(:not([disabled])) [part="summary"]:hover [part="toggle"] {
         color: var(--lumo-body-text-color);
     }
+}
+
+/* === Focus === */
+
+:host([focus-ring]) [part="summary"] {
+    box-shadow: 0 0 0 2px var(--focus-color);
 }

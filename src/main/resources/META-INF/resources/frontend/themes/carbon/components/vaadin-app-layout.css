@@ -1,23 +1,33 @@
-[part='navbar'] ::slotted(header) {
-    box-shadow: inset 0 -1px 0 0 var(--navigation-border-color);
-}
+/* === Navigation bar === */
 
-[part="navbar"],
-:host([overlay]) [part="drawer"] {
+[part="navbar"] {
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
 }
 
-:host([overlay]) [part="drawer"],
-:host([overlay]) [part="backdrop"] {
+[part='navbar'] ::slotted(header) {
+    box-shadow: inset 0 -1px 0 0 var(--navigation-border-color);
+}
+
+/* === Drawer === */
+
+:host([overlay]) [part="drawer"] {
+    backdrop-filter: none;
     top: var(--lumo-size-l);
+    -webkit-backdrop-filter: none;
 }
 
 :host([overlay]) [part="drawer"]::before {
     content: none;
 }
 
+/* === Backdrop === */
+
 [part="backdrop"] {
     background-color: var(--gray-100);
     opacity: 0.5;
+}
+
+:host([overlay]) [part="backdrop"] {
+    top: var(--lumo-size-l);
 }

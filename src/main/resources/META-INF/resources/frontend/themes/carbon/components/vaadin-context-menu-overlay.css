@@ -2,6 +2,8 @@
     padding: 0;
 }
 
+/* === Opened === */
+
 :host([opened])::after {
     background-color: var(--overlay-bg);
     content: "";
@@ -12,11 +14,15 @@
     width: var(--lumo-size-m);
 }
 
+/* === Overlay === */
+
 [part="overlay"] {
     background-color: var(--overlay-bg);
     background-image: none;
     box-shadow: var(--lumo-box-shadow-m);
 }
+
+/* === Content === */
 
 [part="content"] {
     padding: 0;
