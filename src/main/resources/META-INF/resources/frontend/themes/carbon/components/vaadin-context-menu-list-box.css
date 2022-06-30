@@ -13,7 +13,7 @@
 /* === Active === */
 
 [part="items"] ::slotted(.vaadin-menu-item:active:not([disabled])) {
-    background-color: var(--gray-20);
+    background-color: var(--item-active-bg);
 }
 
 /* === Selection === */
