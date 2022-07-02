@@ -1,0 +1,4 @@
+{
+  "parent": "carbon",
+  "lumoImports" : [ "typography", "color", "spacing", "badge", "utility" ]
+}
