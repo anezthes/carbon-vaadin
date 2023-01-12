@@ -5,7 +5,7 @@
     <groupId>org.vaadin.addons.anezthes</groupId>
     <artifactId>carbon-vaadin</artifactId>
     <name>Carbon for Vaadin</name>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
     <description>A Carbon inspired theme for Vaadin</description>
 
@@ -35,7 +35,7 @@
         <url>https://github.com/anezthes/carbon-vaadin23</url>
         <connection>scm:git:git://github.com/anezthes/carbon-vaadin23.git</connection>
         <developerConnection>scm:git:ssh://git@github.com:/anezthes/carbon-vaadin23.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>carbon-vaadin-1.0.1</tag>
     </scm>
 
     <issueManagement>
